@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1748908320 source:d:\descargas\utn\cursada 2025\programacion 1\programas\ejercicios\codigo\guia 6\tp integrador programacion 1\main.cpp
+	<iostream>
+	"MOSTRARMENU.h"
+	"JUGAR.h"
+
+1748907716 d:\descargas\utn\cursada 2025\programacion 1\programas\ejercicios\codigo\guia 6\tp integrador programacion 1\mostrarmenu.h
+
+1748907785 source:d:\descargas\utn\cursada 2025\programacion 1\programas\ejercicios\codigo\guia 6\tp integrador programacion 1\mostrarmenu.cpp
+	<iostream>
+	"MOSTRARMENU.h"
+
+1748908116 d:\descargas\utn\cursada 2025\programacion 1\programas\ejercicios\codigo\guia 6\tp integrador programacion 1\jugar.h
+
+1748908237 source:d:\descargas\utn\cursada 2025\programacion 1\programas\ejercicios\codigo\guia 6\tp integrador programacion 1\jugar.cpp
+	<iostream>
+	"JUGAR.h"
+
+1749782005 source:d:\descargas\utn\cursada 2025\programacion 1\tp integrador\tp integrador programacion 1\jugar.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"JUGAR.h"
+
+1749782232 d:\descargas\utn\cursada 2025\programacion 1\tp integrador\tp integrador programacion 1\jugar.h
+
+1749079747 source:d:\descargas\utn\cursada 2025\programacion 1\tp integrador\tp integrador programacion 1\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"MOSTRARMENU.h"
+	"JUGAR.h"
+	"DADOS.h"
+
+1748907716 d:\descargas\utn\cursada 2025\programacion 1\tp integrador\tp integrador programacion 1\mostrarmenu.h
+
+1749782199 source:d:\descargas\utn\cursada 2025\programacion 1\tp integrador\tp integrador programacion 1\mostrarmenu.cpp
+	<iostream>
+	"MOSTRARMENU.h"
+	"JUGAR.h"
+	"DADOS.h"
+
+1749594798 d:\descargas\utn\cursada 2025\programacion 1\tp integrador\tp integrador programacion 1\dados.h
+
+1749609826 source:d:\descargas\utn\cursada 2025\programacion 1\tp integrador\tp integrador programacion 1\dados.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"DADOS.h"
+	"JUGAR.h"
+
