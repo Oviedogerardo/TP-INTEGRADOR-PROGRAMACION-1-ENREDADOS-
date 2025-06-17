@@ -16,15 +16,17 @@
 	<iostream>
 	"JUGAR.h"
 
-1749782005 source:d:\descargas\utn\cursada 2025\programacion 1\tp integrador\tp integrador programacion 1\jugar.cpp
+1750128500 source:d:\descargas\utn\cursada 2025\programacion 1\tp integrador\tp integrador programacion 1\jugar.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
 	"JUGAR.h"
+	"DADOS.h"
+	"MOSTRARMENU.h"
 
-1749782232 d:\descargas\utn\cursada 2025\programacion 1\tp integrador\tp integrador programacion 1\jugar.h
+1750128060 d:\descargas\utn\cursada 2025\programacion 1\tp integrador\tp integrador programacion 1\jugar.h
 
-1749079747 source:d:\descargas\utn\cursada 2025\programacion 1\tp integrador\tp integrador programacion 1\main.cpp
+1750092744 source:d:\descargas\utn\cursada 2025\programacion 1\tp integrador\tp integrador programacion 1\main.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -34,18 +36,19 @@
 
 1748907716 d:\descargas\utn\cursada 2025\programacion 1\tp integrador\tp integrador programacion 1\mostrarmenu.h
 
-1749782199 source:d:\descargas\utn\cursada 2025\programacion 1\tp integrador\tp integrador programacion 1\mostrarmenu.cpp
+1750128257 source:d:\descargas\utn\cursada 2025\programacion 1\tp integrador\tp integrador programacion 1\mostrarmenu.cpp
 	<iostream>
 	"MOSTRARMENU.h"
 	"JUGAR.h"
 	"DADOS.h"
 
-1749594798 d:\descargas\utn\cursada 2025\programacion 1\tp integrador\tp integrador programacion 1\dados.h
+1750126030 d:\descargas\utn\cursada 2025\programacion 1\tp integrador\tp integrador programacion 1\dados.h
 
-1749609826 source:d:\descargas\utn\cursada 2025\programacion 1\tp integrador\tp integrador programacion 1\dados.cpp
+1750128588 source:d:\descargas\utn\cursada 2025\programacion 1\tp integrador\tp integrador programacion 1\dados.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
 	"DADOS.h"
 	"JUGAR.h"
+	"MOSTRARMENU.h"
 

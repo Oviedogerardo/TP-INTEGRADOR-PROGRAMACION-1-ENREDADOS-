@@ -9,7 +9,10 @@ string PedirNombreJugador1();
 string PedirNombreJugador2();
 int ContadorRondas();
 void creditos();
-void MostrarPartida(string NombreJugador1, string NombreJugador2);
+void MostrarNombres(string NombreJugador1, string NombreJugador2);
+void MostrarPartida(int Empieza, string NombreJugador1, string NombreJugador2, int DadosStockJugador1Numero[],int DadosStockJugador2Numero[],int DadosStockJugadorCantidad);
+ //void MostrarPodongas (string &poronga1, string &poronga2);
+
 
 
 //int DecidirQuienEmpieza ();

@@ -2,6 +2,8 @@
 #include <cstdlib>
 #include <ctime>
 #include "JUGAR.h"
+#include "DADOS.h"
+#include "MOSTRARMENU.h"
 
 using namespace std;
 
@@ -57,14 +59,79 @@ void creditos()    //ESTA FUNCION MUESTRA LOS CREDITOS DE TODOS LOS INTEGRANTES 
 
 }
 
-void MostrarPartida(string NombreJugador1, string NombreJugador2) //ESTA FUNCION SIRVE PARA MOSTRAR EL TRANSCURSO DE TODA LA PARTIDA
+void MostrarNombres(string NombreJugador1, string NombreJugador2)
 {
 
-     cout<<"Jugador 1: "<<NombreJugador1;
+    cout<<"Jugador 1: "<<NombreJugador1<<endl;
 
-     cout<<"Jugador 2: "<<NombreJugador2;
+    cout<<"Jugador 2: "<<NombreJugador2<<endl;
 
 }
+
+//EMMA HACER FUNCION DE RONDAS
+//PAR HACER FUNCION MOSTRAR DADOS DE 12 CARAS
+
+
+void MostrarPartida(int Empieza, string NombreJugador1, string NombreJugador2, int DadosStockJugador1Numero[],int DadosStockJugador2Numero[],int DadosStockJugadorCantidad) //ESTA FUNCION SIRVE PARA MOSTRAR EL TRANSCURSO DE TODA LA PARTIDA
+{
+    if(Empieza == 1)
+    {
+
+        MostrarNombres(NombreJugador1, NombreJugador2);
+        cout<<"El Jugador "<<NombreJugador1<<" Tira sus Dados Objetivo: "<<endl<<endl;
+        DadosObjetivoJugador1();
+
+        system("pause");
+        system("cls");
+
+        MostrarNombres(NombreJugador1, NombreJugador2);
+
+        cout<<"El Jugador "<<NombreJugador2<<" Tira sus Dados Objetivo: "<<endl<<endl;
+        DadosObjetivoJugador2();
+
+
+        system("pause");
+        system("cls");
+    }
+    else
+    {
+
+        MostrarNombres(NombreJugador1, NombreJugador2);
+
+        cout<<"El Jugador "<<NombreJugador2<<" Tira sus Dados Objetivo: "<<endl<<endl;
+        DadosObjetivoJugador2();
+
+
+        system("pause");
+        system("cls");
+
+        MostrarNombres(NombreJugador1, NombreJugador2);
+        cout<<"El Jugador "<<NombreJugador1<<" Tira sus Dados Objetivo: "<<endl<<endl;
+        DadosObjetivoJugador1();
+
+        system("pause");
+        system("cls");
+    }
+    DadosStockJugador1 (DadosStockJugador1Numero,DadosStockJugadorCantidad);
+    DadosStockJugador2 (DadosStockJugador2Numero,DadosStockJugadorCantidad);
+
+}
+
+/*void MostrarPodongas (string &poronga1, string &poronga2)      //ESTO SE COMENTO PARA USAR DESPUES
+                                                                   NOMBRES POR REFERENCIA TENIENDO EN CUENTA
+{                                                                  QUE LAS VARIABLES DE NOMBRES SE DECLAREN EN EL MAIN
+     cout<<"mostar poronga" + poronga1<<endl;
+
+     poronga1 = "PORONGA VENOSA";
+
+     cout<<"mostar poronga" + poronga1<<endl;
+
+
+
+
+}*/
+
+
 
 
 

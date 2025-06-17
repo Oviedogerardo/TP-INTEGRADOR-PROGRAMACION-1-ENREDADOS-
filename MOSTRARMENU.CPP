@@ -10,16 +10,20 @@ void mostrarMenu()
 
 {
 
-    string NombreJugador1;
-    string NombreJugador2;
-    int ValorDadoInicialJugador1;
-    int ValorDadoInicialJugador2;
-    int DadoMayor;
+    string NombreJugador1;//DECLARACION DE LA VARIABLE PARA EL NOMBRE
+    string NombreJugador2;//DECLARACION DE LA VARIABLE PARA EL NOMBRE
+    int ValorDadoInicialJugador1; //DECLARACION DE LA VARIABLE PARA GUARDAR EL NUMERO QUE NOS DE LA FUNCION RAND
+    int ValorDadoInicialJugador2; //DECLARACION DE LA VARIABLE PARA GUARDAR EL NUMERO QUE NOS DE LA FUNCION RAND
+    int DadoMayor; //DECLARACION DE LA VARIABLE PARA GUARDAR EL VALOR QUE NOS SALGA DE VALIDAR SI UNO U OTRO DADO ES MAYOR
+    int DadosStockJugadorCantidad = 6; //DECLARACION DE VARIABLE DE CANTIDAD DE DADOS
+    int DadosStockJugador1Numero [DadosStockJugadorCantidad]; //DECLARACION DE VECTOR DE DADOS DE STOCK PARA GUARDAR EL VALOR DE CADA DADO
+    int DadosStockJugador2Numero [DadosStockJugadorCantidad]; //DECLARACION DE VECTOR DE DADOS DE STOCK PARA GUARDAR EL VALOR DE CADA DADO
+    int Empieza;
 
 
-    int opcion;
+    int opcion; //DECLARACION DE VARIABLE PARA PODER GUARDAR LA OPCION QUE NOS PIDA
 
-    do
+    do  //ES UN "DO/WHILE" PORQUE PRIMERO QUEREMOS QUE MUESTRE EL MENU Y DESPUES EL RESTO
     {
 
         cout<<"    _______   ____________  _______   ______ ___ ____  ____  _____ "<<endl;
@@ -46,16 +50,18 @@ void mostrarMenu()
             break;
         case 1:
 
-            NombreJugador1 = PedirNombreJugador1();
-            NombreJugador2 = PedirNombreJugador2();
+            NombreJugador1 = PedirNombreJugador1(); //UTILIZAMOS ESTA FUNCION EN ESTA VARIABLE PARA GUARDAR EL VALOR
+            NombreJugador2 = PedirNombreJugador2(); //UTILIZAMOS ESTA FUNCION EN ESTA VARIABLE PARA GUARDAR EL VALOR
             system("cls"); //ESTO LIMPIA TODO LO ANTERIOR ASI NO SE VE EN PANTALLA
 
-            ValorDadoInicialJugador1 = DadoInicialJugador1();    //ACA PODEMOS VALIDAR CON 1; PARA EVITAR ESPERAR A QUE DE EL NUMERO IGUAL
-            ValorDadoInicialJugador2 = DadoInicialJugador2();    //ACA PODEMOS VALIDAR CON 1; PARA EVITAR ESPERAR A QUE DE EL NUMERO IGUAL
+            ValorDadoInicialJugador1 = DadoInicialJugador1();    //ACA PODEMOS VALIDAR CON 1; PARA EVITAR ESPERAR A QUE DE EL NUMERO IGUAL EJ: ValorDadoInicialJugador1 = 1, PARA VER SI EL SEGUNDO JUGADOR EMPIEZA PRIMERO Y SI ESTA BIEN HECHO.
+            DibujarDado(ValorDadoInicialJugador1);
+            ValorDadoInicialJugador2 = DadoInicialJugador2();    //ACA PODEMOS VALIDAR CON 1; PARA EVITAR ESPERAR A QUE DE EL NUMERO IGUAL EJ: ValorDadoInicialJugador2 = 1, PARA VER SI EL PRIMER JUGADOR EMPIEZA PRIMERO Y SI ESTA BIEN HECHO.
+            DibujarDado(ValorDadoInicialJugador2); //USAMOS ESTA FUNCION PARA GRAFICAR LOS DADOS INICIALES
             system("pause"); //ESTO PAUSA EL PROGRAMA Y ESPERA A APRETAR UNA TECLA PARA CONTINUAR
-            system("cls");
+            system("cls"); //ESTO LIMPIA TODO LO ANTERIOR ASI NO SE VE EN PANTALLA
 
-            while (ValorDadoInicialJugador1 == ValorDadoInicialJugador2)
+            while (ValorDadoInicialJugador1 == ValorDadoInicialJugador2) //UTILIZAMOS ESTE WHILE PARA TIRAR NUEVAMENTE EN CASO DE QUE LOS NUMEROS DE LOS DADOS INICIALES SEAN IGUALES!!!
             {
                 cout<<"Como ambos Jugadores tienen el mismo valor se tira nuevamente: "<<endl;
                 ValorDadoInicialJugador1 = DadoInicialJugador1();
@@ -64,20 +70,27 @@ void mostrarMenu()
 
             if (ValorDadoInicialJugador1 > ValorDadoInicialJugador2)
             {
-
+                 Empieza = 1;
                 DadoMayor = ValorDadoInicialJugador1;
                 cout<<"El Jugador "<<NombreJugador1<<" Tiene el dado Mayor....comienza la partida"<<endl;
 
             }
             else if (ValorDadoInicialJugador2 > ValorDadoInicialJugador1)
             {
-
+                 Empieza = 2;
                 DadoMayor = ValorDadoInicialJugador2;
                 cout<<"El Jugador "<<NombreJugador2<<" Tiene el dado Mayor....comienza la partida"<<endl;
 
             }
 
-            MostrarPartida(NombreJugador1, NombreJugador2);
+            system("pause");
+            system("cls");
+
+           MostrarPartida(Empieza,NombreJugador1, NombreJugador2, DadosStockJugador1Numero,DadosStockJugador2Numero, DadosStockJugadorCantidad);
+           //EN ESTA FUNCION POR PARAMETRO PASAMOS TODOS LAS VARIABLES Y VECTORES PARA PODER TRABAJAR CON LOS MISMOS DENTRO DE LA FUNCION
+
+
+
 
 
             //ContadorRondas();
