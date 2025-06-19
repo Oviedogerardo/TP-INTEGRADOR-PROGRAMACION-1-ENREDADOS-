@@ -10,7 +10,7 @@ string PedirNombreJugador2();
 int ContadorRondas();
 void creditos();
 void MostrarNombres(string NombreJugador1, string NombreJugador2);
-void MostrarPartida(int Empieza, string NombreJugador1, string NombreJugador2, int DadosStockJugador1Numero[],int DadosStockJugador2Numero[],int DadosStockJugadorCantidad);
+void MostrarPartida(int Empieza, string NombreJugador1, string NombreJugador2, int DadosStockJugador1Numero[],int DadosStockJugador2Numero[],int DadosStockJugador1Cantidad, int DadosStockJugador2Cantidad);
  //void MostrarPodongas (string &poronga1, string &poronga2);
 
 

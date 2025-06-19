@@ -72,8 +72,13 @@ void MostrarNombres(string NombreJugador1, string NombreJugador2)
 //PAR HACER FUNCION MOSTRAR DADOS DE 12 CARAS
 
 
-void MostrarPartida(int Empieza, string NombreJugador1, string NombreJugador2, int DadosStockJugador1Numero[],int DadosStockJugador2Numero[],int DadosStockJugadorCantidad) //ESTA FUNCION SIRVE PARA MOSTRAR EL TRANSCURSO DE TODA LA PARTIDA
+void MostrarPartida(int Empieza, string NombreJugador1, string NombreJugador2, int DadosStockJugador1Numero[],int DadosStockJugador2Numero[],int DadosStockJugador1Cantidad, int DadosStockJugador2Cantidad)
+ //ESTA FUNCION SIRVE PARA MOSTRAR EL TRANSCURSO DE TODA LA PARTIDA
 {
+
+    int SumaSeleccionada;
+
+
     if(Empieza == 1)
     {
 
@@ -112,19 +117,29 @@ void MostrarPartida(int Empieza, string NombreJugador1, string NombreJugador2, i
         system("pause");
         system("cls");
     }
-    DadosStockJugador1 (DadosStockJugador1Numero,DadosStockJugadorCantidad);
-    DadosStockJugador2 (DadosStockJugador2Numero,DadosStockJugadorCantidad);
 
-}
 
-/*void MostrarPodongas (string &poronga1, string &poronga2)      //ESTO SE COMENTO PARA USAR DESPUES
+    cout<<"Estos son los Dados de la tirada del Jugador: "<< NombreJugador1<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
+
+    DadosStockJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad);
+
+    ElegirDadosySumarJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad);
+
+    cout<<"Estos son los Dados de la tirada del Jugador: "<< NombreJugador2<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
+
+    DadosStockJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad);
+
+    ElegirDadosySumarJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad);
+ }
+
+/*void MostrarCOSO (string &COSO1, string &COSO2)      //ESTO SE COMENTO PARA USAR DESPUES
                                                                    NOMBRES POR REFERENCIA TENIENDO EN CUENTA
 {                                                                  QUE LAS VARIABLES DE NOMBRES SE DECLAREN EN EL MAIN
-     cout<<"mostar poronga" + poronga1<<endl;
+     cout<<"mostar COSO" + COSO1<<endl;
 
-     poronga1 = "PORONGA VENOSA";
+     COSO1 = "COSO COSELI";
 
-     cout<<"mostar poronga" + poronga1<<endl;
+     cout<<"mostar COSO" + COSO1<<endl;
 
 
 

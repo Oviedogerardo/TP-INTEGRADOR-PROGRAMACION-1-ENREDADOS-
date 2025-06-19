@@ -14,8 +14,8 @@ int main()
     srand(time(nullptr));
 
 
-   // string porongaNumero1 = "carlo";
-    //string porongaNumero2;
+   // string COSONumero1 = "carlo";
+    //string COSONumero2;
 
   /* for (int i = 1; i <= 6; i++)       //ESTO SE HIZO PARA DIBUJAR LOS DADOS, SE VA A BORRAR
    {
@@ -24,11 +24,11 @@ int main()
    DibujarDado(i);
    }  */
 
-    //cout<<porongaNumero1<<endl;
+    //cout<<COSONumero1<<endl;
 
-   // MostrarPodongas(porongaNumero1, porongaNumero2);
+   // MostrarCOSO(COSONumero1, COSONumero2);
 
-    //cout<<porongaNumero1<<endl;
+    //cout<<COSONumero1<<endl;
 
   mostrarMenu(); //POSIBLE FUNCION QUE VA A CAMBIAR DE NOMBRE POR EL CONTENIDO QUE TIENE!
 

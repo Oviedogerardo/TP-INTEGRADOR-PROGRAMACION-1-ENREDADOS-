@@ -15,9 +15,10 @@ void mostrarMenu()
     int ValorDadoInicialJugador1; //DECLARACION DE LA VARIABLE PARA GUARDAR EL NUMERO QUE NOS DE LA FUNCION RAND
     int ValorDadoInicialJugador2; //DECLARACION DE LA VARIABLE PARA GUARDAR EL NUMERO QUE NOS DE LA FUNCION RAND
     int DadoMayor; //DECLARACION DE LA VARIABLE PARA GUARDAR EL VALOR QUE NOS SALGA DE VALIDAR SI UNO U OTRO DADO ES MAYOR
-    int DadosStockJugadorCantidad = 6; //DECLARACION DE VARIABLE DE CANTIDAD DE DADOS
-    int DadosStockJugador1Numero [DadosStockJugadorCantidad]; //DECLARACION DE VECTOR DE DADOS DE STOCK PARA GUARDAR EL VALOR DE CADA DADO
-    int DadosStockJugador2Numero [DadosStockJugadorCantidad]; //DECLARACION DE VECTOR DE DADOS DE STOCK PARA GUARDAR EL VALOR DE CADA DADO
+    int DadosStockJugador1Cantidad = 6; //DECLARACION DE VARIABLE DE CANTIDAD DE DADOS
+    int DadosStockJugador2Cantidad = 6; //DECLARACION DE VARIABLE DE CANTIDAD DE DADOS
+    int DadosStockJugador1Numero [DadosStockJugador1Cantidad]; //DECLARACION DE VECTOR DE DADOS DE STOCK PARA GUARDAR EL VALOR DE CADA DADO
+    int DadosStockJugador2Numero [DadosStockJugador2Cantidad]; //DECLARACION DE VECTOR DE DADOS DE STOCK PARA GUARDAR EL VALOR DE CADA DADO
     int Empieza;
 
 
@@ -86,7 +87,7 @@ void mostrarMenu()
             system("pause");
             system("cls");
 
-           MostrarPartida(Empieza,NombreJugador1, NombreJugador2, DadosStockJugador1Numero,DadosStockJugador2Numero, DadosStockJugadorCantidad);
+           MostrarPartida(Empieza,NombreJugador1, NombreJugador2, DadosStockJugador1Numero,DadosStockJugador2Numero, DadosStockJugador1Cantidad, DadosStockJugador2Cantidad);
            //EN ESTA FUNCION POR PARAMETRO PASAMOS TODOS LAS VARIABLES Y VECTORES PARA PODER TRABAJAR CON LOS MISMOS DENTRO DE LA FUNCION
 
 

@@ -11,6 +11,9 @@ int DadosObjetivoJugador2();
 void DibujarDado(int valor);
 void DadosStockJugador1 (int DadosStockJugador1Numero[], int DadosStockJugadorCantidad);
 void DadosStockJugador2 (int DadosStockJugador2Numero[], int DadosStockJugadorCantidad);
+void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int DadosStockJugadorCantidad);
+void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int DadosStockJugadorCantidad);
+//void AsignacionDadosJugador1 (int DadosStockJugador1Numero[]);
 
 
 #endif // DADOS_H_INCLUDED
