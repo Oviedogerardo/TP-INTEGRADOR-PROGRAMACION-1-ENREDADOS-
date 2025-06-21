@@ -18,6 +18,7 @@ void MostrarPuntajePuntajeJugador1 (int &SumaDadosJugador1, int &DadosElegidosJu
 void MostrarPuntajePuntajeJugador2(int &SumaDadosJugador2, int &DadosElegidosJugador2, string &NombreJugador2);
 void Pali();
 void Estadisticas (string NombreJugador1, string NombreJugador2, int PuntajeJugador1, int PuntajeJugador2);
+void GanarAutomaticamente(int DadosStockJugador1Cantidad, int DadosStockJugador2Cantidad, int PuntajeJugador1,int PuntajeJugador2, string NombreJugador1, string NombreJugador2);
 
 
 #endif // JUGAR_H_INCLUDED

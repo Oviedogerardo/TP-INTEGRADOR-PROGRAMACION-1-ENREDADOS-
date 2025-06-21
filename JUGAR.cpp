@@ -1,9 +1,11 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <clocale>
 #include "JUGAR.h"
 #include "DADOS.h"
 #include "MOSTRARMENU.h"
+
 
 using namespace std;
 
@@ -53,7 +55,7 @@ void MostrarNombres(string NombreJugador1, string NombreJugador2)
 {
     cout<<"                                              Jugador 1: "<<NombreJugador1<<endl;
 
-    cout<<"                                              Jugador 2: "<<NombreJugador2<<endl;
+    cout<<"                                              Jugador 2: "<<NombreJugador2<<endl<<endl;
 }
 
 void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2, int DadosStockJugador1Numero[],int DadosStockJugador2Numero[],int &DadosStockJugador1Cantidad,
@@ -63,41 +65,44 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
 {
     if(Empieza == 1)
     {
-        cout<<"                                          RONDA NUMERO: "<<Ronda<<endl<<endl;      ///AAA
         MostrarNombres(NombreJugador1, NombreJugador2);
-        cout<<"                                              El Jugador "<<NombreJugador1<<" Tira sus Dados Objetivo: "<<endl<<endl;
+
+        cout<<"                                              El Jugador 1: "<<NombreJugador1<<" Tira sus Dados Objetivo: "<<endl<<endl;
         DadosObjetivoJugador1(NumeroObjetivoJugador1);
 
-        Pali();
-        cout<<"                                          RONDA NUMERO: "<<Ronda<<endl<<endl; ///AA
+        system("cls");
+        MostrarRonda(Ronda);
         MostrarNombres(NombreJugador1, NombreJugador2);
 
-        cout<<"                                              El Jugador "<<NombreJugador2<<" Tira sus Dados Objetivo: "<<endl<<endl;
+        cout<<"                                              El Jugador 2: "<<NombreJugador2<<" Tira sus Dados Objetivo: "<<endl<<endl;
         DadosObjetivoJugador2(NumeroObjetivoJugador2);
 
-        Pali();
+        system("cls");
     }
     else
     {
         MostrarNombres(NombreJugador1, NombreJugador2);
 
-        cout<<"                                              El Jugador "<<NombreJugador2<<" Tira sus Dados Objetivo: "<<endl<<endl;
+        cout<<"                                              El Jugador 2: "<<NombreJugador2<<" Tira sus Dados Objetivo: "<<endl<<endl;
         DadosObjetivoJugador2(NumeroObjetivoJugador2);
 
-        system("cls");
 
+        system("cls");
+        MostrarRonda(Ronda);
         MostrarNombres(NombreJugador1, NombreJugador2);
-        cout<<"                                              El Jugador "<<NombreJugador1<<" Tira sus Dados Objetivo: "<<endl<<endl;
+        cout<<"                                              El Jugador 1: "<<NombreJugador1<<" Tira sus Dados Objetivo: "<<endl<<endl;
         DadosObjetivoJugador1(NumeroObjetivoJugador1);
+
 
         system("cls");
     }
-
+    MostrarRonda(Ronda);
     MostrarNombres(NombreJugador1, NombreJugador2);
+    cout<<endl;
 
     cout<<"                                              El Numero Objetivo a llegar es: "<<NumeroObjetivoJugador1<<endl<<endl; //ESTO SE AGREGO PARA MOSTRAR EL NUMERO OBJETIVO
 
-    cout<<"Estos son los Dados Stock de la tirada del Jugador: "<< NombreJugador1<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
+    cout<<"Estos son los Dados Stock de la tirada del Jugador 1: "<< NombreJugador1<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
 
     DadosStockJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad);
 
@@ -105,11 +110,13 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
 
     Pali();
 
+    MostrarRonda(Ronda);
     MostrarNombres(NombreJugador1, NombreJugador2);
+    cout<<endl;
 
     cout<<"                                              El Numero Objetivo a llegar es: "<<NumeroObjetivoJugador2<<endl<<endl;
 
-    cout<<"Estos son los Dados Stock de la tirada del Jugador: "<< NombreJugador2<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
+    cout<<"Estos son los Dados Stock de la tirada del Jugador 2: "<< NombreJugador2<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
 
     DadosStockJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad);
 
@@ -150,36 +157,39 @@ void Estadisticas (string NombreJugador1, string NombreJugador2, int PuntajeJuga
 
     cout<<"El Jugador 2: "<<NombreJugador2<<" Tubo estos puntos: "<<PuntajeJugador2<<endl<<endl;
 
+    if (PuntajeJugador1 == 0 & PuntajeJugador2 == 0)
+    {
+        cout<<"QUE HACEN MIRANDO ESTO?? VAYAN A JUGAR Y VUELVAN!!!"<<endl<<endl;
+    }
+
+    Pali();
 }
 
 void MostrarRonda(int &Ronda)
 {
-    cout<<"                                          RONDA NUMERO: "<<Ronda<<endl<<endl;
+    cout<<"                                              RONDA NUMERO: "<<Ronda<<endl<<endl;
 }
 
-
-/*void MostrarCOSO (string &COSO1, string &COSO2)      //ESTO SE COMENTO PARA USAR DESPUES
-                                                                   NOMBRES POR REFERENCIA TENIENDO EN CUENTA
-{                                                                  QUE LAS VARIABLES DE NOMBRES SE DECLAREN EN EL MAIN
-     cout<<"mostar COSO" + COSO1<<endl;
-
-     COSO1 = "COSO COSELI";
-
-     cout<<"mostar COSO" + COSO1<<endl;
-
-
-
-
-}*/
-
-
-
-
+void GanarAutomaticamente(int DadosStockJugador1Cantidad, int DadosStockJugador2Cantidad, int PuntajeJugador1,int PuntajeJugador2, string NombreJugador1, string NombreJugador2)
+{
+    if (DadosStockJugador1Cantidad == 0 || DadosStockJugador2Cantidad)
+    {
+        cout<<"********************************************************************************"<<endl;
+        cout<<"      UNO DE LOS JUGADORES SE QUEDO SIN DADOS!!!"<<endl<<endl;
+        if (DadosStockJugador1Cantidad == 0)
+        {
+            PuntajeJugador1 += 10000;
+            cout<<"FELICIDADES "<<NombreJugador1<<"      TE QUEDASTE SIN DADOS, TOMA 10.000 PUNTOS Y GANAS AUTOMATICAMENTE!!!"<<endl;
+        }
+        else if (DadosStockJugador2Cantidad == 0)
+        {
+            PuntajeJugador2 += 10000;
+            cout<<"FELICIDADES "<<NombreJugador2<<"      TE QUEDASTE SIN DADOS, TOMA 10.000 PUNTOS Y GANAS AUTOMATICAMENTE!!!"<<endl;
+        }
 
 
-
+    }
 
 
 
-
-
+}

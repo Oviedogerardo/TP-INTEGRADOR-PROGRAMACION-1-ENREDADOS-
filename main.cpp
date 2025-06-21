@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <clocale>
 #include "MOSTRARMENU.h"
 #include "JUGAR.h"
 #include "DADOS.h"
@@ -12,8 +13,9 @@ using namespace std;
 int main()
 {
     srand(time(nullptr));
+    setlocale(LC_ALL, "spanish");
 
-  Menu(); //POSIBLE FUNCION QUE VA A CAMBIAR DE NOMBRE POR EL CONTENIDO QUE TIENE! ----21/06/2025 SE CAMBIO EL NOMBRE A Menu();
+    Menu(); //POSIBLE FUNCION QUE VA A CAMBIAR DE NOMBRE POR EL CONTENIDO QUE TIENE! ----21/06/2025 SE CAMBIO EL NOMBRE A Menu();
 
 
 

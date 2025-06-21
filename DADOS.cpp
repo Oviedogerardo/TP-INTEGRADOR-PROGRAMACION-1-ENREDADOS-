@@ -1,9 +1,11 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <clocale>
 #include "DADOS.h"
 #include "JUGAR.h"
 #include "MOSTRARMENU.h"
+
 
 using namespace std;
 
@@ -30,7 +32,7 @@ int DadoInicialJugador1() /////ESTA FUNCION GENERA UN NUMERO ALEATORIO DE HASTA 
 {
     int  ValorDadoJugador1 = rand() % 6 + 1;
 
-    cout<<"El Valor del Dado Inicial del Jugador 1 es: "<<ValorDadoJugador1<<endl;
+    cout<<"El Valor del Dado Inicial del Jugador 1 es: "<<ValorDadoJugador1<<endl<<endl;
 
     return ValorDadoJugador1;
 }
@@ -39,7 +41,7 @@ int DadoInicialJugador2() /////ESTA FUNCION GENERA UN NUMERO ALEATORIO DE HASTA 
 {
     int  ValorDadoJugador2 = rand() % 6 + 1;
 
-    cout<<"El Valor del Dado Inicial del Jugador 2 es: "<<ValorDadoJugador2<<endl;
+    cout<<"El Valor del Dado Inicial del Jugador 2 es: "<<ValorDadoJugador2<<endl<<endl;
 
     return ValorDadoJugador2;
 }
@@ -49,8 +51,10 @@ void DadosObjetivoJugador1(int &NumeroObjetivoJugador1) //VARIABLE PASADA POR RE
     int DadoObjetivoJugador1_A = rand() % 12 + 1;
     int DadoObjetivoJugador1_B = rand() % 12 + 1;
 
-    cout<<DadoObjetivoJugador1_A<<endl;
-    cout<<DadoObjetivoJugador1_B<<endl<<endl;
+    cout<<"Valor primer dado Objetivo Jugador 1: "<<DadoObjetivoJugador1_A<<endl;
+    cout<<"Valor segundo dado Objetivo Jugador 1: "<<DadoObjetivoJugador1_B<<endl<<endl;
+
+    MostrarDadosObjetivoJugador1(DadoObjetivoJugador1_A,DadoObjetivoJugador1_B);
 
     NumeroObjetivoJugador1 = DadoObjetivoJugador1_A +  DadoObjetivoJugador1_B;
 
@@ -63,8 +67,10 @@ void DadosObjetivoJugador2(int &NumeroObjetivoJugador2)   //VARIABLE PASADA POR 
     int DadoObjetivoJugador2_B = rand() % 12 + 1;
 
 
-    cout<<DadoObjetivoJugador2_A<<endl;
-    cout<<DadoObjetivoJugador2_B<<endl<<endl;
+    cout<<"Valor primer dado Objetivo Jugador 2: "<<DadoObjetivoJugador2_A<<endl;
+    cout<<"Valor segundo dado Objetivo Jugador 2: "<<DadoObjetivoJugador2_B<<endl<<endl;
+
+    MostrarDadosObjetivoJugador2(DadoObjetivoJugador2_A,DadoObjetivoJugador2_B);
 
     NumeroObjetivoJugador2 = DadoObjetivoJugador2_A +  DadoObjetivoJugador2_B;
 
@@ -134,7 +140,7 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
 
         if (IndiceVectorDados < 1 || IndiceVectorDados > DadosStockJugador1Cantidad)
         {
-                        cout<<"Genio, el numero que pusiste no va"<<endl;
+            cout<<"Genio, el numero que pusiste no va"<<endl;
 
             i--; /*ESTO SE AGREGO PARA QUE CUANDO EL PIBE/PIBA/PC ELIJA MAL EL NUMERO NO DE COMO VALIDA
                         LA VUELTA Y DE LA MISMA VUELTA DE NUEVO HASTA QUE LO HAGAN BIEN*/
@@ -197,7 +203,7 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
         MostrarPuntajePuntajeJugador1(SumaDadosJugador1, DadosElegidosJugador1, NombreJugador1);
         cout<<endl;
     }
- }
+}
 
 void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJugador2Cantidad, int &DadosStockJugador1Cantidad,int &NumeroObjetivoJugador2, int &SumaDadosJugador2,int &DadosElegidosJugador2, string &NombreJugador2)
 {
@@ -270,7 +276,7 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
             DadosStockJugador1Cantidad = DadosStockJugador1Cantidad + DadosElegidosJugador2;
 
             cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
-         }
+        }
 
         cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
 
@@ -342,3 +348,43 @@ void DibujarDado(int valor)
     }
     cout << "+-------+" << endl;
 }
+
+void MostrarDadosObjetivoJugador1 (int DadoObjetivoJugador1_A, int DadoObjetivoJugador1_B)
+{
+    cout << "            ______      "<< endl;
+    cout << "           /       \     "<< endl;
+    cout << "          /         \    "<< endl;
+    cout << "         |    "<<DadoObjetivoJugador1_A<<"    |   "<< endl;
+    cout << "          \         /    "<< endl;
+    cout << "           \_______/     "<< endl;
+
+    cout << "            ______      "<< endl;
+    cout << "           /       \     "<< endl;
+    cout << "          /         \    "<< endl;
+    cout << "         |    "<<DadoObjetivoJugador1_B<<"    |   "<< endl;
+    cout << "          \         /    "<< endl;
+    cout << "           \_______/     "<< endl;
+
+    system("pause");
+}
+
+void MostrarDadosObjetivoJugador2 (int DadoObjetivoJugador2_A, int DadoObjetivoJugador2_B)
+{
+    cout << "            ______      "<< endl;
+    cout << "           /       \     "<< endl;
+    cout << "          /         \    "<< endl;
+    cout << "         |    "<<DadoObjetivoJugador2_A<<"    |   "<< endl;
+    cout << "          \         /    "<< endl;
+    cout << "           \_______/     "<< endl;
+
+    cout << "            ______      "<< endl;
+    cout << "           /       \     "<< endl;
+    cout << "          /         \    "<< endl;
+    cout << "         |    "<<DadoObjetivoJugador2_B<<"    |   "<< endl;
+    cout << "          \         /    "<< endl;
+    cout << "           \_______/     "<< endl;
+
+    system("pause");
+}
+
+

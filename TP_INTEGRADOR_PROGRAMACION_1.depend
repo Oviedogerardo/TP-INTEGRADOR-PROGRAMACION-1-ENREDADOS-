@@ -35,38 +35,42 @@
 	"JUGAR.h"
 	"DADOS.h"
 
-1750531205 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\dados.cpp
+1750549474 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\dados.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
+	<clocale>
 	"DADOS.h"
 	"JUGAR.h"
 	"MOSTRARMENU.h"
 
-1750528861 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\dados.h
+1750549320 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\dados.h
 
-1750533615 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\jugar.h
+1750544194 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\jugar.h
 
-1750528091 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\mostrarmenu.h
+1750549334 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\mostrarmenu.h
 
-1750533227 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\jugar.cpp
+1750549480 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\jugar.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
+	<clocale>
 	"JUGAR.h"
 	"DADOS.h"
 	"MOSTRARMENU.h"
 
-1750528091 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\main.cpp
+1750549525 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\main.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
+	<clocale>
 	"MOSTRARMENU.h"
 	"JUGAR.h"
 	"DADOS.h"
 
-1750533187 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\mostrarmenu.cpp
+1750549487 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\mostrarmenu.cpp
 	<iostream>
+	<clocale>
 	"MOSTRARMENU.h"
 	"JUGAR.h"
 	"DADOS.h"
