@@ -30,6 +30,8 @@ int main()
 
     //cout<<COSONumero1<<endl;
 
+
+
   mostrarMenu(); //POSIBLE FUNCION QUE VA A CAMBIAR DE NOMBRE POR EL CONTENIDO QUE TIENE!
 
 

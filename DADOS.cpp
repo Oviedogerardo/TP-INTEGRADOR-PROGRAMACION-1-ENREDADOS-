@@ -90,11 +90,11 @@ void DadosObjetivoJugador2(int &NumeroObjetivoJugador2)   //VARIABLE PASADA POR 
 
 }
 
-void DadosStockJugador1 (int DadosStockJugador1Numero[], int DadosStockJugadorCantidad)
+void DadosStockJugador1 (int DadosStockJugador1Numero[], int DadosStockJugador1Cantidad)
 
 {
 
-    for (int i = 0; i < DadosStockJugadorCantidad; i++) //CON ESTE FOR VAMOS RECORRIENDO TODO EL VECTOR Y DANDOLE EL VALOR A CADA DADO
+    for (int i = 0; i < DadosStockJugador1Cantidad; i++) //CON ESTE FOR VAMOS RECORRIENDO TODO EL VECTOR Y DANDOLE EL VALOR A CADA DADO
     {
 
         DadosStockJugador1Numero[i] = rand() % 6 + 1; //CON ESTE RAND VAMOS DANDO EL VALOR A CADA DADO
@@ -107,10 +107,10 @@ void DadosStockJugador1 (int DadosStockJugador1Numero[], int DadosStockJugadorCa
     cout<<endl;
 }
 
-void DadosStockJugador2 (int DadosStockJugador2Numero[], int DadosStockJugadorCantidad)
+void DadosStockJugador2 (int DadosStockJugador2Numero[], int DadosStockJugador2Cantidad)
 {
 
-    for (int i = 0; i < DadosStockJugadorCantidad; i++) //CON ESTE FOR VAMOS RECORRIENDO TODO EL VECTOR Y DANDOLE EL VALOR A CADA DADO
+    for (int i = 0; i < DadosStockJugador2Cantidad; i++) //CON ESTE FOR VAMOS RECORRIENDO TODO EL VECTOR Y DANDOLE EL VALOR A CADA DADO
     {
         DadosStockJugador2Numero[i] = rand() % 6 + 1; //CON ESTE RAND VAMOS DANDO EL VALOR A CADA DADO
         cout<<DadosStockJugador2Numero[i]<<" ";
@@ -123,14 +123,16 @@ void DadosStockJugador2 (int DadosStockJugador2Numero[], int DadosStockJugadorCa
 
 }
 
-void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int DadosStockJugador1Cantidad, int &NumeroObjetivoJugador1, int &SumaDadosJugador1,int &DadosElegidosJugador1)
+void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJugador1Cantidad, int &DadosStockJugador2Cantidad, int &NumeroObjetivoJugador1,int &SumaDadosJugador1,int &DadosElegidosJugador1, string &NombreJugador1)
 {
-
+    SumaDadosJugador1 = 0;
     bool Tirada = false;
+    int PuntajeFinal;
     int IndiceVectorDados;
     bool DadosUsados[12]; /*ESTA BANDERA/VECTOR VA A VALIDAR SI UN DADO YA FUE USADO PARA EVITAR ERRORES Y TIENE 12 INDICES PORQUE ES LA
                           CANTIDAD MAXIMA DE DADOS QUE PUEDEN EXISTIR EN LA PARTIDA PORQUE? SON 6 DADOS STOCK PARA
                           EL JUGADOR 1 Y EL JUGADOR 2*/
+
 
     for (int i = 0; i < 12; i++) /*ESTE FOR ESTA PARA INICIALIZAR LA BANDERA/VECTOR Y PONER TODOS LOS DADOS EN FALSE
                                     PARA VALIDAR*/
@@ -178,7 +180,7 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int DadosStockJu
             DadosUsados [IndiceVectorDados - 1] = true;
 
             SumaDadosJugador1 += DadosStockJugador1Numero [IndiceVectorDados - 1];
-            cout<<"Van Sumados: "<<SumaDadosJugador1<<endl;
+            cout<<"Van Sumados: "<<SumaDadosJugador1<<endl<<endl;
 
         }
 
@@ -188,21 +190,58 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int DadosStockJu
 
     if (SumaDadosJugador1 == NumeroObjetivoJugador1)
     {
-      Tirada = true;
-      cout<<"Tirada Exitosa"<<endl<<endl;
+        Tirada = true;
+        cout<<"Tirada Exitosa"<<endl<<endl;
 
-      cout<<"Tira el proximo Jugador!!!"<<endl;
-      system("pause");
-      system("cls");
+        if (Tirada == true)
+        {
+            DadosStockJugador1Cantidad = DadosStockJugador1Cantidad - DadosElegidosJugador1;
+            DadosStockJugador2Cantidad = DadosStockJugador2Cantidad + DadosElegidosJugador1;
+
+            cout<<"LOS DADOS QUE TENES ACTUALMENTE!!!!"<<DadosStockJugador1Cantidad<<endl;
+
+
+        }
+
+
+        cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
+        system("pause");
+        system("cls");
 
 
     }
+    else
+    {
+        Tirada = false;
+        cout<<"Tirada Fallida, solo tenias que hacer 1 sola cosa!!!!"<<endl<<endl;
+        cout<<"TOMA....Como penalizacion al Jugador 2 le sacamos un dado y te lo damos a vos!!!"<<endl;
 
+        if (DadosStockJugador2Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 2 TENGA DADOS
+        {
+            DadosStockJugador2Cantidad--;
+            DadosStockJugador1Cantidad++;
+        }
+        else if (DadosStockJugador1Cantidad == 0)
+        {
+            PuntajeFinal = SumaDadosJugador1 * DadosElegidosJugador1 + 10000;
+
+            cout<<"FELICITACIONES PADRE, GANASTE ESTE JUEGO DE CONSOLA PERO.....A QUE COSTO?"<<endl;
+
+
+        }
+
+        cout<<"LOS DADOS QUE TENES ACTUALMENTE!!!!"<<DadosStockJugador1Cantidad<<endl;
+
+
+    }
+    MostrarPuntajePuntajeJugador1(SumaDadosJugador1, DadosElegidosJugador1, NombreJugador1);
 }
 
-void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int DadosStockJugador2Cantidad,int &NumeroObjetivoJugador2, int &SumaDadosJugador2,int &DadosElegidosJugador2)
+void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJugador2Cantidad, int &DadosStockJugador1Cantidad,int &NumeroObjetivoJugador2, int &SumaDadosJugador2,int &DadosElegidosJugador2, string &NombreJugador2)
 {
-    bool Tirada;
+    SumaDadosJugador2 = 0;  //SE ASIGNO NUEVAMENTE 0 (CERO) A ESTA VARIABLE DE REFERENCIA PORQUE AL PASAR LAS RONDAS Y NO REINICIAR EL VALOR A CERO, NO SE PODRIA CUMPLIR (SumaDadosJugadorx == NumeroObjetivoJugador2)
+    int PuntajeFinal;
+    bool Tirada = false;
     int IndiceVectorDados;
     bool DadosUsados[12]; /*ESTA BANDERA/VECTOR VA A VALIDAR SI UN DADO YA FUE USADO PARA EVITAR ERRORES Y TIENE 12 INDICES PORQUE ES LA
                           CANTIDAD MAXIMA DE DADOS QUE PUEDEN EXISTIR EN LA PARTIDA PORQUE? SON 6 DADOS STOCK PARA
@@ -232,7 +271,7 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int DadosStockJu
 
     for (int i = 0; i < DadosElegidosJugador2; i++)
     {
-        cout<<"Elegi el Dado, del 1 al "<<DadosElegidosJugador2<<": ";
+        cout<<"Elegi el Dado, del 1 al "<<DadosStockJugador2Cantidad<<": ";
         cin>>IndiceVectorDados;
 
         if (IndiceVectorDados < 1 || IndiceVectorDados > DadosStockJugador2Cantidad)
@@ -254,27 +293,69 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int DadosStockJu
             DadosUsados [IndiceVectorDados - 1] = true;
 
             SumaDadosJugador2 += DadosStockJugador2Numero [IndiceVectorDados - 1];
-            cout<<"Van Sumados: "<<SumaDadosJugador2<<endl;
+            cout<<"Van Sumados: "<<SumaDadosJugador2<<endl<<endl;
 
         }
 
     }
 
-    cout<<"La Suma de los dados Seleccionados es: "<<SumaDadosJugador2<<endl;
-
+    cout<<"La Suma de los dados Seleccionados es: "<<SumaDadosJugador2<<endl<<endl;
+       cout<<"PORONGA"<<SumaDadosJugador2<<endl;
+       cout<<NumeroObjetivoJugador2<<endl;
     if (SumaDadosJugador2 == NumeroObjetivoJugador2)
     {
-      Tirada = true;
-      cout<<"Tirada Exitosa"<<endl<<endl;
+        Tirada = true;
+        cout<<"Tirada Exitosa"<<endl<<endl;
+        cout<<"Se te saca un dado y se lo da al otro jugador";
 
-      cout<<"Tira el proximo Jugador!!!"<<endl;
-      system("pause");
-      system("cls");
+
+        if (Tirada == true)
+        {
+            DadosStockJugador2Cantidad = DadosStockJugador2Cantidad - DadosElegidosJugador2;
+            DadosStockJugador1Cantidad = DadosStockJugador1Cantidad + DadosElegidosJugador2;
+
+            cout<<"LOS DADOS QUE TENES ACTUALMENTE!!!!"<<DadosStockJugador2Cantidad<<endl;
+
+
+        }
+
+
+
+        cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
+        system("pause");
+        system("cls");
 
 
     }
+    else
+    {
 
+        Tirada = false;
+        cout<<"Tirada Fallida, solo tenias que hacer 1 sola cosa!!!!"<<endl<<endl;
+        cout<<"TOMA....Como penalizacion al Jugador 2 le sacamos un dado y te lo damos a vos!!!"<<endl<<endl;
+        ;
+
+        if (DadosStockJugador2Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 2 TENGA DADOS
+        {
+            DadosStockJugador1Cantidad--;
+            DadosStockJugador2Cantidad++;
+        }
+        else if (DadosStockJugador2Cantidad == 0)
+        {
+            PuntajeFinal = SumaDadosJugador2 * DadosElegidosJugador2 + 10000;
+
+            cout<<"FELICITACIONES PADRE, GANASTE ESTE JUEGO DE CONSOLA PERO.....A QUE COSTO?"<<endl;
+            system("pause");
+
+        }
+
+        cout<<"LOS DADOS QUE TENES ACTUALMENTE!!!!"<<DadosStockJugador2Cantidad<<endl;
+        MostrarPuntajePuntajeJugador2(SumaDadosJugador2, DadosElegidosJugador2, NombreJugador2);
+
+    }
 }
+
+
 
 
 void DibujarDado(int valor)

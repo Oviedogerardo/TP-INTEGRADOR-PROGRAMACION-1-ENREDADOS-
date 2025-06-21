@@ -72,10 +72,10 @@ void MostrarNombres(string NombreJugador1, string NombreJugador2)
 //PAR HACER FUNCION MOSTRAR DADOS DE 12 CARAS
 
 
-void MostrarPartida(int Empieza, string NombreJugador1, string NombreJugador2, int DadosStockJugador1Numero[],int DadosStockJugador2Numero[],int DadosStockJugador1Cantidad,
-                     int DadosStockJugador2Cantidad,int &NumeroObjetivoJugador1,int &NumeroObjetivoJugador2, int &SumaDadosJugador1, int &SumaDadosJugador2
-                     ,int &DadosElegidosJugador1,int &DadosElegidosJugador2)
- //ESTA FUNCION SIRVE PARA MOSTRAR EL TRANSCURSO DE TODA LA PARTIDA
+void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2, int DadosStockJugador1Numero[],int DadosStockJugador2Numero[],int &DadosStockJugador1Cantidad,
+                    int &DadosStockJugador2Cantidad,int &NumeroObjetivoJugador1,int &NumeroObjetivoJugador2, int &SumaDadosJugador1, int &SumaDadosJugador2
+                    ,int &DadosElegidosJugador1,int &DadosElegidosJugador2)
+//ESTA FUNCION SIRVE PARA MOSTRAR EL TRANSCURSO DE TODA LA PARTIDA
 {
 
 
@@ -123,42 +123,50 @@ void MostrarPartida(int Empieza, string NombreJugador1, string NombreJugador2, i
 
     cout<<"El Numero Objetivo a llegar es: "<<NumeroObjetivoJugador1<<endl<<endl; //ESTO SE AGREGO PARA MOSTRAR EL NUMERO OBJETIVO
 
-    cout<<"Estos son los Dados de la tirada del Jugador: "<< NombreJugador1<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
+    cout<<"Estos son los Dados Stock de la tirada del Jugador: "<< NombreJugador1<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
 
     DadosStockJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad);
 
-    ElegirDadosySumarJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad,NumeroObjetivoJugador1, SumaDadosJugador1,DadosElegidosJugador1);
+    ElegirDadosySumarJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad, DadosStockJugador2Cantidad,NumeroObjetivoJugador1, SumaDadosJugador1,DadosElegidosJugador1, NombreJugador1);
+
+    system ("pause");
+    system("cls");
+
 
     cout<<"El Numero Objetivo a llegar es: "<<NumeroObjetivoJugador2<<endl<<endl;
 
-    cout<<"Estos son los Dados de la tirada del Jugador: "<< NombreJugador2<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
+    cout<<"Estos son los Dados Stock de la tirada del Jugador: "<< NombreJugador2<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
 
     DadosStockJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad);
 
-    ElegirDadosySumarJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad,NumeroObjetivoJugador1, SumaDadosJugador2,DadosElegidosJugador2);
- }
+    ElegirDadosySumarJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad, DadosStockJugador1Cantidad,NumeroObjetivoJugador2, SumaDadosJugador2,DadosElegidosJugador2, NombreJugador2);
+    system ("pause");
+    system("cls");
 
- void MostrarPuntajePuntajeJugador1 (int &SumaDadosJugador1, int &DadosElegidosJugador1, string &NombreJugador1)  //EL PUNTAJE ES = SUMASELECCIONADA X CANTIDAD DE DADOS ELEGIDOS
- {
+}
 
-     int PuntajeJugador1;
+void MostrarPuntajePuntajeJugador1 (int &SumaDadosJugador1, int &DadosElegidosJugador1, string &NombreJugador1)  //EL PUNTAJE ES = SUMASELECCIONADA X CANTIDAD DE DADOS ELEGIDOS
+{
 
-   PuntajeJugador1 = SumaDadosJugador1 * DadosElegidosJugador1;
+    int PuntajeJugador1;
 
-   cout<<"El Puntaje del Jugador 1 es: "<<NombreJugador1<<" es: "<<PuntajeJugador1;
+    PuntajeJugador1 = SumaDadosJugador1 * DadosElegidosJugador1;
+
+    cout<<"El Puntaje del Jugador 1 "<<NombreJugador1<<" es: "<<PuntajeJugador1<<endl;
 
 
- }
+}
 
- void MostrarPuntajePuntajeJugador2(int &SumaDadosJugador2, int &DadosElegidosJugador2, string &NombreJugador2)
- {
-     int PuntajeJugador2;
+void MostrarPuntajePuntajeJugador2(int &SumaDadosJugador2, int &DadosElegidosJugador2, string &NombreJugador2)
+{
+    int PuntajeJugador2;
 
     PuntajeJugador2= SumaDadosJugador2 * DadosElegidosJugador2;
 
-   cout<<"El Puntaje del Jugador 2 "<<NombreJugador2<<" es: "<<PuntajeJugador2;
+    cout<<"El Puntaje del Jugador 2 "<<NombreJugador2<<" es: "<<PuntajeJugador2<<endl;
+    system("pause");
 
- }
+}
 
 /*void MostrarCOSO (string &COSO1, string &COSO2)      //ESTO SE COMENTO PARA USAR DESPUES
                                                                    NOMBRES POR REFERENCIA TENIENDO EN CUENTA

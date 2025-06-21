@@ -24,9 +24,10 @@ void mostrarMenu()
     int Empieza;
     int DadosElegidosJugador1;
     int DadosElegidosJugador2;
-    int SumaDadosJugador1; //SE CREO ESTA VARIABLE PARA DESPUES CALCULAR LOS PUNTOS
-    int SumaDadosJugador2;  //SE CREO ESTA VARIABLE PARA DESPUES CALCULAR LOS PUNTOS
-
+    int SumaDadosJugador1 = 0; //SE CREO ESTA VARIABLE PARA DESPUES CALCULAR LOS PUNTOS
+    int SumaDadosJugador2 = 0;  //SE CREO ESTA VARIABLE PARA DESPUES CALCULAR LOS PUNTOS
+    int PuntajeJugador1 = 0;
+    int PuntajeJugador2 = 0;
 
     int opcion; //DECLARACION DE VARIABLE PARA PODER GUARDAR LA OPCION QUE NOS PIDA
 
@@ -93,24 +94,51 @@ void mostrarMenu()
             system("pause");
             system("cls");
 
+
+           for (int Ronda = 1; Ronda <= 3; Ronda++) //ESTE FOR VA A HACER LAS VECES DE RONDA, YA QUE EL LIMITE ES 3 RONDAS O QUE ALGUN JUGADOR SE QUEDE SIN DADOS!!!
+           {
+
+
+
            MostrarPartida(Empieza,NombreJugador1, NombreJugador2, DadosStockJugador1Numero,DadosStockJugador2Numero, DadosStockJugador1Cantidad,
                            DadosStockJugador2Cantidad,NumeroObjetivoJugador1,NumeroObjetivoJugador2,SumaDadosJugador1,SumaDadosJugador2,DadosElegidosJugador1,DadosElegidosJugador2);
             //EN ESTA FUNCION POR PARAMETRO PASAMOS TODOS LAS VARIABLES Y VECTORES PARA PODER TRABAJAR CON LOS MISMOS DENTRO DE LA FUNCION
-            MostrarPuntajePuntajeJugador1 (SumaDadosJugador1,DadosElegidosJugador1,NombreJugador1);
+
+            PuntajeJugador1 += SumaDadosJugador1 * DadosElegidosJugador1;
+            PuntajeJugador2 += SumaDadosJugador2 * DadosElegidosJugador2;
 
 
+            system("pause");
+            system("cls");
 
+           }
+            if (DadosStockJugador1Cantidad > 0 && DadosStockJugador2Cantidad)
+            {
+                cout<<"---------------------RESUMEN FINAL DE LA PARTIDA---------------------"<<endl;
+                cout<<NombreJugador1<<" Tuvo"<<PuntajeJugador1<<" puntos"<<endl;
+                cout<<NombreJugador2<<" Tuvo"<<PuntajeJugador2<<" puntos"<<endl;
 
-            //ContadorRondas();
+                if (PuntajeJugador1 > PuntajeJugador2)
+                {
+                    cout<<"Felicidades "<<NombreJugador1<<"! Ganaste un juego de consola, pero......a que costo?"<<endl;
+                    system("pause");
+                    system("cls");
 
+                } else if (PuntajeJugador2 > PuntajeJugador1)
+                {
 
+                    cout<<"Felicidades "<<NombreJugador2<<"! Ganaste un juego de consola, pero......a que costo?"<<endl;
+                     system("pause");
+                     system("cls");
+                }  else
 
+                {
+                    cout<<"CAPO......EMPATARON!!!, COMO LLEGARON A ESTO???"<<endl;
+                    system("pause");
+                    system("cls");
+                }
 
-
-            //GuardaValorJugador1();
-            // ValorDadoMayor ();
-            //DesempateDadoInicial();
-
+            }
 
             break;
         case 2:  //ESTADISTICAS
