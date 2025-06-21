@@ -192,21 +192,22 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
     {
         Tirada = true;
         cout<<"Tirada Exitosa"<<endl<<endl;
+        cout<<"Los dados que seleccionaste se los vamos a pasar al otro Jugador, Divertido no?"<<endl<<endl;
+
 
         if (Tirada == true)
         {
             DadosStockJugador1Cantidad = DadosStockJugador1Cantidad - DadosElegidosJugador1;
             DadosStockJugador2Cantidad = DadosStockJugador2Cantidad + DadosElegidosJugador1;
 
-            cout<<"LOS DADOS QUE TENES ACTUALMENTE!!!!"<<DadosStockJugador1Cantidad<<endl;
+            cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador1Cantidad<<endl<<endl;
 
 
         }
 
 
         cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
-        system("pause");
-        system("cls");
+        Pali();
 
 
     }
@@ -214,7 +215,7 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
     {
         Tirada = false;
         cout<<"Tirada Fallida, solo tenias que hacer 1 sola cosa!!!!"<<endl<<endl;
-        cout<<"TOMA....Como penalizacion al Jugador 2 le sacamos un dado y te lo damos a vos!!!"<<endl;
+        cout<<"TOMA....Como penalizacion al Jugador 2 le sacamos un dado y te lo damos a vos!!!"<<endl<<endl;
 
         if (DadosStockJugador2Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 2 TENGA DADOS
         {
@@ -225,16 +226,17 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
         {
             PuntajeFinal = SumaDadosJugador1 * DadosElegidosJugador1 + 10000;
 
-            cout<<"FELICITACIONES PADRE, GANASTE ESTE JUEGO DE CONSOLA PERO.....A QUE COSTO?"<<endl;
+            cout<<"FELICITACIONES PADRE, GANASTE ESTE JUEGO DE CONSOLA PERO.....A QUE COSTO?"<<endl<<endl;
 
 
         }
 
-        cout<<"LOS DADOS QUE TENES ACTUALMENTE!!!!"<<DadosStockJugador1Cantidad<<endl;
-
+        cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador1Cantidad<<endl<<endl;
+        MostrarPuntajePuntajeJugador1(SumaDadosJugador1, DadosElegidosJugador1, NombreJugador1);
+    cout<<endl;
 
     }
-    MostrarPuntajePuntajeJugador1(SumaDadosJugador1, DadosElegidosJugador1, NombreJugador1);
+
 }
 
 void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJugador2Cantidad, int &DadosStockJugador1Cantidad,int &NumeroObjetivoJugador2, int &SumaDadosJugador2,int &DadosElegidosJugador2, string &NombreJugador2)
@@ -300,21 +302,21 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
     }
 
     cout<<"La Suma de los dados Seleccionados es: "<<SumaDadosJugador2<<endl<<endl;
-       cout<<"PORONGA"<<SumaDadosJugador2<<endl;
-       cout<<NumeroObjetivoJugador2<<endl;
+
     if (SumaDadosJugador2 == NumeroObjetivoJugador2)
     {
         Tirada = true;
-        cout<<"Tirada Exitosa"<<endl<<endl;
-        cout<<"Se te saca un dado y se lo da al otro jugador";
 
+        cout<<"Tirada Exitosa"<<endl<<endl;
+
+        cout<<"Los dados que seleccionaste se los vamos a pasar al otro Jugador, Divertido no?"<<endl<<endl;
 
         if (Tirada == true)
         {
             DadosStockJugador2Cantidad = DadosStockJugador2Cantidad - DadosElegidosJugador2;
             DadosStockJugador1Cantidad = DadosStockJugador1Cantidad + DadosElegidosJugador2;
 
-            cout<<"LOS DADOS QUE TENES ACTUALMENTE!!!!"<<DadosStockJugador2Cantidad<<endl;
+            cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
 
 
         }
@@ -322,8 +324,7 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
 
 
         cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
-        system("pause");
-        system("cls");
+        Pali();
 
 
     }
@@ -331,9 +332,8 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
     {
 
         Tirada = false;
-        cout<<"Tirada Fallida, solo tenias que hacer 1 sola cosa!!!!"<<endl<<endl;
+        cout<<"Tirada Fallida, solo tenias que hacer 1 sola cosa!!!!"<<endl<<endl<<endl;
         cout<<"TOMA....Como penalizacion al Jugador 2 le sacamos un dado y te lo damos a vos!!!"<<endl<<endl;
-        ;
 
         if (DadosStockJugador2Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 2 TENGA DADOS
         {
@@ -349,9 +349,9 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
 
         }
 
-        cout<<"LOS DADOS QUE TENES ACTUALMENTE!!!!"<<DadosStockJugador2Cantidad<<endl;
+        cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
         MostrarPuntajePuntajeJugador2(SumaDadosJugador2, DadosElegidosJugador2, NombreJugador2);
-
+        cout<<endl;
     }
 }
 

@@ -34,18 +34,18 @@ void mostrarMenu()
     do  //ES UN "DO/WHILE" PORQUE PRIMERO QUEREMOS QUE MUESTRE EL MENU Y DESPUES EL RESTO
     {
 
-        cout<<"    _______   ____________  _______   ______ ___ ____  ____  _____ "<<endl;
+        cout<<"    _______   ____________  _______   ______  ___    ____  ____  _____ "<<endl;
         cout<<"   / ____/ | / / ____/ __ \/ ____/ | / / __ \/   |  / __ \/ __ \/ ___/ "<<endl;
         cout<<"  / __/ /  |/ / /_  / /_/ / __/ /  |/ / / / / /| | / / / / / / /\__ \  "<<endl;
         cout<<" / /___/ /|  / __/ / _, _/ /___/ /|  / /_/ / ___ |/ /_/ / /_/ /___/ /  "<<endl;
         cout<<"/_____/_/ |_/_/   /_/ |_/_____/_/ |_/_____/_/  |_/_____/\____//____/   "<<endl;
         cout<<"                                                                       "<<endl;
-        cout<<"                                                                       "<<endl;
-        cout<<"1 - JUGAR                                                              "<<endl;
-        cout<<"2 - ESTADÍSTICAS                                                       "<<endl;
-        cout<<"3 - CRÉDITOS                                                           "<<endl;
-        cout<<"---------------------                                                  "<<endl;
-        cout<<"0 - SALIR "<<endl<<endl;
+        cout<<"                         ---------------------                         "<<endl;
+        cout<<"                        |1 - JUGAR            |                        "<<endl;
+        cout<<"                        |2 - ESTADÍSTICAS     |                        "<<endl;
+        cout<<"                        |3 - CRÉDITOS         |                        "<<endl;
+        cout<<"                        |0 - SALIR            |                        "<<endl;
+        cout<<"                        |---------------------|                        "<<endl<<endl;
 
         cout<<"Ingrese una opcion: "<<endl;
         cin >> opcion;
@@ -60,14 +60,16 @@ void mostrarMenu()
 
             NombreJugador1 = PedirNombreJugador1(); //UTILIZAMOS ESTA FUNCION EN ESTA VARIABLE PARA GUARDAR EL VALOR
             NombreJugador2 = PedirNombreJugador2(); //UTILIZAMOS ESTA FUNCION EN ESTA VARIABLE PARA GUARDAR EL VALOR
-            system("cls"); //ESTO LIMPIA TODO LO ANTERIOR ASI NO SE VE EN PANTALLA
+            system("cls");
+            cout<<"                    Ahora ambos Jugadores van a tirar el Dado Inicial para definir quien Empieza!!! (SUERTE)                               "<<endl;
+
+            Pali();
 
             ValorDadoInicialJugador1 = DadoInicialJugador1();    //ACA PODEMOS VALIDAR CON 1; PARA EVITAR ESPERAR A QUE DE EL NUMERO IGUAL EJ: ValorDadoInicialJugador1 = 1, PARA VER SI EL SEGUNDO JUGADOR EMPIEZA PRIMERO Y SI ESTA BIEN HECHO.
             DibujarDado(ValorDadoInicialJugador1);
             ValorDadoInicialJugador2 = DadoInicialJugador2();    //ACA PODEMOS VALIDAR CON 1; PARA EVITAR ESPERAR A QUE DE EL NUMERO IGUAL EJ: ValorDadoInicialJugador2 = 1, PARA VER SI EL PRIMER JUGADOR EMPIEZA PRIMERO Y SI ESTA BIEN HECHO.
             DibujarDado(ValorDadoInicialJugador2); //USAMOS ESTA FUNCION PARA GRAFICAR LOS DADOS INICIALES
-            system("pause"); //ESTO PAUSA EL PROGRAMA Y ESPERA A APRETAR UNA TECLA PARA CONTINUAR
-            system("cls"); //ESTO LIMPIA TODO LO ANTERIOR ASI NO SE VE EN PANTALLA
+            Pali();
 
             while (ValorDadoInicialJugador1 == ValorDadoInicialJugador2) //UTILIZAMOS ESTE WHILE PARA TIRAR NUEVAMENTE EN CASO DE QUE LOS NUMEROS DE LOS DADOS INICIALES SEAN IGUALES!!!
             {
@@ -91,8 +93,7 @@ void mostrarMenu()
 
             }
 
-            system("pause");
-            system("cls");
+            Pali();
 
 
            for (int Ronda = 1; Ronda <= 3; Ronda++) //ESTE FOR VA A HACER LAS VECES DE RONDA, YA QUE EL LIMITE ES 3 RONDAS O QUE ALGUN JUGADOR SE QUEDE SIN DADOS!!!
@@ -108,46 +109,39 @@ void mostrarMenu()
             PuntajeJugador2 += SumaDadosJugador2 * DadosElegidosJugador2;
 
 
-            system("pause");
             system("cls");
 
            }
-            if (DadosStockJugador1Cantidad > 0 && DadosStockJugador2Cantidad)
-            {
-                cout<<"---------------------RESUMEN FINAL DE LA PARTIDA---------------------"<<endl;
-                cout<<NombreJugador1<<" Tuvo"<<PuntajeJugador1<<" puntos"<<endl;
-                cout<<NombreJugador2<<" Tuvo"<<PuntajeJugador2<<" puntos"<<endl;
+
+                cout<<"                    ---------------------RESUMEN FINAL DE LA PARTIDA---------------------"<<endl;
+                cout<<NombreJugador1<<" Tuvo ("<<PuntajeJugador1<<") puntos"<<endl;
+                cout<<NombreJugador2<<" Tuvo ("<<PuntajeJugador2<<") puntos"<<endl<<endl;
 
                 if (PuntajeJugador1 > PuntajeJugador2)
                 {
-                    cout<<"Felicidades "<<NombreJugador1<<"! Ganaste un juego de consola, pero......a que costo?"<<endl;
-                    system("pause");
-                    system("cls");
+                    cout<<"Felicidades "<<NombreJugador1<<"! Ganaste un juego de consola, pero......a que costo?"<<endl<<endl;
+                    Pali();
 
                 } else if (PuntajeJugador2 > PuntajeJugador1)
                 {
 
-                    cout<<"Felicidades "<<NombreJugador2<<"! Ganaste un juego de consola, pero......a que costo?"<<endl;
-                     system("pause");
-                     system("cls");
+                    cout<<"Felicidades "<<NombreJugador2<<"! Ganaste un juego de consola, pero......a que costo?"<<endl<<endl;
+                    Pali();
                 }  else
 
                 {
-                    cout<<"CAPO......EMPATARON!!!, COMO LLEGARON A ESTO???"<<endl;
-                    system("pause");
-                    system("cls");
+                    cout<<"CAPO......EMPATARON!!!, COMO LLEGARON A ESTO???"<<endl<<endl;
+                    Pali();
                 }
-
-            }
 
             break;
         case 2:  //ESTADISTICAS
+             Estadisticas(NombreJugador1,NombreJugador2,PuntajeJugador1,PuntajeJugador2);
             break;
         case 3: //CREDITOS
              system("cls");
             creditos();
-             system("pause");
-             system("cls");
+             Pali();
 
             break;
         default:

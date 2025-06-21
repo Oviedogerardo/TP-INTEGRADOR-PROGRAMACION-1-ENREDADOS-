@@ -110,6 +110,7 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
         DadosObjetivoJugador2(NumeroObjetivoJugador2);
 
 
+
         system("pause");
         system("cls");
 
@@ -164,7 +165,24 @@ void MostrarPuntajePuntajeJugador2(int &SumaDadosJugador2, int &DadosElegidosJug
     PuntajeJugador2= SumaDadosJugador2 * DadosElegidosJugador2;
 
     cout<<"El Puntaje del Jugador 2 "<<NombreJugador2<<" es: "<<PuntajeJugador2<<endl;
-    system("pause");
+
+
+}
+
+void Pali() //FUNCION PARA PAUSAR Y LIMPIAR LA PANTALLA y no estar escribiendo system y lo demas!!!
+{
+    system ("pause");
+    system("cls");
+}
+
+void Estadisticas (string NombreJugador1, string NombreJugador2, int PuntajeJugador1, int PuntajeJugador2)
+{
+    system("cls");
+    cout<<"                    ---------------------ESTADISTICAS---------------------"<<endl<<endl;
+
+    cout<<"El Jugador 1: "<<NombreJugador1<<"Tubo estos puntos: "<<PuntajeJugador1<<endl<<endl;
+
+    cout<<"El Jugador 2: "<<NombreJugador2<<"Tubo estos puntos: "<<PuntajeJugador2<<endl<<endl;
 
 }
 

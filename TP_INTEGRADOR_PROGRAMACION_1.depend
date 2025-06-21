@@ -35,7 +35,7 @@
 	"JUGAR.h"
 	"DADOS.h"
 
-1750460194 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\dados.cpp
+1750525991 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\dados.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -43,13 +43,13 @@
 	"JUGAR.h"
 	"MOSTRARMENU.h"
 
-1750454395 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\dados.h
+1750522945 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\dados.h
 
-1750446160 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\jugar.h
+1750525991 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\jugar.h
 
 1748907716 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\mostrarmenu.h
 
-1750460757 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\jugar.cpp
+1750525991 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\jugar.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -65,7 +65,7 @@
 	"JUGAR.h"
 	"DADOS.h"
 
-1750443308 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\mostrarmenu.cpp
+1750463653 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\mostrarmenu.cpp
 	<iostream>
 	"MOSTRARMENU.h"
 	"JUGAR.h"
