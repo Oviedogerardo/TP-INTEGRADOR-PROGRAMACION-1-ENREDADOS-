@@ -84,7 +84,7 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
         cout<<"                                              El Jugador "<<NombreJugador2<<" Tira sus Dados Objetivo: "<<endl<<endl;
         DadosObjetivoJugador2(NumeroObjetivoJugador2);
 
-system("cls");
+        system("cls");
 
         MostrarNombres(NombreJugador1, NombreJugador2);
         cout<<"                                              El Jugador "<<NombreJugador1<<" Tira sus Dados Objetivo: "<<endl<<endl;
@@ -146,9 +146,9 @@ void Estadisticas (string NombreJugador1, string NombreJugador2, int PuntajeJuga
     system("cls");
     cout<<"                    ---------------------ESTADISTICAS---------------------"<<endl<<endl;
 
-    cout<<"El Jugador 1: "<<NombreJugador1<<"Tubo estos puntos: "<<PuntajeJugador1<<endl<<endl;
+    cout<<"El Jugador 1: "<<NombreJugador1<<" Tubo estos puntos: "<<PuntajeJugador1<<endl<<endl;
 
-    cout<<"El Jugador 2: "<<NombreJugador2<<"Tubo estos puntos: "<<PuntajeJugador2<<endl<<endl;
+    cout<<"El Jugador 2: "<<NombreJugador2<<" Tubo estos puntos: "<<PuntajeJugador2<<endl<<endl;
 
 }
 
