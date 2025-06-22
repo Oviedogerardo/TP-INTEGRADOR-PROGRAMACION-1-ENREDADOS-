@@ -108,7 +108,8 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
 
     ElegirDadosySumarJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad, DadosStockJugador2Cantidad,NumeroObjetivoJugador1, SumaDadosJugador1,DadosElegidosJugador1, NombreJugador1);
 
-    Pali();
+    system("cls");
+    //Pali();
 
     MostrarRonda(Ronda);
     MostrarNombres(NombreJugador1, NombreJugador2);
@@ -121,7 +122,9 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
     DadosStockJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad);
 
     ElegirDadosySumarJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad, DadosStockJugador1Cantidad,NumeroObjetivoJugador2, SumaDadosJugador2,DadosElegidosJugador2, NombreJugador2);
-    Pali();
+
+    system("cls");
+    //Pali();
 }
 
 void MostrarPuntajePuntajeJugador1 (int &SumaDadosJugador1, int &DadosElegidosJugador1, string &NombreJugador1)  //EL PUNTAJE ES = SUMASELECCIONADA X CANTIDAD DE DADOS ELEGIDOS

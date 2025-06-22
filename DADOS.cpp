@@ -79,11 +79,12 @@ void DadosObjetivoJugador2(int &NumeroObjetivoJugador2)   //VARIABLE PASADA POR 
 
 void DadosStockJugador1 (int DadosStockJugador1Numero[], int DadosStockJugador1Cantidad)
 {
+
     for (int i = 0; i < DadosStockJugador1Cantidad; i++) //CON ESTE FOR VAMOS RECORRIENDO TODO EL VECTOR Y DANDOLE EL VALOR A CADA DADO
     {
 
         DadosStockJugador1Numero[i] = rand() % 6 + 1; //CON ESTE RAND VAMOS DANDO EL VALOR A CADA DADO
-        cout<<DadosStockJugador1Numero[i]<<" ";
+        cout<<"Dado: "<<DadosStockJugador1Numero[i]<<" ";
     }
 
     cout<<endl;//ESTO SE PUSO ACA PORQUE AL MOSTRAR LOS DADOS DE ARRIBA DEJA UN ESPACIO ESTETICO PARA EL CARTEL DE LOS DADOS A ELEGIR
@@ -92,12 +93,11 @@ void DadosStockJugador1 (int DadosStockJugador1Numero[], int DadosStockJugador1C
 
 void DadosStockJugador2 (int DadosStockJugador2Numero[], int DadosStockJugador2Cantidad)
 {
+
     for (int i = 0; i < DadosStockJugador2Cantidad; i++) //CON ESTE FOR VAMOS RECORRIENDO TODO EL VECTOR Y DANDOLE EL VALOR A CADA DADO
     {
         DadosStockJugador2Numero[i] = rand() % 6 + 1; //CON ESTE RAND VAMOS DANDO EL VALOR A CADA DADO
-        cout<<DadosStockJugador2Numero[i]<<" ";
-
-
+        cout<<"Dado: "<<DadosStockJugador2Numero[i]<<" ";
     }
 
     cout<<endl;//ESTO SE PUSO ACA PORQUE AL MOSTRAR LOS DADOS DE ARRIBA DEJA UN ESPACIO ESTETICO PARA EL CARTEL DE LOS DADOS A ELEGIR
@@ -161,6 +161,8 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
 
     cout<<"La Suma de los dados Seleccionados es: "<<SumaDadosJugador1<<endl<<endl;
 
+    system("cls");
+
     if (SumaDadosJugador1 == NumeroObjetivoJugador1)
     {
         Tirada = true;
@@ -174,6 +176,8 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
             DadosStockJugador2Cantidad = DadosStockJugador2Cantidad + DadosElegidosJugador1;
 
             cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador1Cantidad<<endl<<endl;
+
+            MostrarPuntajePuntajeJugador1(SumaDadosJugador1, DadosElegidosJugador1, NombreJugador1);
         }
 
         cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
@@ -262,6 +266,8 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
 
     cout<<"La Suma de los dados Seleccionados es: "<<SumaDadosJugador2<<endl<<endl;
 
+    system("cls");
+
     if (SumaDadosJugador2 == NumeroObjetivoJugador2)
     {
         Tirada = true;
@@ -276,6 +282,8 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
             DadosStockJugador1Cantidad = DadosStockJugador1Cantidad + DadosElegidosJugador2;
 
             cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
+
+            MostrarPuntajePuntajeJugador2(SumaDadosJugador2, DadosElegidosJugador2, NombreJugador2);
         }
 
         cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
