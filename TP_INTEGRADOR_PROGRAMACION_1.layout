@@ -2,19 +2,34 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="MOSTRARMENU.CPP" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="MOSTRARMENU.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1210" topLine="96" />
+			<Cursor1 position="198" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="JUGAR.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+	<File name="MOSTRARMENU.CPP" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4579" topLine="9" />
+			<Cursor1 position="1276" topLine="20" />
+		</Cursor>
+	</File>
+	<File name="JUGAR.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6623" topLine="149" />
+		</Cursor>
+	</File>
+	<File name="rlutil.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="20237" topLine="682" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="421" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="DADOS.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="6452" topLine="138" />
+			<Cursor1 position="12561" topLine="274" />
 		</Cursor>
 	</File>
 	<File name="JUGAR.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -22,19 +37,9 @@
 			<Cursor1 position="545" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="MOSTRARMENU.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="198" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="DADOS.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="622" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="291" topLine="0" />
 		</Cursor>
 	</File>
 	<Target name="Debug" top="MOSTRARMENU.CPP">
@@ -45,5 +50,6 @@
 		<File name="DADOS.h" />
 		<File name="JUGAR.h" />
 		<File name="MOSTRARMENU.h" />
+		<File name="rlutil.h" />
 	</Target>
 </CodeBlocks_layout_file>

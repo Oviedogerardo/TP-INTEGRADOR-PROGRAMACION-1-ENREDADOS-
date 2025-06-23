@@ -3,7 +3,7 @@
 #include "MOSTRARMENU.h"
 #include "JUGAR.h"
 #include "DADOS.h"
-
+#include "rlutil.h"
 
 using namespace std;
 
@@ -37,21 +37,22 @@ void Menu()
 
     int opcion; //DECLARACION DE VARIABLE PARA PODER GUARDAR LA OPCION QUE NOS PIDA
 
+
     do  //ES UN "DO/WHILE" PORQUE PRIMERO QUEREMOS QUE MUESTRE EL MENU Y DESPUES EL RESTO
     {
-
+        rlutil::cls();
         cout<<"                         _______   ____________  _______   ______  ___    ____  ____  _____ "<<endl;
         cout<<"                        / ____/ | / / ____/ __  \/ ____/ | / / _ _ \/   |  / __ \/ __ \/ ___/ "<<endl;
         cout<<"                       / __/ /  |/ / /_  / /_/ / __/ /  |/ / / / / /| | / / / / / / /\__ \  "<<endl;
         cout<<"                      / /___/ /|  / __/ / _, _/ /___/ /|  / /_/ / ___ |/ /_/ / /_/ /___/ /  "<<endl;
         cout<<"                     /_____/_/ |_/_/   /_/ |_/_____/_/ |_/_____/_/  |_/_____/\____//____/   "<<endl;
         cout<<"                                                                       "<<endl;
-        cout<<"                                               ---------------------                         "<<endl;
+        cout<<"                                              +---------------------+                         "<<endl;
         cout<<"                                              |1 - JUGAR            |                        "<<endl;
-        cout<<"                                              |2 - ESTADÍSTICAS     |                        "<<endl;
-        cout<<"                                              |3 - CRÉDITOS         |                        "<<endl;
+        cout<<"                                              |2 - ESTADISTICAS     |                        "<<endl;
+        cout<<"                                              |3 - CREDITOS         |                        "<<endl;
         cout<<"                                              |0 - SALIR            |                        "<<endl;
-        cout<<"                                              |---------------------|                        "<<endl<<endl;
+        cout<<"                                              +---------------------+                        "<<endl<<endl;
 
         cout<<"                                                Ingrese una opcion: ";
         cin >> opcion;
@@ -82,7 +83,9 @@ void Menu()
             {
                 cout<<"Como ambos Jugadores tienen el mismo valor se tira nuevamente: "<<endl<<endl;
                 ValorDadoInicialJugador1 = DadoInicialJugador1();
+                DibujarDado(ValorDadoInicialJugador1);
                 ValorDadoInicialJugador2 = DadoInicialJugador2();
+                DibujarDado(ValorDadoInicialJugador2);
             }
 
             if (ValorDadoInicialJugador1 > ValorDadoInicialJugador2)
@@ -147,7 +150,7 @@ void Menu()
             else
 
             {
-                cout<<"CAPO......EMPATARON!!!, COMO LLEGARON A ESTO???"<<endl<<endl;
+                cout<<"UFFF......EMPATARON!!!, COMO LLEGARON A ESTO???"<<endl<<endl;
                 Pali();
             }
 
@@ -162,7 +165,9 @@ void Menu()
 
             break;
         default:
-            cout << " ESTA OPCION ES INCORRECTA " << endl;
+            rlutil::setColor(rlutil::RED);
+            cout << "ESTA OPCION ES INCORRECTA " << endl;
+            rlutil::anykey ();
             break;
 
         }

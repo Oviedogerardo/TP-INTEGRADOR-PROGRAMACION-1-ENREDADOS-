@@ -5,7 +5,7 @@
 #include "JUGAR.h"
 #include "DADOS.h"
 #include "MOSTRARMENU.h"
-
+#include "rlutil.h"
 
 using namespace std;
 
@@ -13,7 +13,8 @@ string PedirNombreJugador1() //ESTA FUNCION PIDE NOMBRES PARA INGRESAR
 {
     string NombreJugador1;
 
-    cout << "                                              Ingrese el nombre del Jugador 1: ";
+    rlutil::locate(5,1);
+    cout << "Ingrese el nombre del Jugador 1: ";
     cin >> NombreJugador1;
 
     return NombreJugador1;
@@ -23,7 +24,8 @@ string PedirNombreJugador2() //ESTA FUNCION PIDE NOMBRES PARA INGRESAR
 {
     string NombreJugador2;
 
-    cout << "                                              Ingrese el nombre del Jugador 2: ";
+    rlutil::locate(5,1);
+    cout << " Ingrese el nombre del Jugador 2: ";
     cin >> NombreJugador2;
 
     return NombreJugador2;
@@ -108,8 +110,6 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
 
     ElegirDadosySumarJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad, DadosStockJugador2Cantidad,NumeroObjetivoJugador1, SumaDadosJugador1,DadosElegidosJugador1, NombreJugador1);
 
-    system("cls");
-    //Pali();
 
     MostrarRonda(Ronda);
     MostrarNombres(NombreJugador1, NombreJugador2);
@@ -156,9 +156,9 @@ void Estadisticas (string NombreJugador1, string NombreJugador2, int PuntajeJuga
     system("cls");
     cout<<"                    ---------------------ESTADISTICAS---------------------"<<endl<<endl;
 
-    cout<<"El Jugador 1: "<<NombreJugador1<<" Tubo estos puntos: "<<PuntajeJugador1<<endl<<endl;
+    cout<<"El Jugador 1: "<<NombreJugador1<<" Tuvo estos puntos: "<<PuntajeJugador1<<endl<<endl;
 
-    cout<<"El Jugador 2: "<<NombreJugador2<<" Tubo estos puntos: "<<PuntajeJugador2<<endl<<endl;
+    cout<<"El Jugador 2: "<<NombreJugador2<<" Tuvo estos puntos: "<<PuntajeJugador2<<endl<<endl;
 
     if (PuntajeJugador1 == 0 & PuntajeJugador2 == 0)
     {
@@ -173,9 +173,9 @@ void MostrarRonda(int &Ronda)
     cout<<"                                              RONDA NUMERO: "<<Ronda<<endl<<endl;
 }
 
-void GanarAutomaticamente(int DadosStockJugador1Cantidad, int DadosStockJugador2Cantidad, int PuntajeJugador1,int PuntajeJugador2, string NombreJugador1, string NombreJugador2)
+void GanarAutomaticamente(int DadosStockJugador1Cantidad, int DadosStockJugador2Cantidad, int &PuntajeJugador1,int &PuntajeJugador2, string NombreJugador1, string NombreJugador2)
 {
-    if (DadosStockJugador1Cantidad == 0 || DadosStockJugador2Cantidad)
+    if (DadosStockJugador1Cantidad == 0 || DadosStockJugador2Cantidad == 0)
     {
         cout<<"********************************************************************************"<<endl;
         cout<<"      UNO DE LOS JUGADORES SE QUEDO SIN DADOS!!!"<<endl<<endl;
@@ -190,9 +190,6 @@ void GanarAutomaticamente(int DadosStockJugador1Cantidad, int DadosStockJugador2
             cout<<"FELICIDADES "<<NombreJugador2<<"      TE QUEDASTE SIN DADOS, TOMA 10.000 PUNTOS Y GANAS AUTOMATICAMENTE!!!"<<endl;
         }
 
-
     }
-
-
 
 }

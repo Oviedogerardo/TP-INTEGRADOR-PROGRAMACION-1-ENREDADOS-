@@ -10,14 +10,6 @@
 using namespace std;
 
 
-void MostrarSeisDados() //DADOS INICIALES
-{
-
-
-
-}
-
-
 void MostrarNombreJugador1 (string NombreJugador1)
 {
     cout<<NombreJugador1<<endl;
@@ -82,13 +74,11 @@ void DadosStockJugador1 (int DadosStockJugador1Numero[], int DadosStockJugador1C
 
     for (int i = 0; i < DadosStockJugador1Cantidad; i++) //CON ESTE FOR VAMOS RECORRIENDO TODO EL VECTOR Y DANDOLE EL VALOR A CADA DADO
     {
-
         DadosStockJugador1Numero[i] = rand() % 6 + 1; //CON ESTE RAND VAMOS DANDO EL VALOR A CADA DADO
-        cout<<"Dado: "<<DadosStockJugador1Numero[i]<<" ";
+        cout << "El numero del dado "<< i+1 << " es: " << DadosStockJugador1Numero[i]<<endl;
+        DibujarDado(DadosStockJugador1Numero[i]);
     }
 
-    cout<<endl;//ESTO SE PUSO ACA PORQUE AL MOSTRAR LOS DADOS DE ARRIBA DEJA UN ESPACIO ESTETICO PARA EL CARTEL DE LOS DADOS A ELEGIR
-    cout<<endl;
 }
 
 void DadosStockJugador2 (int DadosStockJugador2Numero[], int DadosStockJugador2Cantidad)
@@ -124,6 +114,7 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
         /*ESTO SE AGREGO PARA FORZAR A QUE EL MUCHACHO QUE VAYA A PONER EL DADO A ELEGIR LO PONGA BIEN, TENIENDO EN CUENTA
                    LA CANTIDAD DE DADOS QUE TIENE*/
         cout<<"DALE PA, Elegi cuantos dados vas a sumar: (como maximo podes "<<DadosStockJugador1Cantidad<<"):";
+
         cin>>DadosElegidosJugador1;
 
         if (DadosElegidosJugador1 < 1 || DadosElegidosJugador1 > DadosStockJugador1Cantidad)
@@ -161,7 +152,8 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
 
     cout<<"La Suma de los dados Seleccionados es: "<<SumaDadosJugador1<<endl<<endl;
 
-    system("cls");
+     Pali();
+    //system("cls");
 
     if (SumaDadosJugador1 == NumeroObjetivoJugador1)
     {
@@ -241,7 +233,8 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
     for (int i = 0; i < DadosElegidosJugador2; i++)
     {
         cout<<"Elegi el Dado, del 1 al "<<DadosStockJugador2Cantidad<<": ";
-        cin>>IndiceVectorDados;
+
+       cin>>IndiceVectorDados;
 
         if (IndiceVectorDados < 1 || IndiceVectorDados > DadosStockJugador2Cantidad)
         {
@@ -320,79 +313,97 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
 
 void DibujarDado(int valor)
 {
-    cout << "+-------+" << endl;
+
     switch(valor)
     {
     case 1:
+        cout << "+-------+" << endl;
         cout << "|       |" << endl;
         cout << "|   *   |" << endl;
         cout << "|       |" << endl;
+        cout << "+-------+" << endl;
         break;
     case 2:
+        cout << "+-------+" << endl;
         cout << "| *     |" << endl;
         cout << "|       |" << endl;
         cout << "|     * |" << endl;
+        cout << "+-------+"  << endl;
         break;
     case 3:
+        cout << "+-------+" << endl;
         cout << "| *     |" << endl;
         cout << "|   *   |" << endl;
         cout << "|     * |" << endl;
+        cout << "+-------+"  << endl;
         break;
     case 4:
+        cout << "+-------+" << endl;
         cout << "| *   * |" << endl;
         cout << "|       |" << endl;
         cout << "| *   * |" << endl;
+        cout << "+-------+" << endl;
         break;
     case 5:
+        cout << "+-------+" << endl;
         cout << "| *   * |" << endl;
         cout << "|   *   |" << endl;
         cout << "| *   * |" << endl;
+        cout << "+-------+"  << endl;
         break;
     case 6:
+        cout << "+-------+" << endl;
         cout << "| *   * |" << endl;
         cout << "| *   * |" << endl;
         cout << "| *   * |" << endl;
+        cout << "+-------+" << endl;
         break;
     }
-    cout << "+-------+" << endl;
 }
 
 void MostrarDadosObjetivoJugador1 (int DadoObjetivoJugador1_A, int DadoObjetivoJugador1_B)
 {
-    cout << "            ______      "<< endl;
-    cout << "           /       \     "<< endl;
-    cout << "          /         \    "<< endl;
-    cout << "         |    "<<DadoObjetivoJugador1_A<<"    |   "<< endl;
-    cout << "          \         /    "<< endl;
-    cout << "           \_______/     "<< endl;
+    // Dado A
+    cout << "           ______     " << endl;
+    cout << "          /      \\    " << endl;
+    cout << "         /        \\   " << endl;
+    cout << "        |   "   << DadoObjetivoJugador1_A << "     |   " << endl; // Más espacios aquí para asegurarte el centrado
+    cout << "         \\        /   " << endl;
+    cout << "          \\______/    " << endl;
 
-    cout << "            ______      "<< endl;
-    cout << "           /       \     "<< endl;
-    cout << "          /         \    "<< endl;
-    cout << "         |    "<<DadoObjetivoJugador1_B<<"    |   "<< endl;
-    cout << "          \         /    "<< endl;
-    cout << "           \_______/     "<< endl;
+    cout << endl; // Un espacio entre dados para que no se vean pegados
 
-    system("pause");
+    // Dado B
+    cout << "           ______     " << endl;
+    cout << "          /      \\    " << endl;
+    cout << "         /        \\   " << endl;
+    cout << "        |   "   << DadoObjetivoJugador1_B << "     |   " << endl; // Y aquí también
+    cout << "         \\        /   " << endl;
+    cout << "          \\______/    " << endl;
+
+
 }
+
 
 void MostrarDadosObjetivoJugador2 (int DadoObjetivoJugador2_A, int DadoObjetivoJugador2_B)
 {
-    cout << "            ______      "<< endl;
-    cout << "           /       \     "<< endl;
-    cout << "          /         \    "<< endl;
-    cout << "         |    "<<DadoObjetivoJugador2_A<<"    |   "<< endl;
-    cout << "          \         /    "<< endl;
-    cout << "           \_______/     "<< endl;
+    // Dado A
+    cout << "           ______     " << endl;
+    cout << "          /      \\    " << endl;
+    cout << "         /        \\   " << endl;
+    cout << "        |   "   << DadoObjetivoJugador2_A << "     |   " << endl; // Más espacios aquí para asegurarte el centrado
+    cout << "         \\        /   " << endl;
+    cout << "          \\______/    " << endl;
 
-    cout << "            ______      "<< endl;
-    cout << "           /       \     "<< endl;
-    cout << "          /         \    "<< endl;
-    cout << "         |    "<<DadoObjetivoJugador2_B<<"    |   "<< endl;
-    cout << "          \         /    "<< endl;
-    cout << "           \_______/     "<< endl;
+    cout << endl; // Un espacio entre dados para que no se vean pegados
 
-    system("pause");
+    // Dado B
+    cout << "           ______     " << endl;
+    cout << "          /      \\    " << endl;
+    cout << "         /        \\   " << endl;
+    cout << "        |   "   << DadoObjetivoJugador2_B << "     |   " << endl; // Y aquí también
+    cout << "         \\        /   " << endl;
+    cout << "          \\______/    " << endl;
+
+
 }
-
-
