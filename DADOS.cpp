@@ -5,6 +5,8 @@
 #include "DADOS.h"
 #include "JUGAR.h"
 #include "MOSTRARMENU.h"
+#include "rlutil.h"
+
 
 
 using namespace std;
