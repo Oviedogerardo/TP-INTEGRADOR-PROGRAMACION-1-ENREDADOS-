@@ -102,35 +102,74 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
 
         //system("cls"); ojo aca
     }
-    MostrarRonda(Ronda);
-    MostrarNombres(NombreJugador1, NombreJugador2);
-    cout<<endl;
+    if (Empieza == 1)
+    {
+        MostrarRonda(Ronda);
+        MostrarNombres(NombreJugador1, NombreJugador2);
+        cout<<endl;
 
-    cout<<"                                              El Numero Objetivo a llegar es: "<<NumeroObjetivoJugador1<<endl<<endl; //ESTO SE AGREGO PARA MOSTRAR EL NUMERO OBJETIVO
 
-    cout<<"Estos son los Dados Stock de la tirada de : "<< NombreJugador1<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
+        cout<<"                                              El Numero Objetivo a llegar es: "<<NumeroObjetivoJugador1<<endl<<endl; //ESTO SE AGREGO PARA MOSTRAR EL NUMERO OBJETIVO
 
-    DadosStockJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad);
+        cout<<"Estos son los Dados Stock de la tirada de : "<< NombreJugador1<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
 
-    ElegirDadosySumarJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad, DadosStockJugador2Cantidad,NumeroObjetivoJugador1, SumaDadosJugador1,DadosElegidosJugador1, NombreJugador1);
+        DadosStockJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad);
 
-    //system("cls");
-    //Pali();
+        ElegirDadosySumarJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad, DadosStockJugador2Cantidad,NumeroObjetivoJugador1, SumaDadosJugador1,DadosElegidosJugador1, NombreJugador1);
 
-    MostrarRonda(Ronda);
-    MostrarNombres(NombreJugador1, NombreJugador2);
-    cout<<endl;
+        //system("cls");
+        //Pali();
 
-    cout<<"                                              El Numero Objetivo a llegar es: "<<NumeroObjetivoJugador2<<endl<<endl;
+        MostrarRonda(Ronda);
+        MostrarNombres(NombreJugador1, NombreJugador2);
+        cout<<endl;
 
-    cout<<"Estos son los Dados Stock de la tirada de: "<< NombreJugador2<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
+        cout<<"                                              El Numero Objetivo a llegar es: "<<NumeroObjetivoJugador2<<endl<<endl;
 
-    DadosStockJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad);
+        cout<<"Estos son los Dados Stock de la tirada de: "<< NombreJugador2<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
 
-    ElegirDadosySumarJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad, DadosStockJugador1Cantidad,NumeroObjetivoJugador2, SumaDadosJugador2,DadosElegidosJugador2, NombreJugador2);
+        DadosStockJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad);
 
-    //system("cls");
-    //Pali();
+        ElegirDadosySumarJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad, DadosStockJugador1Cantidad,NumeroObjetivoJugador2, SumaDadosJugador2,DadosElegidosJugador2, NombreJugador2);
+
+        //system("cls");
+        //Pali();
+
+    }
+    else
+
+    {
+        MostrarRonda(Ronda);
+        MostrarNombres(NombreJugador1, NombreJugador2);
+        cout<<endl;
+
+        cout<<"                                              El Numero Objetivo a llegar es: "<<NumeroObjetivoJugador2<<endl<<endl;
+
+        cout<<"Estos son los Dados Stock de la tirada de: "<< NombreJugador2<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
+
+        DadosStockJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad);
+
+        ElegirDadosySumarJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad, DadosStockJugador1Cantidad,NumeroObjetivoJugador2, SumaDadosJugador2,DadosElegidosJugador2, NombreJugador2);
+
+        //system("cls");
+        //Pali();
+
+
+        MostrarRonda(Ronda);
+        MostrarNombres(NombreJugador1, NombreJugador2);
+        cout<<endl;
+        cout<<"                                              El Numero Objetivo a llegar es: "<<NumeroObjetivoJugador1<<endl<<endl; //ESTO SE AGREGO PARA MOSTRAR EL NUMERO OBJETIVO
+
+        cout<<"Estos son los Dados Stock de la tirada de : "<< NombreJugador1<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
+
+        DadosStockJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad);
+
+        ElegirDadosySumarJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad, DadosStockJugador2Cantidad,NumeroObjetivoJugador1, SumaDadosJugador1,DadosElegidosJugador1, NombreJugador1);
+
+        //system("cls");
+        //Pali();
+
+    }
 }
 
 void MostrarPuntajePuntajeJugador1 (int &SumaDadosJugador1, int &DadosElegidosJugador1, string &NombreJugador1)  //EL PUNTAJE ES = SUMASELECCIONADA X CANTIDAD DE DADOS ELEGIDOS
