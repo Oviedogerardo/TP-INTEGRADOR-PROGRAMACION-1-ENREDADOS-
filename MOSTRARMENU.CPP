@@ -32,7 +32,7 @@ void Menu()
     int SumaDadosJugador2 = 0;  //SE CREO ESTA VARIABLE PARA DESPUES CALCULAR LOS PUNTOS
     int PuntajeJugador2 = 0;
 
-    int Ronda;
+    int Ronda = 1;
     int Empieza;
 
     int opcion; //DECLARACION DE VARIABLE PARA PODER GUARDAR LA OPCION QUE NOS PIDA
@@ -42,19 +42,26 @@ void Menu()
     {
         rlutil::cls();
         cout<<"                         _______   ____________  _______   ______  ___    ____  ____  _____ "<<endl;
-        cout<<"                        / ____/ | / / ____/ __  \/ ____/ | / / _ _ \/   |  / __ \/ __ \/ ___/ "<<endl;
-        cout<<"                       / __/ /  |/ / /_  / /_/ / __/ /  |/ / / / / /| | / / / / / / /\__ \  "<<endl;
-        cout<<"                      / /___/ /|  / __/ / _, _/ /___/ /|  / /_/ / ___ |/ /_/ / /_/ /___/ /  "<<endl;
+        cout<<"                        / ____/ | / / ____/ __  \/ ____/ | / / _ _ \/   |  / __ \\/ _ \ /  ___/ "<<endl;
+        cout<<"                       / __/ /  |/ / /_  / /_/ / __/ /  |/ / / / / /| | / / / / / //\__  \\  "<<endl;
+        cout<<"                      / /___/ /|  / __/ / _, _/ /___/ /|  / /_/ / ___ |/ /_/ / /_//___/ /  "<<endl;
         cout<<"                     /_____/_/ |_/_/   /_/ |_/_____/_/ |_/_____/_/  |_/_____/\____//____/   "<<endl;
-        cout<<"                                                                       "<<endl;
-        cout<<"                                              +---------------------+                         "<<endl;
-        cout<<"                                              |1 - JUGAR            |                        "<<endl;
-        cout<<"                                              |2 - ESTADISTICAS     |                        "<<endl;
-        cout<<"                                              |3 - CREDITOS         |                        "<<endl;
-        cout<<"                                              |0 - SALIR            |                        "<<endl;
-        cout<<"                                              +---------------------+                        "<<endl<<endl;
+        cout<<""<<endl<<endl<<endl;
 
-        cout<<"                                                Ingrese una opcion: ";
+        rlutil::locate(30,10);
+        cout<<"+---------------------+"<<endl;
+        rlutil::locate(30,11);
+        cout<<"|1 - JUGAR            |"<<endl;
+        rlutil::locate(30,12);
+        cout<<"|2 - ESTADISTICAS     |"<<endl;
+        rlutil::locate(30,13);
+        cout<<"|3 - CREDITOS         |"<<endl;
+        rlutil::locate(30,14);
+        cout<<"|0 - SALIR            |"<<endl;
+        rlutil::locate(30,15);
+        cout<<"+---------------------+"<<endl;
+        rlutil::locate(30,18);
+        cout<<"Ingrese una opcion: ";
         cin >> opcion;
 
         switch (opcion)
@@ -68,23 +75,23 @@ void Menu()
             NombreJugador1 = PedirNombreJugador1(); //UTILIZAMOS ESTA FUNCION EN ESTA VARIABLE PARA GUARDAR EL VALOR
             NombreJugador2 = PedirNombreJugador2(); //UTILIZAMOS ESTA FUNCION EN ESTA VARIABLE PARA GUARDAR EL VALOR
             system("cls");
-            cout<<"                    Ahora ambos Jugadores van a tirar el Dado Inicial para definir quien Empieza!!! (SUERTE)                               "<<endl;
+            cout<<"              Ambos jugadores lanzaran sus dados para ver quién arranca. ¡Mucha suerte y que los dados estén de su lado!                            "<<endl;
 
             Pali();
 
             MostrarNombres(NombreJugador1,NombreJugador2);
-            ValorDadoInicialJugador1 = DadoInicialJugador1();    //ACA PODEMOS VALIDAR CON 1; PARA EVITAR ESPERAR A QUE DE EL NUMERO IGUAL EJ: ValorDadoInicialJugador1 = 1, PARA VER SI EL SEGUNDO JUGADOR EMPIEZA PRIMERO Y SI ESTA BIEN HECHO.
+            ValorDadoInicialJugador1 = DadoInicialJugador1(NombreJugador1);    //ACA PODEMOS VALIDAR CON 1; PARA EVITAR ESPERAR A QUE DE EL NUMERO IGUAL EJ: ValorDadoInicialJugador1 = 1, PARA VER SI EL SEGUNDO JUGADOR EMPIEZA PRIMERO Y SI ESTA BIEN HECHO.
             DibujarDado(ValorDadoInicialJugador1);
-            ValorDadoInicialJugador2 = DadoInicialJugador2();    //ACA PODEMOS VALIDAR CON 1; PARA EVITAR ESPERAR A QUE DE EL NUMERO IGUAL EJ: ValorDadoInicialJugador2 = 1, PARA VER SI EL PRIMER JUGADOR EMPIEZA PRIMERO Y SI ESTA BIEN HECHO.
+            ValorDadoInicialJugador2 = DadoInicialJugador2(NombreJugador2);    //ACA PODEMOS VALIDAR CON 1; PARA EVITAR ESPERAR A QUE DE EL NUMERO IGUAL EJ: ValorDadoInicialJugador2 = 1, PARA VER SI EL PRIMER JUGADOR EMPIEZA PRIMERO Y SI ESTA BIEN HECHO.
             DibujarDado(ValorDadoInicialJugador2); //USAMOS ESTA FUNCION PARA GRAFICAR LOS DADOS INICIALES
             Pali();
 
             while (ValorDadoInicialJugador1 == ValorDadoInicialJugador2) //UTILIZAMOS ESTE WHILE PARA TIRAR NUEVAMENTE EN CASO DE QUE LOS NUMEROS DE LOS DADOS INICIALES SEAN IGUALES!!!
             {
                 cout<<"Como ambos Jugadores tienen el mismo valor se tira nuevamente: "<<endl<<endl;
-                ValorDadoInicialJugador1 = DadoInicialJugador1();
+                ValorDadoInicialJugador1 = DadoInicialJugador1(NombreJugador1);
                 DibujarDado(ValorDadoInicialJugador1);
-                ValorDadoInicialJugador2 = DadoInicialJugador2();
+                ValorDadoInicialJugador2 = DadoInicialJugador2(NombreJugador2);
                 DibujarDado(ValorDadoInicialJugador2);
             }
 
@@ -92,21 +99,20 @@ void Menu()
             {
                 Empieza = 1;
                 DadoMayor = ValorDadoInicialJugador1;
-                cout<<"El Jugador "<<NombreJugador1<<" Tiene el dado Mayor....comienza la partida"<<endl;
+                cout<<NombreJugador1<<" comienza esta emocionante partida. ¡Mucha suerte!"<<endl;
 
             }
             else if (ValorDadoInicialJugador2 > ValorDadoInicialJugador1)
             {
                 Empieza = 2;
                 DadoMayor = ValorDadoInicialJugador2;
-                cout<<"El Jugador "<<NombreJugador2<<" Tiene el dado Mayor....comienza la partida"<<endl;
+                cout<<NombreJugador2<<" comienza esta emocionante partida. ¡Mucha suerte!"<<endl;
 
             }
 
             Pali();
 
-
-            for (Ronda = 1; Ronda <= 3; Ronda++) //ESTE FOR VA A HACER LAS VECES DE RONDA, YA QUE EL LIMITE ES 3 RONDAS O QUE ALGUN JUGADOR SE QUEDE SIN DADOS!!!
+            while (Ronda <= 3 || DadosStockJugador1Cantidad == 0 || DadosStockJugador2Cantidad == 0)
             {
                 MostrarRonda(Ronda);
 
@@ -123,11 +129,10 @@ void Menu()
                 PuntajeJugador2 += SumaDadosJugador2 * DadosElegidosJugador2;
 
                 GanarAutomaticamente(DadosStockJugador1Cantidad, DadosStockJugador2Cantidad,PuntajeJugador1, PuntajeJugador2, NombreJugador1, NombreJugador2);
-                if(DadosElegidosJugador1 == 0 || DadosElegidosJugador2 == 0)
-                {
-                    break; //ESTE BREAK SE PUSO PARA SALIR DEL FOR DIRECTAMENTE PORQUE YA UN JUGADOR SE QUEDO SIN DADOS Y GANO
-                }
+
                 system("cls");
+
+                Ronda++;
 
             }
 
@@ -154,26 +159,81 @@ void Menu()
                 Pali();
             }
 
-            break;
-        case 2:  //ESTADISTICAS
-            Estadisticas(NombreJugador1,NombreJugador2,PuntajeJugador1,PuntajeJugador2);
-            break;
-        case 3: //CREDITOS
-            system("cls");
-            creditos();
-            Pali();
+            //Ronda = 1;
 
             break;
-        default:
-            rlutil::setColor(rlutil::RED);
-            cout << "ESTA OPCION ES INCORRECTA " << endl;
-            rlutil::anykey ();
-            break;
 
-        }
 
+
+
+
+        /*      for (Ronda = 1; Ronda <= 3; Ronda++) //ESTE FOR VA A HACER LAS VECES DE RONDA, YA QUE EL LIMITE ES 3 RONDAS O QUE ALGUN JUGADOR SE QUEDE SIN DADOS!!!
+              {
+                  MostrarRonda(Ronda);
+
+                  MostrarPartida(Empieza,NombreJugador1, NombreJugador2,
+                                 DadosStockJugador1Numero,DadosStockJugador2Numero,
+                                 DadosStockJugador1Cantidad,DadosStockJugador2Cantidad,
+                                 NumeroObjetivoJugador1,NumeroObjetivoJugador2,
+                                 SumaDadosJugador1,SumaDadosJugador2,
+                                 DadosElegidosJugador1,DadosElegidosJugador2,
+                                 Ronda);
+                  //EN ESTA FUNCION POR PARAMETRO PASAMOS TODOS LAS VARIABLES Y VECTORES PARA PODER TRABAJAR CON LOS MISMOS DENTRO DE LA FUNCION
+
+                  PuntajeJugador1 += SumaDadosJugador1 * DadosElegidosJugador1;
+                  PuntajeJugador2 += SumaDadosJugador2 * DadosElegidosJugador2;
+
+                  GanarAutomaticamente(DadosStockJugador1Cantidad, DadosStockJugador2Cantidad,PuntajeJugador1, PuntajeJugador2, NombreJugador1, NombreJugador2);
+
+                  system("cls");
+
+              }
+
+              cout<<"                    ---------------------RESUMEN FINAL DE LA PARTIDA---------------------"<<endl;
+              cout<<NombreJugador1<<" Tuvo ("<<PuntajeJugador1<<") puntos"<<endl;
+              cout<<NombreJugador2<<" Tuvo ("<<PuntajeJugador2<<") puntos"<<endl<<endl;
+
+              if (PuntajeJugador1 > PuntajeJugador2)
+              {
+                  cout<<"Felicidades "<<NombreJugador1<<"! Ganaste un juego de consola, pero......a que costo?"<<endl<<endl;
+                  Pali();
+
+              }
+              else if (PuntajeJugador2 > PuntajeJugador1)
+              {
+
+                  cout<<"Felicidades "<<NombreJugador2<<"! Ganaste un juego de consola, pero......a que costo?"<<endl<<endl;
+                  Pali();
+              }
+              else
+
+              {
+                  cout<<"UFFF......EMPATARON!!!, COMO LLEGARON A ESTO???"<<endl<<endl;
+                  Pali();
+              }
+
+              break;*/
+
+    case 2:  //ESTADISTICAS
+        Estadisticas(NombreJugador1,NombreJugador2,PuntajeJugador1,PuntajeJugador2);
+        break;
+    case 3: //CREDITOS
+        system("cls");
+        creditos();
+        Pali();
+
+        break;
+    default:
+        rlutil::setColor(rlutil::RED);
+        cout << "ESTA OPCION ES INCORRECTA " << endl;
+        rlutil::anykey ();
+        Pali() ;
+        break;
 
     }
-    while (opcion !=0);
+
+
+}
+while (opcion !=0);
 
 }

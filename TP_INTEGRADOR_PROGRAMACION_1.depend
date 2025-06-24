@@ -75,7 +75,7 @@
 	"JUGAR.h"
 	"DADOS.h"
 
-1750633109 source:c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1-enredados--main\dados.cpp
+1750697164 source:c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1-enredados--main\dados.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -90,7 +90,7 @@
 
 1750617705 c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1-enredados--main\mostrarmenu.h
 
-1750632457 source:c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1-enredados--main\jugar.cpp
+1750699742 source:c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1-enredados--main\jugar.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -100,7 +100,7 @@
 	"MOSTRARMENU.h"
 	"rlutil.h"
 
-1750624768 source:c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1-enredados--main\mostrarmenu.cpp
+1750706127 source:c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1-enredados--main\mostrarmenu.cpp
 	<iostream>
 	<clocale>
 	"MOSTRARMENU.h"
@@ -132,7 +132,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1750633109 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\dados.cpp
+1750697164 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\este ahora si\dados.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -141,13 +141,13 @@
 	"JUGAR.h"
 	"MOSTRARMENU.h"
 
-1750617705 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\dados.h
+1750617705 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\este ahora si\dados.h
 
-1750617705 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\jugar.h
+1750617705 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\este ahora si\jugar.h
 
-1750617705 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\mostrarmenu.h
+1750617705 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\este ahora si\mostrarmenu.h
 
-1750632457 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\jugar.cpp
+1750699742 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\este ahora si\jugar.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -157,7 +157,7 @@
 	"MOSTRARMENU.h"
 	"rlutil.h"
 
-1748562564 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\rlutil.h
+1748562564 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\este ahora si\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -171,7 +171,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1750629105 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\main.cpp
+1750629105 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\este ahora si\main.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -181,7 +181,64 @@
 	"DADOS.h"
 	"rlutil.h"
 
-1750634577 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\mostrarmenu.cpp
+1750720262 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\este ahora si\mostrarmenu.cpp
+	<iostream>
+	<clocale>
+	"MOSTRARMENU.h"
+	"JUGAR.h"
+	"DADOS.h"
+	"rlutil.h"
+
+1750726022 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\este_ahora_si\dados.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<clocale>
+	"DADOS.h"
+	"JUGAR.h"
+	"MOSTRARMENU.h"
+
+1750725660 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\este_ahora_si\dados.h
+
+1750725645 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\este_ahora_si\jugar.h
+
+1750617705 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\este_ahora_si\mostrarmenu.h
+
+1750726165 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\este_ahora_si\jugar.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<clocale>
+	"JUGAR.h"
+	"DADOS.h"
+	"MOSTRARMENU.h"
+	"rlutil.h"
+
+1748562564 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\este_ahora_si\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1750629105 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\este_ahora_si\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<clocale>
+	"MOSTRARMENU.h"
+	"JUGAR.h"
+	"DADOS.h"
+	"rlutil.h"
+
+1750727946 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\descargado\este_ahora_si\mostrarmenu.cpp
 	<iostream>
 	<clocale>
 	"MOSTRARMENU.h"

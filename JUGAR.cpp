@@ -13,7 +13,7 @@ string PedirNombreJugador1() //ESTA FUNCION PIDE NOMBRES PARA INGRESAR
 {
     string NombreJugador1;
 
-    rlutil::locate(5,1);
+    rlutil::locate(5,1);// posiciona el cursor en algun punto
     cout << "Ingrese el nombre del Jugador 1: ";
     cin >> NombreJugador1;
 
@@ -24,8 +24,8 @@ string PedirNombreJugador2() //ESTA FUNCION PIDE NOMBRES PARA INGRESAR
 {
     string NombreJugador2;
 
-    rlutil::locate(5,1);
-    cout << " Ingrese el nombre del Jugador 2: ";
+    rlutil::locate(5,2);
+    cout << "Ingrese el nombre del Jugador 2: ";
     cin >> NombreJugador2;
 
     return NombreJugador2;
@@ -34,23 +34,27 @@ string PedirNombreJugador2() //ESTA FUNCION PIDE NOMBRES PARA INGRESAR
 
 void creditos()    //ESTA FUNCION MUESTRA LOS CREDITOS DE TODOS LOS INTEGRANTES DEL GRUPO
 {
-    cout << "                                              -----CREDITOS-----" << endl;
+    rlutil::locate(46,2);
+    cout << "-----CREDITOS-----";
+    rlutil::locate(46,4);
+    cout << "----Equipo #35----";
+    rlutil::locate(39,7);
+    cout << "BAÑULS BRIZUELA, Fernando Emmanuel";
+    rlutil::locate(48,8);
+    cout << "Legajo #33493";
+    rlutil::locate(39,10);
+    cout << "OVIEDO, Gerardo Joaquin";
+    rlutil::locate(48,11);
+    cout << "Legajo #31647";
+    rlutil::locate(39,13);
+    cout << "SARZA, Ludmila";
+    rlutil::locate(48,14);
+    cout << "Legajo #32540";
+    rlutil::locate(39,16);
+    cout << "VAZQUEZ GONZALEZ, Patricia";
+    rlutil::locate(48,17);
+    cout << "Legajo #31174";
     cout << endl;
-    cout << "                                              ----Equipo #35----" << endl;
-    cout << endl;
-    cout << "                                              BAÑULS BRIZUELA, Fernando Emmanuel" << endl;
-    cout << "                                              Legajo #33493" << endl;
-    cout << endl;
-    cout << "                                              OVIEDO, Gerardo Joaquin" << endl;
-    cout << "                                              Legajo #31647" << endl;
-    cout << endl;
-    cout << "                                              SARZA, Ludmila" << endl;
-    cout << "                                              Legajo #32540" << endl;
-    cout << endl;
-    cout << "                                              VAZQUEZ GONZALEZ, Patricia" << endl;
-    cout << "                                              Legajo #31174" << endl;
-    cout << endl;
-
 }
 
 void MostrarNombres(string NombreJugador1, string NombreJugador2)
@@ -70,33 +74,33 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
         MostrarNombres(NombreJugador1, NombreJugador2);
 
         cout<<"                                              El Jugador 1: "<<NombreJugador1<<" Tira sus Dados Objetivo: "<<endl<<endl;
-        DadosObjetivoJugador1(NumeroObjetivoJugador1);
+        DadosObjetivoJugador1(NumeroObjetivoJugador1, NombreJugador1);
 
         system("cls");
         MostrarRonda(Ronda);
         MostrarNombres(NombreJugador1, NombreJugador2);
 
         cout<<"                                              El Jugador 2: "<<NombreJugador2<<" Tira sus Dados Objetivo: "<<endl<<endl;
-        DadosObjetivoJugador2(NumeroObjetivoJugador2);
+        DadosObjetivoJugador2(NumeroObjetivoJugador2, NombreJugador2);
 
-        system("cls");
+        //system("cls");
     }
     else
     {
         MostrarNombres(NombreJugador1, NombreJugador2);
 
         cout<<"                                              El Jugador 2: "<<NombreJugador2<<" Tira sus Dados Objetivo: "<<endl<<endl;
-        DadosObjetivoJugador2(NumeroObjetivoJugador2);
+        DadosObjetivoJugador2(NumeroObjetivoJugador2,NombreJugador2);
 
 
-        system("cls");
+        //system("cls");
         MostrarRonda(Ronda);
         MostrarNombres(NombreJugador1, NombreJugador2);
         cout<<"                                              El Jugador 1: "<<NombreJugador1<<" Tira sus Dados Objetivo: "<<endl<<endl;
-        DadosObjetivoJugador1(NumeroObjetivoJugador1);
+        DadosObjetivoJugador1(NumeroObjetivoJugador1,NombreJugador1);
 
 
-        system("cls");
+        //system("cls"); ojo aca
     }
     MostrarRonda(Ronda);
     MostrarNombres(NombreJugador1, NombreJugador2);
@@ -104,12 +108,14 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
 
     cout<<"                                              El Numero Objetivo a llegar es: "<<NumeroObjetivoJugador1<<endl<<endl; //ESTO SE AGREGO PARA MOSTRAR EL NUMERO OBJETIVO
 
-    cout<<"Estos son los Dados Stock de la tirada del Jugador 1: "<< NombreJugador1<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
+    cout<<"Estos son los Dados Stock de la tirada de : "<< NombreJugador1<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
 
     DadosStockJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad);
 
     ElegirDadosySumarJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad, DadosStockJugador2Cantidad,NumeroObjetivoJugador1, SumaDadosJugador1,DadosElegidosJugador1, NombreJugador1);
 
+    //system("cls");
+    //Pali();
 
     MostrarRonda(Ronda);
     MostrarNombres(NombreJugador1, NombreJugador2);
@@ -117,13 +123,13 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
 
     cout<<"                                              El Numero Objetivo a llegar es: "<<NumeroObjetivoJugador2<<endl<<endl;
 
-    cout<<"Estos son los Dados Stock de la tirada del Jugador 2: "<< NombreJugador2<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
+    cout<<"Estos son los Dados Stock de la tirada de: "<< NombreJugador2<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
 
     DadosStockJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad);
 
     ElegirDadosySumarJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad, DadosStockJugador1Cantidad,NumeroObjetivoJugador2, SumaDadosJugador2,DadosElegidosJugador2, NombreJugador2);
 
-    system("cls");
+    //system("cls");
     //Pali();
 }
 
@@ -133,7 +139,7 @@ void MostrarPuntajePuntajeJugador1 (int &SumaDadosJugador1, int &DadosElegidosJu
 
     PuntajeJugador1 = SumaDadosJugador1 * DadosElegidosJugador1;
 
-    cout<<"El Puntaje del Jugador 1 "<<NombreJugador1<<" es: "<<PuntajeJugador1<<endl;
+    cout<<"El Puntaje de "<<NombreJugador1<<" es: "<<PuntajeJugador1<<endl;
 }
 
 void MostrarPuntajePuntajeJugador2(int &SumaDadosJugador2, int &DadosElegidosJugador2, string &NombreJugador2)
@@ -142,7 +148,7 @@ void MostrarPuntajePuntajeJugador2(int &SumaDadosJugador2, int &DadosElegidosJug
 
     PuntajeJugador2= SumaDadosJugador2 * DadosElegidosJugador2;
 
-    cout<<"El Puntaje del Jugador 2 "<<NombreJugador2<<" es: "<<PuntajeJugador2<<endl;
+    cout<<"El Puntaje de "<<NombreJugador2<<" es: "<<PuntajeJugador2<<endl;
 }
 
 void Pali() //FUNCION PARA PAUSAR Y LIMPIAR LA PANTALLA y no estar escribiendo system y lo demas!!!
@@ -156,9 +162,9 @@ void Estadisticas (string NombreJugador1, string NombreJugador2, int PuntajeJuga
     system("cls");
     cout<<"                    ---------------------ESTADISTICAS---------------------"<<endl<<endl;
 
-    cout<<"El Jugador 1: "<<NombreJugador1<<" Tuvo estos puntos: "<<PuntajeJugador1<<endl<<endl;
+    cout<<"El Jugador 1: "<<NombreJugador1<<" tuvo estos puntos: "<<PuntajeJugador1<<endl<<endl;
 
-    cout<<"El Jugador 2: "<<NombreJugador2<<" Tuvo estos puntos: "<<PuntajeJugador2<<endl<<endl;
+    cout<<"El Jugador 2: "<<NombreJugador2<<" tuvo estos puntos: "<<PuntajeJugador2<<endl<<endl;
 
     if (PuntajeJugador1 == 0 & PuntajeJugador2 == 0)
     {
@@ -173,9 +179,9 @@ void MostrarRonda(int &Ronda)
     cout<<"                                              RONDA NUMERO: "<<Ronda<<endl<<endl;
 }
 
-void GanarAutomaticamente(int DadosStockJugador1Cantidad, int DadosStockJugador2Cantidad, int &PuntajeJugador1,int &PuntajeJugador2, string NombreJugador1, string NombreJugador2)
+void GanarAutomaticamente(int DadosStockJugador1Cantidad, int DadosStockJugador2Cantidad, int PuntajeJugador1,int PuntajeJugador2, string NombreJugador1, string NombreJugador2)
 {
-    if (DadosStockJugador1Cantidad == 0 || DadosStockJugador2Cantidad == 0)
+    if (DadosStockJugador1Cantidad == 0 || DadosStockJugador2Cantidad)
     {
         cout<<"********************************************************************************"<<endl;
         cout<<"      UNO DE LOS JUGADORES SE QUEDO SIN DADOS!!!"<<endl<<endl;
