@@ -123,7 +123,9 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
 
         if (DadosElegidosJugador1 < 1 || DadosElegidosJugador1 > DadosStockJugador1Cantidad) //PARA VALIDAR QUE AL MENOS 1 DADO Y COMO MAXIMO LOS QUE TIENE DISPONIBLES SE UTILICEN PARA ELEGIR
         {
+            rlutil::setColor(rlutil::RED);
             cout<<"CAPO FIJATE LO QUE PONES, La cantidad pusiste con lo que tenes no va!!"<<endl;
+            rlutil::setColor(rlutil::BLACK);
         }
     }
     while (DadosElegidosJugador1 < 1 || DadosElegidosJugador1 > DadosStockJugador1Cantidad);
@@ -137,14 +139,18 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
 
         if (IndiceVectorDados < 1 || IndiceVectorDados > DadosStockJugador1Cantidad)    //SE VALIDA SI LOS DADOS QUE EL JUGADOR ELIGIO SON MAYORES A LOS DADOS DE STOCK
         {
+            rlutil::setColor(rlutil::RED);
             cout<<"Genio, el numero que pusiste no va"<<endl;
+            rlutil::setColor(rlutil::BLACK);
 
             i--; /*ESTO SE AGREGO PARA QUE CUANDO EL PIBE/PIBA/PC ELIJA MAL EL NUMERO NO DE COMO VALIDA
                         LA VUELTA Y DE LA MISMA VUELTA DE NUEVO HASTA QUE LO HAGAN BIEN*/
         }
         else if (DadosUsados [IndiceVectorDados - 1] == true) //EVALUA SI YA SE ELIGIO, COMO? SI ES FALSE, AL SEGUIR EL DADO/NUMERO PASA A TRUE Y AL HACER LA VUELTA ENTRA DE NUEVO
-        {                                                     //LLEGADO EL CASO DE Q EL MISMO INDICE SEA TRUE, TIRA ADVERTENCIA Y SE TIRA DE NUEVO!
+        {
+            rlutil::setColor(rlutil::RED);                                                  //LLEGADO EL CASO DE Q EL MISMO INDICE SEA TRUE, TIRA ADVERTENCIA Y SE TIRA DE NUEVO!
             cout<<"MAQUINA, Mira el dado ya lo usaste, Elegi otro "<<endl;
+            rlutil::setColor(rlutil::BLACK);
             i--;
         }
         else
@@ -184,9 +190,10 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
     else
     {
         Tirada = false;
+        rlutil::setColor(rlutil::RED);
         cout<<"Tirada Fallida, solo tenias que hacer 1 sola cosa!!!!"<<endl<<endl;
         cout<<"TOMA....Como penalizacion al Jugador 2 le sacamos un dado y te lo damos a vos!!!"<<endl<<endl;
-
+         rlutil::setColor(rlutil::BLACK);
         if (DadosStockJugador2Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 2 TENGA DADOS
         {
             DadosStockJugador2Cantidad--;
@@ -232,7 +239,9 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
 
         if (DadosElegidosJugador2 < 1 || DadosElegidosJugador2 > DadosStockJugador2Cantidad)
         {
+            rlutil::setColor(rlutil::RED);
             cout<<"CAPO FIJATE LO QUE PONES, La cantidad pusiste con lo que tenes no va!!"<<endl;
+            rlutil::setColor(rlutil::BLACK);
         }
     }
     while (DadosElegidosJugador2 < 1 || DadosElegidosJugador2 > DadosStockJugador2Cantidad);
@@ -244,14 +253,18 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
 
         if (IndiceVectorDados < 1 || IndiceVectorDados > DadosStockJugador2Cantidad)
         {
+            rlutil::setColor(rlutil::RED);
             cout<<"Genio, el numero que pusiste no va"<<endl;
+            rlutil::setColor(rlutil::BLACK);
 
             i--; /*ESTO SE AGREGO PARA QUE CUANDO EL PIBE/PIBA/PC ELIJA MAL EL NUMERO NO DE COMO VALIDA
                         LA VUELTA Y DE LA MISMA VUELTA DE NUEVO HASTA QUE LO HAGAN BIEN*/
         }
         else if (DadosUsados [IndiceVectorDados - 1] == true)
         {
+            rlutil::setColor(rlutil::RED);
             cout<<"MAQUINA, Mira el dado ya lo usaste, Elegi otro "<<endl;
+            rlutil::setColor(rlutil::BLACK);
             i--;
         }
         else
@@ -293,8 +306,11 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
     else
     {
         Tirada = false;
+
+        rlutil::setColor(rlutil::RED);
         cout<<"Tirada Fallida, solo tenias que hacer 1 sola cosa!!!!"<<endl<<endl<<endl;
         cout<<"TOMA....Como penalizacion al Jugador 1 le sacamos un dado y te lo damos a vos!!!"<<endl<<endl;
+        rlutil::setColor(rlutil::BLACK);
 
         if (DadosStockJugador2Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 2 TENGA DADOS
         {

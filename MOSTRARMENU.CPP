@@ -227,6 +227,7 @@ void Menu()
         rlutil::setColor(rlutil::RED);
         cout << "ESTA OPCION ES INCORRECTA " << endl;
         rlutil::anykey ();
+        rlutil::setColor(rlutil::BLACK);
         Pali() ;
         break;
 
