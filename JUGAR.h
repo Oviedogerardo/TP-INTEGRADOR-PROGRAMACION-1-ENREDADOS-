@@ -10,7 +10,7 @@ void MostrarNombres(std::string NombreJugador1, std::string NombreJugador2);
 void MostrarRonda(int &Ronda);
 void MostrarPartida(int Empieza, std::string &NombreJugador1, std::string &NombreJugador2, int DadosStockJugador1Numero[],int DadosStockJugador2Numero[],int &DadosStockJugador1Cantidad,
                     int &DadosStockJugador2Cantidad,int &NumeroObjetivoJugador1,int &NumeroObjetivoJugador2, int &SumaDadosJugador1, int &SumaDadosJugador2
-                    ,int &DadosElegidosJugador1,int &DadosElegidosJugador2, int &Ronda);
+                    ,int &DadosElegidosJugador1,int &DadosElegidosJugador2, int &Ronda, int PuntajeJugador1,int PuntajeJugador2);
 void MostrarPuntajePuntajeJugador1 (int &SumaDadosJugador1, int &DadosElegidosJugador1, std::string &NombreJugador1);
 void MostrarPuntajePuntajeJugador2(int &SumaDadosJugador2, int &DadosElegidosJugador2, std::string &NombreJugador2);
 void Pali();

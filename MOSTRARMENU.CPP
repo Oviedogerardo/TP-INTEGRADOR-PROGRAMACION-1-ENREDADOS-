@@ -122,7 +122,7 @@ void Menu()
                                NumeroObjetivoJugador1,NumeroObjetivoJugador2,
                                SumaDadosJugador1,SumaDadosJugador2,
                                DadosElegidosJugador1,DadosElegidosJugador2,
-                               Ronda);
+                               Ronda, PuntajeJugador1, PuntajeJugador2);
                 //EN ESTA FUNCION POR PARAMETRO PASAMOS TODOS LAS VARIABLES Y VECTORES PARA PODER TRABAJAR CON LOS MISMOS DENTRO DE LA FUNCION
 
                 PuntajeJugador1 += SumaDadosJugador1 * DadosElegidosJugador1;
@@ -130,7 +130,7 @@ void Menu()
 
                 GanarAutomaticamente(DadosStockJugador1Cantidad, DadosStockJugador2Cantidad,PuntajeJugador1, PuntajeJugador2, NombreJugador1, NombreJugador2);
 
-                system("cls");
+                Pali();
 
                 Ronda++;
 

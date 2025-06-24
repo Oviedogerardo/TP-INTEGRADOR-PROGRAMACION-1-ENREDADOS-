@@ -66,7 +66,7 @@ void MostrarNombres(string NombreJugador1, string NombreJugador2)
 
 void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2, int DadosStockJugador1Numero[],int DadosStockJugador2Numero[],int &DadosStockJugador1Cantidad,
                     int &DadosStockJugador2Cantidad,int &NumeroObjetivoJugador1,int &NumeroObjetivoJugador2, int &SumaDadosJugador1, int &SumaDadosJugador2
-                    ,int &DadosElegidosJugador1,int &DadosElegidosJugador2, int &Ronda)
+                    ,int &DadosElegidosJugador1,int &DadosElegidosJugador2, int &Ronda, int PuntajeJugador1,int PuntajeJugador2)
 //ESTA FUNCION SIRVE PARA MOSTRAR EL TRANSCURSO DE TODA LA PARTIDA
 {
     if(Empieza == 1)
@@ -115,7 +115,7 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
 
         DadosStockJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad);
 
-        ElegirDadosySumarJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad, DadosStockJugador2Cantidad,NumeroObjetivoJugador1, SumaDadosJugador1,DadosElegidosJugador1, NombreJugador1);
+        ElegirDadosySumarJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad, DadosStockJugador2Cantidad,NumeroObjetivoJugador1, SumaDadosJugador1,DadosElegidosJugador1, NombreJugador1,PuntajeJugador1);
 
         //system("cls");
         //Pali();
@@ -130,7 +130,7 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
 
         DadosStockJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad);
 
-        ElegirDadosySumarJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad, DadosStockJugador1Cantidad,NumeroObjetivoJugador2, SumaDadosJugador2,DadosElegidosJugador2, NombreJugador2);
+        ElegirDadosySumarJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad, DadosStockJugador1Cantidad,NumeroObjetivoJugador2, SumaDadosJugador2,DadosElegidosJugador2, NombreJugador2,PuntajeJugador2);
 
         //system("cls");
         //Pali();
@@ -149,7 +149,7 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
 
         DadosStockJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad);
 
-        ElegirDadosySumarJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad, DadosStockJugador1Cantidad,NumeroObjetivoJugador2, SumaDadosJugador2,DadosElegidosJugador2, NombreJugador2);
+        ElegirDadosySumarJugador2 (DadosStockJugador2Numero,DadosStockJugador2Cantidad, DadosStockJugador1Cantidad,NumeroObjetivoJugador2, SumaDadosJugador2,DadosElegidosJugador2, NombreJugador2,PuntajeJugador2);
 
         //system("cls");
         //Pali();
@@ -164,7 +164,7 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
 
         DadosStockJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad);
 
-        ElegirDadosySumarJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad, DadosStockJugador2Cantidad,NumeroObjetivoJugador1, SumaDadosJugador1,DadosElegidosJugador1, NombreJugador1);
+        ElegirDadosySumarJugador1 (DadosStockJugador1Numero,DadosStockJugador1Cantidad, DadosStockJugador2Cantidad,NumeroObjetivoJugador1, SumaDadosJugador1,DadosElegidosJugador1, NombreJugador1, PuntajeJugador1);
 
         //system("cls");
         //Pali();
@@ -228,11 +228,13 @@ void GanarAutomaticamente(int DadosStockJugador1Cantidad, int DadosStockJugador2
         {
             PuntajeJugador1 += 10000;
             cout<<"FELICIDADES "<<NombreJugador1<<"      TE QUEDASTE SIN DADOS, TOMA 10.000 PUNTOS Y GANAS AUTOMATICAMENTE!!!"<<endl;
+            cout<<"CERRAS CON ESTOS PUNTOS: "<<PuntajeJugador1<<endl;
         }
         else if (DadosStockJugador2Cantidad == 0)
         {
             PuntajeJugador2 += 10000;
             cout<<"FELICIDADES "<<NombreJugador2<<"      TE QUEDASTE SIN DADOS, TOMA 10.000 PUNTOS Y GANAS AUTOMATICAMENTE!!!"<<endl;
+            cout<<"CERRAS CON ESTOS PUNTOS: "<<PuntajeJugador2<<endl;
         }
 
     }

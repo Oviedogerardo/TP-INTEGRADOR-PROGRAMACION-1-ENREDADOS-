@@ -98,7 +98,7 @@ void DadosStockJugador2 (int DadosStockJugador2Numero[], int DadosStockJugador2C
     cout<<endl<<endl;//ESTO SE PUSO ACA PORQUE AL MOSTRAR LOS DADOS DE ARRIBA DEJA UN ESPACIO ESTETICO PARA EL CARTEL DE LOS DADOS A ELEGIR
 }
 
-void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJugador1Cantidad, int &DadosStockJugador2Cantidad, int &NumeroObjetivoJugador1,int &SumaDadosJugador1,int &DadosElegidosJugador1, string &NombreJugador1)
+void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJugador1Cantidad, int &DadosStockJugador2Cantidad, int &NumeroObjetivoJugador1,int &SumaDadosJugador1,int &DadosElegidosJugador1, string &NombreJugador1, int PuntajeJugador1)
 {
     SumaDadosJugador1 = 0;
     bool Tirada = false;
@@ -197,7 +197,7 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
         else if (DadosStockJugador1Cantidad == 0)
         {
             cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador1Cantidad<<endl<<endl;
-            PuntajeFinal = SumaDadosJugador1 * DadosElegidosJugador1 + 10000;
+            PuntajeFinal = SumaDadosJugador1 * DadosElegidosJugador1 + PuntajeJugador1 + 10000;
 
             cout<<"FELICITACIONES PADRE, GANASTE CON "<<PuntajeFinal<<" PUNTOS ESTE JUEGO DE CONSOLA PERO.....A QUE COSTO?"<<endl<<endl;
         }
@@ -208,7 +208,7 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
     }
 }
 
-void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJugador2Cantidad, int &DadosStockJugador1Cantidad,int &NumeroObjetivoJugador2, int &SumaDadosJugador2,int &DadosElegidosJugador2, string &NombreJugador2)
+void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJugador2Cantidad, int &DadosStockJugador1Cantidad,int &NumeroObjetivoJugador2, int &SumaDadosJugador2,int &DadosElegidosJugador2, string &NombreJugador2, int PuntajeJugador2)
 {
     SumaDadosJugador2 = 0;  //SE ASIGNO NUEVAMENTE 0 (CERO) A ESTA VARIABLE DE REFERENCIA PORQUE AL PASAR LAS RONDAS Y NO REINICIAR EL VALOR A CERO, NO SE PODRIA CUMPLIR (SumaDadosJugadorx == NumeroObjetivoJugador2)
     int PuntajeFinal;
@@ -306,7 +306,7 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
         else if (DadosStockJugador2Cantidad == 0)
         {
             cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
-            PuntajeFinal = SumaDadosJugador2 * DadosElegidosJugador2 + 10000;
+            PuntajeFinal = SumaDadosJugador2 * DadosElegidosJugador2 + PuntajeJugador2 + 10000;
 
             cout<<"FELICITACIONES PADRE, GANASTE CON "<<PuntajeFinal<<" PUNTOS ESTE JUEGO DE CONSOLA PERO.....A QUE COSTO?"<<endl<<endl;
             system("pause");
