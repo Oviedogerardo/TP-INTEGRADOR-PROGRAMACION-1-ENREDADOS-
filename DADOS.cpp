@@ -115,13 +115,13 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
 
     do
     {
-        /*ESTO SE AGREGO PARA FORZAR A QUE EL MUCHACHO QUE VAYA A PONER EL DADO A ELEGIR LO PONGA BIEN, TENIENDO EN CUENTA
+        /*ESTO SE AGREGO PARA FORZAR A QUE EL MUCHACHO/A QUE VAYA A PONER EL DADO A ELEGIR LO PONGA BIEN, TENIENDO EN CUENTA
                    LA CANTIDAD DE DADOS QUE TIENE*/
         cout<<"DALE PA, Elegi cuantos dados vas a Utilizar: (como maximo podes "<<DadosStockJugador1Cantidad<<"):";
 
         cin>>DadosElegidosJugador1;
 
-        if (DadosElegidosJugador1 < 1 || DadosElegidosJugador1 > DadosStockJugador1Cantidad)
+        if (DadosElegidosJugador1 < 1 || DadosElegidosJugador1 > DadosStockJugador1Cantidad) //PARA VALIDAR QUE AL MENOS 1 DADO Y COMO MAXIMO LOS QUE TIENE DISPONIBLES SE UTILICEN PARA ELEGIR
         {
             cout<<"CAPO FIJATE LO QUE PONES, La cantidad pusiste con lo que tenes no va!!"<<endl;
         }
@@ -135,15 +135,15 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
         cout<<"Elegi el Dado, del 1 al "<<DadosElegidosJugador1<<": ";
         cin>>IndiceVectorDados;
 
-        if (IndiceVectorDados < 1 || IndiceVectorDados > DadosStockJugador1Cantidad)
+        if (IndiceVectorDados < 1 || IndiceVectorDados > DadosStockJugador1Cantidad)    //SE VALIDA SI LOS DADOS QUE EL JUGADOR ELIGIO SON MAYORES A LOS DADOS DE STOCK
         {
             cout<<"Genio, el numero que pusiste no va"<<endl;
 
             i--; /*ESTO SE AGREGO PARA QUE CUANDO EL PIBE/PIBA/PC ELIJA MAL EL NUMERO NO DE COMO VALIDA
                         LA VUELTA Y DE LA MISMA VUELTA DE NUEVO HASTA QUE LO HAGAN BIEN*/
         }
-        else if (DadosUsados [IndiceVectorDados - 1] == true)
-        {
+        else if (DadosUsados [IndiceVectorDados - 1] == true) //EVALUA SI YA SE ELIGIO, COMO? SI ES FALSE, AL SEGUIR EL DADO/NUMERO PASA A TRUE Y AL HACER LA VUELTA ENTRA DE NUEVO
+        {                                                     //LLEGADO EL CASO DE Q EL MISMO INDICE SEA TRUE, TIRA ADVERTENCIA Y SE TIRA DE NUEVO!
             cout<<"MAQUINA, Mira el dado ya lo usaste, Elegi otro "<<endl;
             i--;
         }

@@ -112,7 +112,7 @@ void Menu()
 
             Pali();
 
-            while (Ronda <= 3 || DadosStockJugador1Cantidad == 0 || DadosStockJugador2Cantidad == 0)
+            while (Ronda <= 3 && DadosStockJugador1Cantidad != 0 && DadosStockJugador2Cantidad != 0)
             {
                 MostrarRonda(Ronda);
 
@@ -159,7 +159,7 @@ void Menu()
                 Pali();
             }
 
-            //Ronda = 1;
+            Ronda = 1;
 
             break;
 

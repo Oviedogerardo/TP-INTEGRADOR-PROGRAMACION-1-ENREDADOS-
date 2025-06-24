@@ -181,7 +181,7 @@ void MostrarRonda(int &Ronda)
 
 void GanarAutomaticamente(int DadosStockJugador1Cantidad, int DadosStockJugador2Cantidad, int PuntajeJugador1,int PuntajeJugador2, string NombreJugador1, string NombreJugador2)
 {
-    if (DadosStockJugador1Cantidad == 0 || DadosStockJugador2Cantidad)
+    if (DadosStockJugador1Cantidad == 0 || DadosStockJugador2Cantidad == 0)
     {
         cout<<"********************************************************************************"<<endl;
         cout<<"      UNO DE LOS JUGADORES SE QUEDO SIN DADOS!!!"<<endl<<endl;
