@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1751169300 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\recuperatorio_tp_integrador_programacion_1\recuperatorio-tp-integrador-programacion-1\recuperatorio_tp_integrador_programacion_1\main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+	<clocale>
+	"JUGAR.h"
+
+1751170083 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\recuperatorio_tp_integrador_programacion_1\recuperatorio-tp-integrador-programacion-1\recuperatorio_tp_integrador_programacion_1\jugar.h
+
+1751170083 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\recuperatorio_tp_integrador_programacion_1\recuperatorio-tp-integrador-programacion-1\recuperatorio_tp_integrador_programacion_1\jugar.cpp
+	<iostream>
+	<cstdlib>
+	"JUGAR.h"
+
+1751238670 source:/home/pocho/Downloads/RECUPERATORIO-TP-INTEGRADOR-PROGRAMACION-1-main/RECUPERATORIO_TP_INTEGRADOR_PROGRAMACION_1/JUGAR.CPP
+	<iostream>
+	<cstdlib>
+	"JUGAR.h"
+
+1751237633 /home/pocho/Downloads/RECUPERATORIO-TP-INTEGRADOR-PROGRAMACION-1-main/RECUPERATORIO_TP_INTEGRADOR_PROGRAMACION_1/JUGAR.h
+
+1751239493 source:/home/pocho/Downloads/RECUPERATORIO-TP-INTEGRADOR-PROGRAMACION-1-main/RECUPERATORIO_TP_INTEGRADOR_PROGRAMACION_1/main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+	<clocale>
+	"JUGAR.h"
+
