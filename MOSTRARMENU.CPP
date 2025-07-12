@@ -143,6 +143,8 @@ void Menu()
             if (PuntajeJugador1 > PuntajeJugador2)
             {
                 cout<<"Felicidades "<<NombreJugador1<<"! Ganaste un juego de consola, pero......a que costo?"<<endl<<endl;
+
+
                 Pali();
 
             }

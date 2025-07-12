@@ -115,11 +115,30 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
         DadosUsados[i] = false;
     }
 
-    do
+    for (int i = 0; i < DadosStockJugador1Cantidad; i++)
     {
-        /*ESTO SE AGREGO PARA FORZAR A QUE EL MUCHACHO/A QUE VAYA A PONER EL DADO A ELEGIR LO PONGA BIEN, TENIENDO EN CUENTA
-                   LA CANTIDAD DE DADOS QUE TIENE*/
-        cout<<"DALE PA, Elegi cuantos dados vas a Utilizar: (como maximo podes "<<DadosStockJugador1Cantidad<<"):";
+        DadosStockJugador1Numero[i] += DadosStockJugador1Numero[i];
+
+        if (DadosStockJugador1Numero[i] > NumeroObjetivoJugador1)
+        {
+            cout<<"Tirada Fallida";
+
+        }
+        else
+
+        {
+            cout<<"Tirada Exitosa";
+        }
+
+    }
+
+
+
+    /* do
+     {
+         /*ESTO SE AGREGO PARA FORZAR A QUE EL MUCHACHO/A QUE VAYA A PONER EL DADO A ELEGIR LO PONGA BIEN, TENIENDO EN CUENTA
+                    LA CANTIDAD DE DADOS QUE TIENE*/
+    /*    cout<<"DALE PA, Elegi cuantos dados vas a Utilizar: (como maximo podes "<<DadosStockJugador1Cantidad<<"):";
 
         cin>>DadosElegidosJugador1;
 
@@ -147,7 +166,7 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
 
             i--; /*ESTO SE AGREGO PARA QUE CUANDO EL PIBE/PIBA/PC ELIJA MAL EL NUMERO NO DE COMO VALIDA
                         LA VUELTA Y DE LA MISMA VUELTA DE NUEVO HASTA QUE LO HAGAN BIEN*/
-        }
+    /*    }
         else if (DadosUsados [IndiceVectorDados - 1] == true) //EVALUA SI YA SE ELIGIO, COMO? SI ES FALSE, AL SEGUIR EL DADO/NUMERO PASA A TRUE Y AL HACER LA VUELTA ENTRA DE NUEVO
         {
             rlutil::setColor(rlutil::RED);                                                  //LLEGADO EL CASO DE Q EL MISMO INDICE SEA TRUE, TIRA ADVERTENCIA Y SE TIRA DE NUEVO!
@@ -174,47 +193,47 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
         Tirada = true;
         cout<<"Tirada Exitosa"<<endl<<endl;
         cout<<"Los dados que seleccionaste se los vamos a pasar al otro Jugador, Divertido no?"<<endl<<endl;
+    }                                                                                                       */
 
+    /* if (Tirada == true)
+     {
+         DadosStockJugador1Cantidad = DadosStockJugador1Cantidad - DadosElegidosJugador1;
+         DadosStockJugador2Cantidad = DadosStockJugador2Cantidad + DadosElegidosJugador1;
 
-        if (Tirada == true)
-        {
-            DadosStockJugador1Cantidad = DadosStockJugador1Cantidad - DadosElegidosJugador1;
-            DadosStockJugador2Cantidad = DadosStockJugador2Cantidad + DadosElegidosJugador1;
+         cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador1Cantidad<<endl<<endl;
 
-            cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador1Cantidad<<endl<<endl;
+         MostrarPuntajePuntajeJugador1(SumaDadosJugador1, DadosElegidosJugador1, NombreJugador1);
+     }
 
-            MostrarPuntajePuntajeJugador1(SumaDadosJugador1, DadosElegidosJugador1, NombreJugador1);
-        }
+     cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
+     Pali();
 
-        cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
-        Pali();
-    }
-    else
-    {
-        Tirada = false;
-        rlutil::setColor(rlutil::RED);
-        cout<<"Tirada Fallida, solo tenias que hacer 1 sola cosa!!!!"<<endl<<endl;
-        cout<<"TOMA....Como penalizacion al Jugador 2 le sacamos un dado y te lo damos a vos!!!"<<endl<<endl;
+     else
+     {
+         Tirada = false;
+         rlutil::setColor(rlutil::RED);
+         cout<<"Tirada Fallida, solo tenias que hacer 1 sola cosa!!!!"<<endl<<endl;
+         cout<<"TOMA....Como penalizacion al Jugador 2 le sacamos un dado y te lo damos a vos!!!"<<endl<<endl;
          rlutil::setColor(rlutil::BLACK);
-        if (DadosStockJugador2Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 2 TENGA DADOS
-        {
-            DadosStockJugador2Cantidad--;
-            DadosStockJugador1Cantidad++;
+         if (DadosStockJugador2Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 2 TENGA DADOS
+         {
+             DadosStockJugador2Cantidad--;
+             DadosStockJugador1Cantidad++;
 
-            cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador1Cantidad<<endl<<endl;
-        }
-        else if (DadosStockJugador1Cantidad == 0)
-        {
-            cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador1Cantidad<<endl<<endl;
-            PuntajeFinal = SumaDadosJugador1 * DadosElegidosJugador1 + PuntajeJugador1 + 10000;
+             cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador1Cantidad<<endl<<endl;
+         }
+         else if (DadosStockJugador1Cantidad == 0)
+         {
+             cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador1Cantidad<<endl<<endl;
+             PuntajeFinal = SumaDadosJugador1 * DadosElegidosJugador1 + PuntajeJugador1 + 10000;
 
-            cout<<"FELICITACIONES PADRE, GANASTE CON "<<PuntajeFinal<<" PUNTOS ESTE JUEGO DE CONSOLA PERO.....A QUE COSTO?"<<endl<<endl;
-        }
+             cout<<"FELICITACIONES PADRE, GANASTE CON "<<PuntajeFinal<<" PUNTOS ESTE JUEGO DE CONSOLA PERO.....A QUE COSTO?"<<endl<<endl;
+         }
 
-        MostrarPuntajePuntajeJugador1(SumaDadosJugador1, DadosElegidosJugador1, NombreJugador1);
-        Pali();
-        cout<<endl;
-    }
+         MostrarPuntajePuntajeJugador1(SumaDadosJugador1, DadosElegidosJugador1, NombreJugador1);
+         Pali();
+         cout<<endl;
+     } */
 }
 
 void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJugador2Cantidad, int &DadosStockJugador1Cantidad,int &NumeroObjetivoJugador2, int &SumaDadosJugador2,int &DadosElegidosJugador2, string &NombreJugador2, int PuntajeJugador2)
@@ -232,11 +251,66 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
         DadosUsados[i] = false;
     }
 
-    do
+    for (int i = 0; i < DadosStockJugador2Cantidad; i++)
     {
-        /*ESTO SE AGREGO PARA FORZAR A QUE EL MUCHACHO QUE VAYA A PONER EL DADO A ELEGIR LO PONGA BIEN, TENIENDO EN CUENTA
-                   LA CANTIDAD DE DADOS QUE TIENE*/
-        cout<<"DALE PA, Elegi cuantos dados vas a Utilizar: (como maximo podes "<<DadosStockJugador2Cantidad<<"):";
+        cout<<"Ingrese el Numero de dado que va a elegir: "<<endl;
+        cin>>DadosStockJugador2Numero[i];
+
+        SumaDadosJugador2 += DadosStockJugador2Numero[i];
+
+
+        if (SumaDadosJugador2 == NumeroObjetivoJugador2)
+        {
+            Tirada = true;
+
+            cout<<"Tirada Exitosa"<<endl<<endl;
+
+            cout<<"Los dados que seleccionaste se los vamos a pasar al otro Jugador, Divertido no?"<<endl<<endl;
+
+            if (Tirada == true)
+            {
+                DadosStockJugador2Cantidad = DadosStockJugador2Cantidad - DadosElegidosJugador2;
+                DadosStockJugador1Cantidad = DadosStockJugador1Cantidad + DadosElegidosJugador2;
+
+                cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
+
+                MostrarPuntajePuntajeJugador2(SumaDadosJugador2, DadosElegidosJugador2, NombreJugador2);
+                cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
+                Pali();
+            }
+        }
+
+
+
+        if (SumaDadosJugador2 > NumeroObjetivoJugador2 || SumaDadosJugador2 == 0)
+
+        {
+            Tirada = false;
+
+            rlutil::setColor(rlutil::RED);
+            cout<<"Tirada Fallida, solo tenias que hacer 1 sola cosa!!!!"<<endl<<endl<<endl;
+            cout<<"TOMA....Como penalizacion al Jugador 1 le sacamos un dado y te lo damos a vos!!!"<<endl<<endl;
+            rlutil::setColor(rlutil::BLACK);
+
+            if (DadosStockJugador2Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 2 TENGA DADOS
+            {
+                DadosStockJugador1Cantidad--;
+                DadosStockJugador2Cantidad++;
+
+                cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
+
+                return;
+            }
+        }
+
+
+
+
+        /*  while
+          {
+              /*ESTO SE AGREGO PARA FORZAR A QUE EL MUCHACHO QUE VAYA A PONER EL DADO A ELEGIR LO PONGA BIEN, TENIENDO EN CUENTA
+                         LA CANTIDAD DE DADOS QUE TIENE*/
+        /*cout<<"DALE PA, Elegi cuantos dados vas a Utilizar: (como maximo podes "<<DadosStockJugador2Cantidad<<"):";
         cin>>DadosElegidosJugador2;
 
         if (DadosElegidosJugador2 < 1 || DadosElegidosJugador2 > DadosStockJugador2Cantidad)
@@ -245,23 +319,24 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
             cout<<"CAPO FIJATE LO QUE PONES, La cantidad pusiste con lo que tenes no va!!"<<endl;
             rlutil::setColor(rlutil::BLACK);
         }
-    }
-    while (DadosElegidosJugador2 < 1 || DadosElegidosJugador2 > DadosStockJugador2Cantidad);
+        }   */
 
-    for (int i = 0; i < DadosElegidosJugador2; i++)
-    {
-        cout<<"Elegi el Dado, del 1 al "<<DadosElegidosJugador2<<": ";
-        cin>>IndiceVectorDados;
+        /*while (DadosElegidosJugador2 < 1 || DadosElegidosJugador2 > DadosStockJugador2Cantidad);
 
-        if (IndiceVectorDados < 1 || IndiceVectorDados > DadosStockJugador2Cantidad)
+        for (int i = 0; i < DadosElegidosJugador2; i++)
         {
-            rlutil::setColor(rlutil::RED);
-            cout<<"Genio, el numero que pusiste no va"<<endl;
-            rlutil::setColor(rlutil::BLACK);
+            cout<<"Elegi el Dado, del 1 al "<<DadosElegidosJugador2<<": ";
+            cin>>IndiceVectorDados;
 
-            i--; /*ESTO SE AGREGO PARA QUE CUANDO EL PIBE/PIBA/PC ELIJA MAL EL NUMERO NO DE COMO VALIDA
-                        LA VUELTA Y DE LA MISMA VUELTA DE NUEVO HASTA QUE LO HAGAN BIEN*/
-        }
+            if (IndiceVectorDados < 1 || IndiceVectorDados > DadosStockJugador2Cantidad)
+            {
+                rlutil::setColor(rlutil::RED);
+                cout<<"Genio, el numero que pusiste no va"<<endl;
+                rlutil::setColor(rlutil::BLACK);
+
+                i--; /*ESTO SE AGREGO PARA QUE CUANDO EL PIBE/PIBA/PC ELIJA MAL EL NUMERO NO DE COMO VALIDA
+                            LA VUELTA Y DE LA MISMA VUELTA DE NUEVO HASTA QUE LO HAGAN BIEN*/
+        /*}
         else if (DadosUsados [IndiceVectorDados - 1] == true)
         {
             rlutil::setColor(rlutil::RED);
@@ -276,63 +351,64 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
             SumaDadosJugador2 += DadosStockJugador2Numero [IndiceVectorDados - 1];
             cout<<"Van Sumados: "<<SumaDadosJugador2<<endl<<endl;
         }
-    }
+        }   */
 
-    cout<<"La Suma de los dados Seleccionados es: "<<SumaDadosJugador2<<endl<<endl;
+        //cout<<"La Suma de los dados Seleccionados es: "<<SumaDadosJugador2<<endl<<endl;
 
-    Pali();
-    //system("cls");
+        //Pali();
+        //system("cls");
 
-    if (SumaDadosJugador2 == NumeroObjetivoJugador2)
-    {
-        Tirada = true;
+        /* if (SumaDadosJugador2 == NumeroObjetivoJugador2)
+         {
+             Tirada = true;
 
-        cout<<"Tirada Exitosa"<<endl<<endl;
+             cout<<"Tirada Exitosa"<<endl<<endl;
 
-        cout<<"Los dados que seleccionaste se los vamos a pasar al otro Jugador, Divertido no?"<<endl<<endl;
+             cout<<"Los dados que seleccionaste se los vamos a pasar al otro Jugador, Divertido no?"<<endl<<endl;
 
-        if (Tirada == true)
-        {
-            DadosStockJugador2Cantidad = DadosStockJugador2Cantidad - DadosElegidosJugador2;
-            DadosStockJugador1Cantidad = DadosStockJugador1Cantidad + DadosElegidosJugador2;
+             if (Tirada == true)
+             {
+                 DadosStockJugador2Cantidad = DadosStockJugador2Cantidad - DadosElegidosJugador2;
+                 DadosStockJugador1Cantidad = DadosStockJugador1Cantidad + DadosElegidosJugador2;
 
-            cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
+                 cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
 
-            MostrarPuntajePuntajeJugador2(SumaDadosJugador2, DadosElegidosJugador2, NombreJugador2);
-        }
+                 MostrarPuntajePuntajeJugador2(SumaDadosJugador2, DadosElegidosJugador2, NombreJugador2);
+             }
 
-        cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
+             cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
 
-        Pali();
-    }
-    else
-    {
-        Tirada = false;
+             Pali();
+         }
+         else
+         {
+             Tirada = false;
 
-        rlutil::setColor(rlutil::RED);
-        cout<<"Tirada Fallida, solo tenias que hacer 1 sola cosa!!!!"<<endl<<endl<<endl;
-        cout<<"TOMA....Como penalizacion al Jugador 1 le sacamos un dado y te lo damos a vos!!!"<<endl<<endl;
-        rlutil::setColor(rlutil::BLACK);
+             rlutil::setColor(rlutil::RED);
+             cout<<"Tirada Fallida, solo tenias que hacer 1 sola cosa!!!!"<<endl<<endl<<endl;
+             cout<<"TOMA....Como penalizacion al Jugador 1 le sacamos un dado y te lo damos a vos!!!"<<endl<<endl;
+             rlutil::setColor(rlutil::BLACK);
 
-        if (DadosStockJugador2Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 2 TENGA DADOS
-        {
-            DadosStockJugador1Cantidad--;
-            DadosStockJugador2Cantidad++;
+             if (DadosStockJugador2Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 2 TENGA DADOS
+             {
+                 DadosStockJugador1Cantidad--;
+                 DadosStockJugador2Cantidad++;
 
-            cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
-        }
-        else if (DadosStockJugador2Cantidad == 0)
-        {
-            cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
-            PuntajeFinal = SumaDadosJugador2 * DadosElegidosJugador2 + PuntajeJugador2 + 10000;
+                 cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
+             }
+             else if (DadosStockJugador2Cantidad == 0)
+             {
+                 cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
+                 PuntajeFinal = SumaDadosJugador2 * DadosElegidosJugador2 + PuntajeJugador2 + 10000;
 
-            cout<<"FELICITACIONES PADRE, GANASTE CON "<<PuntajeFinal<<" PUNTOS ESTE JUEGO DE CONSOLA PERO.....A QUE COSTO?"<<endl<<endl;
-            system("pause");
-        }
+                 cout<<"FELICITACIONES PADRE, GANASTE CON "<<PuntajeFinal<<" PUNTOS ESTE JUEGO DE CONSOLA PERO.....A QUE COSTO?"<<endl<<endl;
+                 system("pause");
+             }
 
-        MostrarPuntajePuntajeJugador2(SumaDadosJugador2, DadosElegidosJugador2, NombreJugador2);
-        Pali();
-        cout<<endl;
+             MostrarPuntajePuntajeJugador2(SumaDadosJugador2, DadosElegidosJugador2, NombreJugador2);
+             Pali();
+             cout<<endl;
+         } */
     }
 }
 
@@ -406,7 +482,7 @@ void MostrarDadosObjetivoJugador1 (int DadoObjetivoJugador1_A, int DadoObjetivoJ
     cout << "         \\        /   " << endl;
     cout << "          \\______/    " << endl;
 
-   //system("pause");
+    //system("pause");
 }
 
 

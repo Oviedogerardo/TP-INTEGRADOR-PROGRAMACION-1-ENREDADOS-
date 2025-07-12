@@ -198,16 +198,34 @@ void Pali() //FUNCION PARA PAUSAR Y LIMPIAR LA PANTALLA y no estar escribiendo s
 
 void Estadisticas (string NombreJugador1, string NombreJugador2, int PuntajeJugador1, int PuntajeJugador2)
 {
+
+    int MayorPuntaje;
+
     system("cls");
     cout<<"                    ---------------------ESTADISTICAS---------------------"<<endl<<endl;
+
+    cout<<"                    ---------------------ULTIMO RESUMEN PARTIDA---------------------"<<endl<<endl;
 
     cout<<"El Jugador 1: "<<NombreJugador1<<" tuvo estos puntos: "<<PuntajeJugador1<<endl<<endl;
 
     cout<<"El Jugador 2: "<<NombreJugador2<<" tuvo estos puntos: "<<PuntajeJugador2<<endl<<endl;
 
+    cout<<"                    ---------------------MAYOR PUNTAJE---------------------"<<endl<<endl;
+
+    if (PuntajeJugador1 > PuntajeJugador2)
+    {
+        MayorPuntaje = PuntajeJugador1;
+        cout<<"El mayor puntaje de la ultima partida es "<<MayorPuntaje;
+    }
+    if (PuntajeJugador1 < PuntajeJugador2)
+    {
+        MayorPuntaje = PuntajeJugador2;
+        cout<<"El mayor puntaje de la ultima partida es "<<MayorPuntaje;
+    }
+
     if (PuntajeJugador1 == 0 & PuntajeJugador2 == 0)
     {
-        cout<<"QUE HACEN MIRANDO ESTO?? VAYAN A JUGAR Y VUELVAN!!!"<<endl<<endl;
+        cout<<"TODAVIA NO SE JUGO NINGUNA RONDA"<<endl<<endl;
     }
 
     Pali();
