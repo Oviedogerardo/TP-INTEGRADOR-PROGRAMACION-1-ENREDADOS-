@@ -99,7 +99,7 @@ void Menu()
             {
                 Empieza = 1;
                 DadoMayor = ValorDadoInicialJugador1;
-                cout<<NombreJugador1<<" comienza esta emocionante partida. ¡Mucha suerte!"<<endl;
+                cout<<NombreJugador1<<" comienza esta emocionante partida. ¡Mucha suerte!"<<endl<<endl;
 
             }
             else if (ValorDadoInicialJugador2 > ValorDadoInicialJugador1)
@@ -142,7 +142,7 @@ void Menu()
 
             if (PuntajeJugador1 > PuntajeJugador2)
             {
-                cout<<"Felicidades "<<NombreJugador1<<"! Ganaste un juego de consola, pero......a que costo?"<<endl<<endl;
+                cout<<"Felicidades "<<NombreJugador1<<"! Ganaste!"<<endl<<endl;
 
 
                 Pali();
@@ -151,70 +151,19 @@ void Menu()
             else if (PuntajeJugador2 > PuntajeJugador1)
             {
 
-                cout<<"Felicidades "<<NombreJugador2<<"! Ganaste un juego de consola, pero......a que costo?"<<endl<<endl;
+                cout<<"Felicidades "<<NombreJugador2<<"! Ganaste!"<<endl<<endl;
                 Pali();
             }
             else
 
             {
-                cout<<"UFFF......EMPATARON!!!, COMO LLEGARON A ESTO???"<<endl<<endl;
+                cout<<"AMBOS JUGADORES EMPATARON"<<endl<<endl;
                 Pali();
             }
 
             Ronda = 1;
 
             break;
-
-
-
-
-
-        /*      for (Ronda = 1; Ronda <= 3; Ronda++) //ESTE FOR VA A HACER LAS VECES DE RONDA, YA QUE EL LIMITE ES 3 RONDAS O QUE ALGUN JUGADOR SE QUEDE SIN DADOS!!!
-              {
-                  MostrarRonda(Ronda);
-
-                  MostrarPartida(Empieza,NombreJugador1, NombreJugador2,
-                                 DadosStockJugador1Numero,DadosStockJugador2Numero,
-                                 DadosStockJugador1Cantidad,DadosStockJugador2Cantidad,
-                                 NumeroObjetivoJugador1,NumeroObjetivoJugador2,
-                                 SumaDadosJugador1,SumaDadosJugador2,
-                                 DadosElegidosJugador1,DadosElegidosJugador2,
-                                 Ronda);
-                  //EN ESTA FUNCION POR PARAMETRO PASAMOS TODOS LAS VARIABLES Y VECTORES PARA PODER TRABAJAR CON LOS MISMOS DENTRO DE LA FUNCION
-
-                  PuntajeJugador1 += SumaDadosJugador1 * DadosElegidosJugador1;
-                  PuntajeJugador2 += SumaDadosJugador2 * DadosElegidosJugador2;
-
-                  GanarAutomaticamente(DadosStockJugador1Cantidad, DadosStockJugador2Cantidad,PuntajeJugador1, PuntajeJugador2, NombreJugador1, NombreJugador2);
-
-                  system("cls");
-
-              }
-
-              cout<<"                    ---------------------RESUMEN FINAL DE LA PARTIDA---------------------"<<endl;
-              cout<<NombreJugador1<<" Tuvo ("<<PuntajeJugador1<<") puntos"<<endl;
-              cout<<NombreJugador2<<" Tuvo ("<<PuntajeJugador2<<") puntos"<<endl<<endl;
-
-              if (PuntajeJugador1 > PuntajeJugador2)
-              {
-                  cout<<"Felicidades "<<NombreJugador1<<"! Ganaste un juego de consola, pero......a que costo?"<<endl<<endl;
-                  Pali();
-
-              }
-              else if (PuntajeJugador2 > PuntajeJugador1)
-              {
-
-                  cout<<"Felicidades "<<NombreJugador2<<"! Ganaste un juego de consola, pero......a que costo?"<<endl<<endl;
-                  Pali();
-              }
-              else
-
-              {
-                  cout<<"UFFF......EMPATARON!!!, COMO LLEGARON A ESTO???"<<endl<<endl;
-                  Pali();
-              }
-
-              break;*/
 
     case 2:  //ESTADISTICAS
         Estadisticas(NombreJugador1,NombreJugador2,PuntajeJugador1,PuntajeJugador2);

@@ -122,19 +122,29 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
 
         cin>>Numero;
 
-        if (Numero < 1 || Numero > DadosStockJugador1Cantidad)
+        if (Numero == 0)
         {
-            cout<<"El numero colocado es erroneo, elegi los dados del 1 al "<<DadosStockJugador1Cantidad<<endl;
+            cout<<"Tirada no Exitosa (no suma puntos)";
+
+             ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
+
+            cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
+            break;
+        }
+
+       if (Numero > DadosStockJugador1Cantidad || Numero < 0)
+        {
+           cout<<"El numero ingresado es Mayor  o Incorrecto a tus dados de Stock, Vuelve a tirar"<<endl;
             i--; //PARA REPETIR LA RONDA
         }
 
         SumaDadosJugador1 += DadosStockJugador1Numero[Numero-1];
         CantidadDadosElegidos++;
-        cout<<"Va Sumando "<<SumaDadosJugador1;
+        DadosElegidosJugador1 = CantidadDadosElegidos;
 
 
-        cout<<SumaDadosJugador1;
-        cout<<DadosStockJugador1Numero[Numero];
+        cout<<"Va Sumando "<<SumaDadosJugador1<<endl<<endl;
+
 
         if (SumaDadosJugador1 == NumeroObjetivoJugador1)
         {
@@ -144,7 +154,11 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
 
             cout<<"Los dados que seleccionaste ("<<CantidadDadosElegidos<<" en total) se los vamos a pasar al otro Jugador"<<endl<<endl;
 
-            if (Tirada == true)
+               ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
+
+               Pali();
+
+            if (Tirada == true)   ///ADEMAS ESTO VA A SER EL RESUMEN DE LA RONDA!
             {
                 DadosStockJugador1Cantidad = DadosStockJugador1Cantidad - CantidadDadosElegidos;
                 DadosStockJugador2Cantidad = DadosStockJugador2Cantidad + CantidadDadosElegidos;
@@ -168,10 +182,12 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
             cout<<"Como penalizacion al Jugador 2 le sacamos un dado y te lo damos a vos!!!"<<endl<<endl;
             rlutil::setColor(rlutil::BLACK);
 
-            if (DadosStockJugador1Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 2 TENGA DADOS
+            if (DadosStockJugador1Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 2 TENGA DADOS    ///ADEMAS ESTO VA A SER EL RESUMEN DE LA RONDA!
             {
                 DadosStockJugador2Cantidad--;
                 DadosStockJugador1Cantidad++;
+
+                   ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
 
                 cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador1Cantidad<<endl<<endl;
                 MostrarPuntajePuntajeJugador1(SumaDadosJugador1, DadosElegidosJugador1, NombreJugador1);
@@ -204,18 +220,27 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
         cout<<"Ingrese el Numero de dado que va a elegir: "<<endl;
         cin>>Numero;
 
-        SumaDadosJugador2 += DadosStockJugador2Numero[Numero-1];
-        CantidadDadosElegidos++;
-        cout<<"Va Sumando "<<SumaDadosJugador2;
-
-         if (Numero < 1 || Numero > DadosStockJugador1Cantidad)
+        if (Numero == 0)
         {
-            cout<<"El numero colocado es erroneo, elegi los dados del 1 al "<<DadosStockJugador2Cantidad<<endl;
-            i--; //PARA REPETIR LA RONDA
+            cout<<"Tirada no Exitosa (no suma puntos)";
+
+             ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
+
+            cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
+            break;
         }
 
-        cout<<SumaDadosJugador2;
-        cout<<DadosStockJugador2Numero[Numero];
+        SumaDadosJugador2 += DadosStockJugador2Numero[Numero-1];
+        CantidadDadosElegidos++;
+        DadosElegidosJugador2 = CantidadDadosElegidos;
+
+        cout<<"Vas Sumando "<<SumaDadosJugador2<<endl<<endl;
+
+         if (Numero > DadosStockJugador1Cantidad || Numero < 0)
+        {
+            cout<<"El numero ingresado es Mayor o Incorrecto a tus dados de Stock, Vuelve a tirar"<<endl;
+            i--; //PARA REPETIR LA RONDA
+        }
 
 
         if (SumaDadosJugador2 == NumeroObjetivoJugador2)
@@ -226,7 +251,11 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
 
             cout<<"Los dados que seleccionaste ("<<CantidadDadosElegidos<<" en total) se los vamos a pasar al otro Jugador"<<endl<<endl;
 
-            if (Tirada == true)
+            Pali();
+
+               ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
+
+            if (Tirada == true)  ///ADEMAS ESTO VA A SER EL RESUMEN DE LA RONDA!
             {
                 DadosStockJugador2Cantidad = DadosStockJugador2Cantidad - CantidadDadosElegidos;
                 DadosStockJugador1Cantidad = DadosStockJugador1Cantidad + CantidadDadosElegidos;
@@ -251,15 +280,19 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
             cout<<"TOMA....Como penalizacion al Jugador 1 le sacamos un dado y te lo damos a vos!!!"<<endl<<endl;
             rlutil::setColor(rlutil::BLACK);
 
-            if (DadosStockJugador2Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 2 TENGA DADOS
+            Pali();
+
+            if (DadosStockJugador2Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 2 TENGA DADOS    ///ADEMAS ESTO VA A SER EL RESUMEN DE LA RONDA!
             {
                 DadosStockJugador1Cantidad--;
                 DadosStockJugador2Cantidad++;
 
+                ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
+
+
                 cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
 
-                return;
-            }
+             }
         }
     }
 }

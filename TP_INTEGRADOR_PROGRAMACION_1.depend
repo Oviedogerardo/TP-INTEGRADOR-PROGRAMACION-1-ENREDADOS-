@@ -35,7 +35,7 @@
 	"JUGAR.h"
 	"DADOS.h"
 
-1752626395 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\dados.cpp
+1752709367 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\dados.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -61,7 +61,7 @@
 	"MOSTRARMENU.h"
 	"rlutil.h"
 
-1750731815 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\main.cpp
+1752708923 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\main.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -71,7 +71,7 @@
 	"DADOS.h"
 	"rlutil.h"
 
-1750808444 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\mostrarmenu.cpp
+1752707230 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\mostrarmenu.cpp
 	<iostream>
 	<clocale>
 	"MOSTRARMENU.h"

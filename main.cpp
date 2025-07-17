@@ -12,8 +12,8 @@ using namespace std;
 
 int main()
 {
-    rlutil::setBackgroundColor (rlutil::GREEN);
-    rlutil::setColor(rlutil::BLACK);
+   /// rlutil::setBackgroundColor (rlutil::GREEN); aca PONER OTRO COLOR POR DIOS!!!!
+   /// rlutil::setColor(rlutil::BLACK);
 
     srand(time(nullptr));
     setlocale(LC_ALL, "spanish");
