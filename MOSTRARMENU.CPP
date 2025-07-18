@@ -71,6 +71,11 @@ void Menu()
             cout << "Gracias por jugar" << endl << endl << endl;
             break;
         case 1:
+
+            ReiniciarValores(DadosStockJugador1Cantidad,SumaDadosJugador1,
+                             PuntajeJugador1,DadosStockJugador2Cantidad,
+                             SumaDadosJugador2, PuntajeJugador2); //ESTA FUNCION SE UTILIZA EN EL CASO DE QUE SE EMPIECE OTRA PARTIRA
+
             system("cls");
             NombreJugador1 = PedirNombreJugador1(); //UTILIZAMOS ESTA FUNCION EN ESTA VARIABLE PARA GUARDAR EL VALOR
             NombreJugador2 = PedirNombreJugador2(); //UTILIZAMOS ESTA FUNCION EN ESTA VARIABLE PARA GUARDAR EL VALOR
@@ -88,7 +93,7 @@ void Menu()
 
             while (ValorDadoInicialJugador1 == ValorDadoInicialJugador2) //UTILIZAMOS ESTE WHILE PARA TIRAR NUEVAMENTE EN CASO DE QUE LOS NUMEROS DE LOS DADOS INICIALES SEAN IGUALES!!!
             {
-                cout<<"Como ambos Jugadores tienen el mismo valor se tira nuevamente: "<<endl<<endl;
+                cout<<"Como ambos Jugadores empataron se tira nuevamente: "<<endl<<endl;
                 ValorDadoInicialJugador1 = DadoInicialJugador1(NombreJugador1);
                 DibujarDado(ValorDadoInicialJugador1);
                 ValorDadoInicialJugador2 = DadoInicialJugador2(NombreJugador2);

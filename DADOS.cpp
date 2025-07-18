@@ -116,7 +116,7 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
                           EL JUGADOR 1 Y EL JUGADOR 2*/
 
 
-    for (int i = 0; i <= DadosStockJugador1Cantidad; i++)
+    for (int i = 0; i < DadosStockJugador1Cantidad; i++)
     {
         cout<<"Ingrese el Numero de dado que va a elegir: "<<endl;
 
@@ -124,77 +124,86 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
 
         if (Numero == 0)
         {
-            cout<<"Tirada no Exitosa (no suma puntos)";
+            cout<<"Tirada no Exitosa (no suma puntos)"<<endl;
 
-             ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
+            ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
 
             cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
-            break;
+            return;
+            //break;
         }
 
-       if (Numero > DadosStockJugador1Cantidad || Numero < 0)
+        if (Numero < 1 || Numero > DadosStockJugador1Cantidad)
         {
-           cout<<"El numero ingresado es Mayor  o Incorrecto a tus dados de Stock, Vuelve a tirar"<<endl;
+            cout<<"El numero ingresado es Mayor  o Incorrecto a tus dados de Stock, Vuelve a tirar"<<endl;
             i--; //PARA REPETIR LA RONDA
         }
-
-        SumaDadosJugador1 += DadosStockJugador1Numero[Numero-1];
-        CantidadDadosElegidos++;
-        DadosElegidosJugador1 = CantidadDadosElegidos;
-
-
-        cout<<"Va Sumando "<<SumaDadosJugador1<<endl<<endl;
-
-
-        if (SumaDadosJugador1 == NumeroObjetivoJugador1)
+        else
         {
-            Tirada = true;
 
-            cout<<"Tirada Exitosa"<<endl<<endl;
 
-            cout<<"Los dados que seleccionaste ("<<CantidadDadosElegidos<<" en total) se los vamos a pasar al otro Jugador"<<endl<<endl;
 
-               ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
+            SumaDadosJugador1 += DadosStockJugador1Numero[Numero-1];
+            CantidadDadosElegidos++;
+            DadosElegidosJugador1 = CantidadDadosElegidos;
 
-               Pali();
 
-            if (Tirada == true)   ///ADEMAS ESTO VA A SER EL RESUMEN DE LA RONDA!
+            cout<<"Va Sumando "<<SumaDadosJugador1<<endl<<endl;
+
+
+            if (SumaDadosJugador1 == NumeroObjetivoJugador1)
             {
-                DadosStockJugador1Cantidad = DadosStockJugador1Cantidad - CantidadDadosElegidos;
-                DadosStockJugador2Cantidad = DadosStockJugador2Cantidad + CantidadDadosElegidos;
+                Tirada = true;
 
-                cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador1Cantidad<<endl<<endl;
+                cout<<"Tirada Exitosa"<<endl<<endl;
 
-                MostrarPuntajePuntajeJugador1(SumaDadosJugador1, DadosElegidosJugador1, NombreJugador1);
-                cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
-                Pali();
-            }
-        }
+                cout<<"Los dados que seleccionaste ("<<CantidadDadosElegidos<<" en total) se los vamos a pasar al otro Jugador"<<endl<<endl;
 
-
-        if (SumaDadosJugador1 > NumeroObjetivoJugador1 || SumaDadosJugador1 == 0)
-
-        {
-            Tirada = false;
-
-            rlutil::setColor(rlutil::RED);
-            cout<<"TIRADA FALLIDA!!!!"<<endl<<endl<<endl;
-            cout<<"Como penalizacion al Jugador 2 le sacamos un dado y te lo damos a vos!!!"<<endl<<endl;
-            rlutil::setColor(rlutil::BLACK);
-
-            if (DadosStockJugador1Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 2 TENGA DADOS    ///ADEMAS ESTO VA A SER EL RESUMEN DE LA RONDA!
-            {
-                DadosStockJugador2Cantidad--;
-                DadosStockJugador1Cantidad++;
-
-                   ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
-
-                cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador1Cantidad<<endl<<endl;
-                MostrarPuntajePuntajeJugador1(SumaDadosJugador1, DadosElegidosJugador1, NombreJugador1);
-                cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
+                ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
 
                 Pali();
+
+                if (Tirada == true)   ///ADEMAS ESTO VA A SER EL RESUMEN DE LA RONDA!
+                {
+                    DadosStockJugador1Cantidad = DadosStockJugador1Cantidad - CantidadDadosElegidos;
+                    DadosStockJugador2Cantidad = DadosStockJugador2Cantidad + CantidadDadosElegidos;
+
+                    cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador1Cantidad<<endl<<endl;
+
+                    MostrarPuntajePuntajeJugador1(SumaDadosJugador1, DadosElegidosJugador1, NombreJugador1);
+                    cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
+                    Pali();
+                    return; ///ESTO SE AGREGO PARA SALIR DE LA FUNCION, SINO VUELVE A DAR LA VUELTA
+                }
             }
+
+
+            if (SumaDadosJugador1 > NumeroObjetivoJugador1 || SumaDadosJugador1 == 0)
+
+            {
+                Tirada = false;
+
+                rlutil::setColor(rlutil::RED);
+                cout<<"TIRADA FALLIDA!!!!"<<endl<<endl<<endl;
+                cout<<"Como penalizacion al Jugador 2 le sacamos un dado y te lo damos a vos!!!"<<endl<<endl;
+                rlutil::setColor(rlutil::WHITE);
+
+                if (DadosStockJugador1Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 2 TENGA DADOS    ///ADEMAS ESTO VA A SER EL RESUMEN DE LA RONDA!
+                {
+                    DadosStockJugador2Cantidad--;
+                    DadosStockJugador1Cantidad++;
+
+                    ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
+
+                    cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador1Cantidad<<endl<<endl;
+                    MostrarPuntajePuntajeJugador1(SumaDadosJugador1, DadosElegidosJugador1, NombreJugador1);
+                    cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
+
+                    Pali();
+                    return; ///ESTO SE AGREGO PARA SALIR DE LA FUNCION, SINO VUELVE A DAR LA VUELTA
+                }
+            }
+
         }
     }
 }
@@ -215,84 +224,95 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
                           EL JUGADOR 1 Y EL JUGADOR 2*/
 
 
-    for (int i = 0; i <= DadosStockJugador2Cantidad; i++)
+    for (int i = 0; i < DadosStockJugador2Cantidad; i++)
     {
         cout<<"Ingrese el Numero de dado que va a elegir: "<<endl;
-        cin>>Numero;
+       cin>>Numero;
 
         if (Numero == 0)
         {
-            cout<<"Tirada no Exitosa (no suma puntos)";
+            cout<<"Tirada no Exitosa (no suma puntos)"<<endl;
 
-             ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
+            ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
 
             cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
-            break;
+            return; ///ESTO SE AGREGO PARA SALIR DE LA FUNCION, SINO VUELVE A DAR LA VUELTA
+            //break;
         }
 
-        SumaDadosJugador2 += DadosStockJugador2Numero[Numero-1];
-        CantidadDadosElegidos++;
-        DadosElegidosJugador2 = CantidadDadosElegidos;
-
-        cout<<"Vas Sumando "<<SumaDadosJugador2<<endl<<endl;
-
-         if (Numero > DadosStockJugador1Cantidad || Numero < 0)
+        if (Numero < 1 || Numero > DadosStockJugador2Cantidad)
         {
             cout<<"El numero ingresado es Mayor o Incorrecto a tus dados de Stock, Vuelve a tirar"<<endl;
             i--; //PARA REPETIR LA RONDA
         }
+        else
 
-
-        if (SumaDadosJugador2 == NumeroObjetivoJugador2)
         {
-            Tirada = true;
 
-            cout<<"Tirada Exitosa"<<endl<<endl;
 
-            cout<<"Los dados que seleccionaste ("<<CantidadDadosElegidos<<" en total) se los vamos a pasar al otro Jugador"<<endl<<endl;
 
-            Pali();
+            SumaDadosJugador2 += DadosStockJugador2Numero[Numero-1];
+            CantidadDadosElegidos++;
+            DadosElegidosJugador2 = CantidadDadosElegidos;
 
-               ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
+            cout<<"Vas Sumando "<<SumaDadosJugador2<<endl<<endl;
 
-            if (Tirada == true)  ///ADEMAS ESTO VA A SER EL RESUMEN DE LA RONDA!
+
+
+
+            if (SumaDadosJugador2 == NumeroObjetivoJugador2)
             {
-                DadosStockJugador2Cantidad = DadosStockJugador2Cantidad - CantidadDadosElegidos;
-                DadosStockJugador1Cantidad = DadosStockJugador1Cantidad + CantidadDadosElegidos;
+                Tirada = true;
 
-                cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
+                cout<<"Tirada Exitosa"<<endl<<endl;
 
-                MostrarPuntajePuntajeJugador2(SumaDadosJugador2, DadosElegidosJugador2, NombreJugador2);
-                cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
+                cout<<"Los dados que seleccionaste ("<<CantidadDadosElegidos<<" en total) se los vamos a pasar al otro Jugador"<<endl<<endl;
+
                 Pali();
-            }
-        }
-
-
-
-        if (SumaDadosJugador2 > NumeroObjetivoJugador2 || SumaDadosJugador2 == 0)
-
-        {
-            Tirada = false;
-
-            rlutil::setColor(rlutil::RED);
-            cout<<"Tirada Fallida, solo tenias que hacer 1 sola cosa!!!!"<<endl<<endl<<endl;
-            cout<<"TOMA....Como penalizacion al Jugador 1 le sacamos un dado y te lo damos a vos!!!"<<endl<<endl;
-            rlutil::setColor(rlutil::BLACK);
-
-            Pali();
-
-            if (DadosStockJugador2Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 2 TENGA DADOS    ///ADEMAS ESTO VA A SER EL RESUMEN DE LA RONDA!
-            {
-                DadosStockJugador1Cantidad--;
-                DadosStockJugador2Cantidad++;
 
                 ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
 
+                if (Tirada == true)  ///ADEMAS ESTO VA A SER EL RESUMEN DE LA RONDA!
+                {
+                    DadosStockJugador2Cantidad = DadosStockJugador2Cantidad - CantidadDadosElegidos;
+                    DadosStockJugador1Cantidad = DadosStockJugador1Cantidad + CantidadDadosElegidos;
 
-                cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
+                    cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
 
-             }
+                    MostrarPuntajePuntajeJugador2(SumaDadosJugador2, DadosElegidosJugador2, NombreJugador2);
+                    cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
+                    Pali();
+                    return; ///ESTO SE AGREGO PARA SALIR DE LA FUNCION, SINO VUELVE A DAR LA VUELTA
+                }
+            }
+
+
+
+            if (SumaDadosJugador2 > NumeroObjetivoJugador2 || SumaDadosJugador2 == 0)
+
+            {
+                Tirada = false;
+
+                rlutil::setColor(rlutil::RED);
+                cout<<"TIRADA FALLIDA!!!!"<<endl<<endl<<endl;
+                cout<<"Como penalizacion al Jugador 2 le sacamos un dado y te lo damos a vos!!!"<<endl<<endl;
+                rlutil::setColor(rlutil::WHITE);
+
+                if (DadosStockJugador2Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 1 TENGA DADOS    ///ADEMAS ESTO VA A SER EL RESUMEN DE LA RONDA!
+                {
+                    DadosStockJugador1Cantidad--;
+                    DadosStockJugador2Cantidad++;
+
+                    ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
+
+                    cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
+                    MostrarPuntajePuntajeJugador2(SumaDadosJugador2, DadosElegidosJugador2, NombreJugador2);
+                    cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
+
+                    Pali();
+                    return; ///ESTO SE AGREGO PARA SALIR DE LA FUNCION, SINO VUELVE A DAR LA VUELTA
+                }
+            }
         }
     }
 }

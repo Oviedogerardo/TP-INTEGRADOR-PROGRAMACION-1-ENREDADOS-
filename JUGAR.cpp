@@ -215,12 +215,12 @@ void Estadisticas (string NombreJugador1, string NombreJugador2, int PuntajeJuga
     if (PuntajeJugador1 > PuntajeJugador2)
     {
         MayorPuntaje = PuntajeJugador1;
-        cout<<"El mayor puntaje de la ultima partida es "<<MayorPuntaje;
+        cout<<"El mayor puntaje de la ultima partida es "<<MayorPuntaje<<endl<<endl;
     }
     if (PuntajeJugador1 < PuntajeJugador2)
     {
         MayorPuntaje = PuntajeJugador2;
-        cout<<"El mayor puntaje de la ultima partida es "<<MayorPuntaje;
+        cout<<"El mayor puntaje de la ultima partida es "<<MayorPuntaje<<endl<<endl;
     }
 
     if (PuntajeJugador1 == 0 & PuntajeJugador2 == 0)
@@ -258,3 +258,18 @@ void GanarAutomaticamente(int DadosStockJugador1Cantidad, int DadosStockJugador2
     }
 
 }
+
+void ReiniciarValores(int &DadosStockJugador1Cantidad,int &SumaDadosJugador1,
+                      int &PuntajeJugador1,int &DadosStockJugador2Cantidad,
+                      int &SumaDadosJugador2,int &PuntajeJugador2)
+{
+    DadosStockJugador1Cantidad = 6;
+    SumaDadosJugador1 = 0;
+    PuntajeJugador1 = 0;
+    DadosStockJugador2Cantidad = 6;
+    SumaDadosJugador2 = 0;
+    PuntajeJugador2 = 0;
+
+}
+
+
