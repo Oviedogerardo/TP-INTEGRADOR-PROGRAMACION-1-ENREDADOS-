@@ -11,16 +11,14 @@
 
 using namespace std;
 
+///*********************
+///FUNCIONES JUGADOR 1.-
+///*********************
 
 void MostrarNombreJugador1 (string NombreJugador1)
 {
     cout<<NombreJugador1<<endl;
 }
-void MostrarNombreJugador2 (string NombreJugador2)
-{
-    cout<<NombreJugador2<<endl;
-}
-
 
 int DadoInicialJugador1(string NombreJugador1) /////ESTA FUNCION GENERA UN NUMERO ALEATORIO DE HASTA 6 NUMEROS, SE PUSO EL "+1" PARA QUE NO DE CERO NUNCA!
 {
@@ -29,15 +27,6 @@ int DadoInicialJugador1(string NombreJugador1) /////ESTA FUNCION GENERA UN NUMER
     cout<<"El Valor del Dado Inicial de "<<NombreJugador1<<" es: "<<ValorDadoJugador1<<endl<<endl;
 
     return ValorDadoJugador1;
-}
-
-int DadoInicialJugador2(string NombreJugador2) /////ESTA FUNCION GENERA UN NUMERO ALEATORIO DE HASTA 6 NUMEROS -OJO NO ESTAS TENIENDO EN CUENTA SI SALE CERO PORQUE EN REALIDAD ESTO ES UN DADO GIRANDO-
-{
-    int  ValorDadoJugador2 = rand() % 6 + 1;
-
-    cout<<"El Valor del Dado Inicial de "<<NombreJugador2<<" es: "<<ValorDadoJugador2<<endl<<endl;
-
-    return ValorDadoJugador2;
 }
 
 void DadosObjetivoJugador1(int &NumeroObjetivoJugador1, string NombreJugador1) //VARIABLE PASADA POR REFERENCIA DEL ARCHIVO DADOS.CPP PARA MODIFICAR SU VALOR Y USARLO
@@ -55,24 +44,7 @@ void DadosObjetivoJugador1(int &NumeroObjetivoJugador1, string NombreJugador1) /
     cout<<endl;
 
     cout<<"El Numero Objetivo a llegar es: "<<NumeroObjetivoJugador1<<endl<<endl;
-    Pali();
-}
-
-void DadosObjetivoJugador2(int &NumeroObjetivoJugador2, string NombreJugador2)   //VARIABLE PASADA POR REFERENCIA DEL ARCHIVO DADOS.CPP PARA MODIFICAR SU VALOR Y USARLO
-{
-    int DadoObjetivoJugador2_A = rand() % 12 + 1;
-    int DadoObjetivoJugador2_B = rand() % 12 + 1;
-
-
-    cout<<"Valor primer dado Objetivo de "<<NombreJugador2<<": "<<DadoObjetivoJugador2_A<<endl;
-    cout<<"Valor segundo dado Objetivo de "<<NombreJugador2<<": "<<DadoObjetivoJugador2_B<<endl<<endl;
-
-    MostrarDadosObjetivoJugador2(DadoObjetivoJugador2_A,DadoObjetivoJugador2_B);
-
-    NumeroObjetivoJugador2 = DadoObjetivoJugador2_A +  DadoObjetivoJugador2_B;
-    cout<<endl;
-    cout<<"El Numero Objetivo a llegar es: "<<NumeroObjetivoJugador2<<endl<<endl;
-    Pali();
+    PausayLimpia();
 }
 
 void DadosStockJugador1 (int DadosStockJugador1Numero[], int DadosStockJugador1Cantidad)
@@ -87,24 +59,10 @@ void DadosStockJugador1 (int DadosStockJugador1Numero[], int DadosStockJugador1C
 
 }
 
-void DadosStockJugador2 (int DadosStockJugador2Numero[], int DadosStockJugador2Cantidad)
-{
-
-    for (int i = 0; i < DadosStockJugador2Cantidad; i++) //CON ESTE FOR VAMOS RECORRIENDO TODO EL VECTOR Y DANDOLE EL VALOR A CADA DADO
-    {
-        DadosStockJugador2Numero[i] = rand() % 6 + 1; //CON ESTE RAND VAMOS DANDO EL VALOR A CADA DADO
-        cout << "El numero del dado "<< i+1 << " es: " << DadosStockJugador2Numero[i]<<endl;
-        DibujarDado(DadosStockJugador2Numero[i]);
-    }
-
-    cout<<endl<<endl;//ESTO SE PUSO ACA PORQUE AL MOSTRAR LOS DADOS DE ARRIBA DEJA UN ESPACIO ESTETICO PARA EL CARTEL DE LOS DADOS A ELEGIR
-}
-
 void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJugador1Cantidad,
                                 int &DadosStockJugador2Cantidad, int &NumeroObjetivoJugador1,
                                 int &SumaDadosJugador1,int &DadosElegidosJugador1,
                                 string &NombreJugador1, int PuntajeJugador1)
-
 {
     int CantidadDadosElegidos = 0;
     int Numero;
@@ -114,7 +72,6 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
     bool DadosUsados[12]; /*ESTA BANDERA/VECTOR VA A VALIDAR SI UN DADO YA FUE USADO PARA EVITAR ERRORES Y TIENE 12 INDICES PORQUE ES LA
                           CANTIDAD MAXIMA DE DADOS QUE PUEDEN EXISTIR EN LA PARTIDA PORQUE? SON 6 DADOS STOCK PARA
                           EL JUGADOR 1 Y EL JUGADOR 2*/
-
 
     for (int i = 0; i < DadosStockJugador1Cantidad; i++)
     {
@@ -129,8 +86,10 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
             ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
 
             cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
+
+            PausayLimpia();
+
             return;
-            //break;
         }
 
         if (Numero < 1 || Numero > DadosStockJugador1Cantidad)
@@ -140,16 +99,11 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
         }
         else
         {
-
-
-
             SumaDadosJugador1 += DadosStockJugador1Numero[Numero-1];
             CantidadDadosElegidos++;
             DadosElegidosJugador1 = CantidadDadosElegidos;
 
-
             cout<<"Va Sumando "<<SumaDadosJugador1<<endl<<endl;
-
 
             if (SumaDadosJugador1 == NumeroObjetivoJugador1)
             {
@@ -161,7 +115,7 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
 
                 ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
 
-                Pali();
+                //PausayLimpia();
 
                 if (Tirada == true)   ///ADEMAS ESTO VA A SER EL RESUMEN DE LA RONDA!
                 {
@@ -171,15 +125,16 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
                     cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador1Cantidad<<endl<<endl;
 
                     MostrarPuntajePuntajeJugador1(SumaDadosJugador1, DadosElegidosJugador1, NombreJugador1);
+
                     cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
-                    Pali();
+
+                    PausayLimpia();
+
                     return; ///ESTO SE AGREGO PARA SALIR DE LA FUNCION, SINO VUELVE A DAR LA VUELTA
                 }
             }
 
-
             if (SumaDadosJugador1 > NumeroObjetivoJugador1 || SumaDadosJugador1 == 0)
-
             {
                 Tirada = false;
 
@@ -199,15 +154,86 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
                     MostrarPuntajePuntajeJugador1(SumaDadosJugador1, DadosElegidosJugador1, NombreJugador1);
                     cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
 
-                    Pali();
+                    Limpia();
+                    //PausayLimpia();
+
                     return; ///ESTO SE AGREGO PARA SALIR DE LA FUNCION, SINO VUELVE A DAR LA VUELTA
                 }
             }
-
         }
     }
 }
 
+void MostrarDadosObjetivoJugador1 (int DadoObjetivoJugador1_A, int DadoObjetivoJugador1_B)
+{
+    /// Dado A
+    cout << "           ______     " << endl;
+    cout << "          /      \\    " << endl;
+    cout << "         /        \\   " << endl;
+    cout << "        |   "   << DadoObjetivoJugador1_A << "     |   " << endl; // Más espacios aquí para asegurarte el centrado
+    cout << "         \\        /   " << endl;
+    cout << "          \\______/    " << endl;
+
+    cout << endl; // Un espacio entre dados para que no se vean pegados
+
+    /// Dado B
+    cout << "           ______     " << endl;
+    cout << "          /      \\    " << endl;
+    cout << "         /        \\   " << endl;
+    cout << "        |   "   << DadoObjetivoJugador1_B << "     |   " << endl; // Y aquí también
+    cout << "         \\        /   " << endl;
+    cout << "          \\______/    " << endl;
+
+
+}
+
+///--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+///*********************
+///FUNCIONES JUGADOR 2.-
+///*********************
+
+void MostrarNombreJugador2 (string NombreJugador2)
+{
+    cout<<NombreJugador2<<endl;
+}
+
+int DadoInicialJugador2(string NombreJugador2) /////ESTA FUNCION GENERA UN NUMERO ALEATORIO DE HASTA 6 NUMEROS -OJO NO ESTAS TENIENDO EN CUENTA SI SALE CERO PORQUE EN REALIDAD ESTO ES UN DADO GIRANDO-
+{
+    int  ValorDadoJugador2 = rand() % 6 + 1;
+
+    cout<<"El Valor del Dado Inicial de "<<NombreJugador2<<" es: "<<ValorDadoJugador2<<endl<<endl;
+
+    return ValorDadoJugador2;
+}
+
+void DadosObjetivoJugador2(int &NumeroObjetivoJugador2, string NombreJugador2)   //VARIABLE PASADA POR REFERENCIA DEL ARCHIVO DADOS.CPP PARA MODIFICAR SU VALOR Y USARLO
+{
+    int DadoObjetivoJugador2_A = rand() % 12 + 1;
+    int DadoObjetivoJugador2_B = rand() % 12 + 1;
+
+    cout<<"Valor primer dado Objetivo de "<<NombreJugador2<<": "<<DadoObjetivoJugador2_A<<endl;
+    cout<<"Valor segundo dado Objetivo de "<<NombreJugador2<<": "<<DadoObjetivoJugador2_B<<endl<<endl;
+
+    MostrarDadosObjetivoJugador2(DadoObjetivoJugador2_A,DadoObjetivoJugador2_B);
+
+    NumeroObjetivoJugador2 = DadoObjetivoJugador2_A +  DadoObjetivoJugador2_B;
+    cout<<endl;
+    cout<<"El Numero Objetivo a llegar es: "<<NumeroObjetivoJugador2<<endl<<endl;
+    PausayLimpia();
+}
+
+void DadosStockJugador2 (int DadosStockJugador2Numero[], int DadosStockJugador2Cantidad)
+{
+    for (int i = 0; i < DadosStockJugador2Cantidad; i++) //CON ESTE FOR VAMOS RECORRIENDO TODO EL VECTOR Y DANDOLE EL VALOR A CADA DADO
+    {
+        DadosStockJugador2Numero[i] = rand() % 6 + 1; //CON ESTE RAND VAMOS DANDO EL VALOR A CADA DADO
+        cout << "El numero del dado "<< i+1 << " es: " << DadosStockJugador2Numero[i]<<endl;
+        DibujarDado(DadosStockJugador2Numero[i]);
+    }
+
+    cout<<endl<<endl;//ESTO SE PUSO ACA PORQUE AL MOSTRAR LOS DADOS DE ARRIBA DEJA UN ESPACIO ESTETICO PARA EL CARTEL DE LOS DADOS A ELEGIR
+}
 
 void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJugador2Cantidad,
                                 int &DadosStockJugador1Cantidad,int &NumeroObjetivoJugador2,
@@ -223,11 +249,10 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
                           CANTIDAD MAXIMA DE DADOS QUE PUEDEN EXISTIR EN LA PARTIDA PORQUE? SON 6 DADOS STOCK PARA
                           EL JUGADOR 1 Y EL JUGADOR 2*/
 
-
     for (int i = 0; i < DadosStockJugador2Cantidad; i++)
     {
         cout<<"Ingrese el Numero de dado que va a elegir: "<<endl;
-       cin>>Numero;
+        cin>>Numero;
 
         if (Numero == 0)
         {
@@ -236,8 +261,10 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
             ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
 
             cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
+
+            PausayLimpia();
+
             return; ///ESTO SE AGREGO PARA SALIR DE LA FUNCION, SINO VUELVE A DAR LA VUELTA
-            //break;
         }
 
         if (Numero < 1 || Numero > DadosStockJugador2Cantidad)
@@ -246,19 +273,12 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
             i--; //PARA REPETIR LA RONDA
         }
         else
-
         {
-
-
-
             SumaDadosJugador2 += DadosStockJugador2Numero[Numero-1];
             CantidadDadosElegidos++;
             DadosElegidosJugador2 = CantidadDadosElegidos;
 
             cout<<"Vas Sumando "<<SumaDadosJugador2<<endl<<endl;
-
-
-
 
             if (SumaDadosJugador2 == NumeroObjetivoJugador2)
             {
@@ -268,7 +288,7 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
 
                 cout<<"Los dados que seleccionaste ("<<CantidadDadosElegidos<<" en total) se los vamos a pasar al otro Jugador"<<endl<<endl;
 
-                Pali();
+               // PausayLimpia();
 
                 ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
 
@@ -280,16 +300,16 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
                     cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
 
                     MostrarPuntajePuntajeJugador2(SumaDadosJugador2, DadosElegidosJugador2, NombreJugador2);
+
                     cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
-                    Pali();
+
+                    PausayLimpia();
+
                     return; ///ESTO SE AGREGO PARA SALIR DE LA FUNCION, SINO VUELVE A DAR LA VUELTA
                 }
             }
 
-
-
             if (SumaDadosJugador2 > NumeroObjetivoJugador2 || SumaDadosJugador2 == 0)
-
             {
                 Tirada = false;
 
@@ -306,10 +326,13 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
                     ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
 
                     cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
+
                     MostrarPuntajePuntajeJugador2(SumaDadosJugador2, DadosElegidosJugador2, NombreJugador2);
+
                     cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
 
-                    Pali();
+                    PausayLimpia();
+
                     return; ///ESTO SE AGREGO PARA SALIR DE LA FUNCION, SINO VUELVE A DAR LA VUELTA
                 }
             }
@@ -317,9 +340,36 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
     }
 }
 
+void MostrarDadosObjetivoJugador2 (int DadoObjetivoJugador2_A, int DadoObjetivoJugador2_B)
+{
+    /// Dado A
+    cout << "           ______     " << endl;
+    cout << "          /      \\    " << endl;
+    cout << "         /        \\   " << endl;
+    cout << "        |   "   << DadoObjetivoJugador2_A << "     |   " << endl; // Más espacios aquí para asegurarte el centrado
+    cout << "         \\        /   " << endl;
+    cout << "          \\______/    " << endl;
+
+    cout << endl; // Un espacio entre dados para que no se vean pegados
+
+    /// Dado B
+    cout << "           ______     " << endl;
+    cout << "          /      \\    " << endl;
+    cout << "         /        \\   " << endl;
+    cout << "        |   "   << DadoObjetivoJugador2_B << "     |   " << endl; // Y aquí también
+    cout << "         \\        /   " << endl;
+    cout << "          \\______/    " << endl;
+}
+
+///--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+///******************
+///FUNCIONES VARIAS.-
+///******************
+
+
 void DibujarDado(int valor)
 {
-
     switch(valor)
     {
     case 1:
@@ -365,51 +415,4 @@ void DibujarDado(int valor)
         cout << "+-------+" << endl;
         break;
     }
-}
-
-void MostrarDadosObjetivoJugador1 (int DadoObjetivoJugador1_A, int DadoObjetivoJugador1_B)
-{
-    // Dado A
-    cout << "           ______     " << endl;
-    cout << "          /      \\    " << endl;
-    cout << "         /        \\   " << endl;
-    cout << "        |   "   << DadoObjetivoJugador1_A << "     |   " << endl; // Más espacios aquí para asegurarte el centrado
-    cout << "         \\        /   " << endl;
-    cout << "          \\______/    " << endl;
-
-    cout << endl; // Un espacio entre dados para que no se vean pegados
-
-    // Dado B
-    cout << "           ______     " << endl;
-    cout << "          /      \\    " << endl;
-    cout << "         /        \\   " << endl;
-    cout << "        |   "   << DadoObjetivoJugador1_B << "     |   " << endl; // Y aquí también
-    cout << "         \\        /   " << endl;
-    cout << "          \\______/    " << endl;
-
-    //system("pause");
-}
-
-
-void MostrarDadosObjetivoJugador2 (int DadoObjetivoJugador2_A, int DadoObjetivoJugador2_B)
-{
-    // Dado A
-    cout << "           ______     " << endl;
-    cout << "          /      \\    " << endl;
-    cout << "         /        \\   " << endl;
-    cout << "        |   "   << DadoObjetivoJugador2_A << "     |   " << endl; // Más espacios aquí para asegurarte el centrado
-    cout << "         \\        /   " << endl;
-    cout << "          \\______/    " << endl;
-
-    cout << endl; // Un espacio entre dados para que no se vean pegados
-
-    // Dado B
-    cout << "           ______     " << endl;
-    cout << "          /      \\    " << endl;
-    cout << "         /        \\   " << endl;
-    cout << "        |   "   << DadoObjetivoJugador2_B << "     |   " << endl; // Y aquí también
-    cout << "         \\        /   " << endl;
-    cout << "          \\______/    " << endl;
-
-    //system("pause");
 }
