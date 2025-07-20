@@ -35,7 +35,7 @@
 	"JUGAR.h"
 	"DADOS.h"
 
-1752965064 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\dados.cpp
+1753031537 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\dados.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -49,9 +49,9 @@
 
 1752948532 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\jugar.h
 
-1752960640 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\mostrarmenu.h
+1753029738 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\mostrarmenu.h
 
-1752964230 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\jugar.cpp
+1753032461 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\jugar.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -61,7 +61,7 @@
 	"MOSTRARMENU.h"
 	"rlutil.h"
 
-1752708923 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\main.cpp
+1753029002 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\main.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -71,7 +71,7 @@
 	"DADOS.h"
 	"rlutil.h"
 
-1752964871 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\mostrarmenu.cpp
+1753031952 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\mostrarmenu.cpp
 	<iostream>
 	<clocale>
 	"MOSTRARMENU.h"

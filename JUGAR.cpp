@@ -17,6 +17,7 @@ string PedirNombreJugador1() //ESTA FUNCION PIDE NOMBRES PARA INGRESAR
 {
     string NombreJugador1;
 
+   rlutil::setColor(rlutil::BLACK);
     rlutil::locate(80,10);// posiciona el cursor en algun punto
     cout << "Ingrese el nombre del Jugador 1: ";
     cin >> NombreJugador1;
@@ -94,9 +95,10 @@ void creditos()    //ESTA FUNCION MUESTRA LOS CREDITOS DE TODOS LOS INTEGRANTES 
 
 void MostrarNombres(string NombreJugador1, string NombreJugador2)
 {
-    cout<<"                                              Jugador 1: "<<NombreJugador1<<endl;
-
-    cout<<"                                              Jugador 2: "<<NombreJugador2<<endl<<endl;
+    rlutil::locate(95,3);
+    cout<<"Jugador 1: "<<NombreJugador1;
+    rlutil::locate(95,4);
+    cout<<"Jugador 2: "<<NombreJugador2<<endl;
 }
 
 void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2, int DadosStockJugador1Numero[],int DadosStockJugador2Numero[],int &DadosStockJugador1Cantidad,
@@ -108,7 +110,8 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
     {
         MostrarNombres(NombreJugador1, NombreJugador2);
 
-        cout<<"                                              El Jugador 1: "<<NombreJugador1<<" Tira sus Dados Objetivo: "<<endl<<endl;
+        rlutil::locate(85,6);
+        cout<<"El Jugador 1: "<<NombreJugador1<<" Tira sus Dados Objetivo: "<<endl<<endl;
         DadosObjetivoJugador1(NumeroObjetivoJugador1, NombreJugador1);
 
         Limpia();
@@ -117,21 +120,24 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
 
         MostrarNombres(NombreJugador1, NombreJugador2);
 
-        cout<<"                                              El Jugador 2: "<<NombreJugador2<<" Tira sus Dados Objetivo: "<<endl<<endl;
+        rlutil::locate(85,6);
+        cout<<"El Jugador 2: "<<NombreJugador2<<" Tira sus Dados Objetivo: "<<endl<<endl;
         DadosObjetivoJugador2(NumeroObjetivoJugador2, NombreJugador2);
     }
     else
     {
         MostrarNombres(NombreJugador1, NombreJugador2);
 
-        cout<<"                                              El Jugador 2: "<<NombreJugador2<<" Tira sus Dados Objetivo: "<<endl<<endl;
+        rlutil::locate(85,6);
+        cout<<"El Jugador 2: "<<NombreJugador2<<" Tira sus Dados Objetivo: "<<endl<<endl;
         DadosObjetivoJugador2(NumeroObjetivoJugador2,NombreJugador2);
 
         MostrarRonda(Ronda);
 
         MostrarNombres(NombreJugador1, NombreJugador2);
 
-        cout<<"                                              El Jugador 1: "<<NombreJugador1<<" Tira sus Dados Objetivo: "<<endl<<endl;
+        rlutil::locate(85,6);
+        cout<<"El Jugador 1: "<<NombreJugador1<<" Tira sus Dados Objetivo: "<<endl<<endl;
 
         DadosObjetivoJugador1(NumeroObjetivoJugador1,NombreJugador1);
     }
@@ -199,6 +205,7 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
 
 void PausayLimpia() //FUNCION PARA PAUSAR Y LIMPIAR LA PANTALLA y no estar escribiendo system y lo demas!!!
 {
+    rlutil::locate(90,25);
     system ("pause");
     system("cls");
 }
@@ -242,7 +249,9 @@ void Estadisticas (string NombreJugador1, string NombreJugador2, int PuntajeJuga
 
     if (PuntajeJugador1 == 0 & PuntajeJugador2 == 0)
     {
+        ColorAdvertencia();
         cout<<"TODAVIA NO SE JUGO NINGUNA RONDA"<<endl<<endl;
+        VuelveColor();
     }
 
     PausayLimpia();
@@ -250,7 +259,8 @@ void Estadisticas (string NombreJugador1, string NombreJugador2, int PuntajeJuga
 
 void MostrarRonda(int &Ronda)
 {
-    cout<<"                                              RONDA NUMERO: "<<Ronda<<endl<<endl;
+    rlutil::locate(95,1);
+    cout<<"RONDA NUMERO: "<<Ronda<<endl<<endl;
 }
 
 void GanarAutomaticamente(int DadosStockJugador1Cantidad, int DadosStockJugador2Cantidad, int PuntajeJugador1,int PuntajeJugador2, string NombreJugador1, string NombreJugador2)

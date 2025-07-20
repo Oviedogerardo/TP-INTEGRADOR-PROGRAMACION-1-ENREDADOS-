@@ -5,5 +5,12 @@
 void Menu ();
 void MostrarTitulo();
 void MostrarMenu(int &opcion);
+void CentradoCarteles();
+void CentradoCarteles();
+void ColorTiradaExitosa();
+void ColorTiradaFallida();
+void ColorAdvertencia();
+void VuelveColor();
+void ColorTiradaNoExitosa();
 
 #endif // MOSTRARMENU_H_INCLUDED

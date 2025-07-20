@@ -91,20 +91,16 @@ void Menu()
 
     do  //ES UN "DO/WHILE" PORQUE PRIMERO QUEREMOS QUE MUESTRE EL MENU Y DESPUES EL RESTO
     {
-        // rlutil::locate(0,0);
-
         MostrarTitulo();
 
         MostrarMenu(opcion);
-
-        //cin >> opcion;
 
         switch (opcion)
         {
 
         case 0:
 
-            rlutil::locate(105,2);
+            CentradoCarteles();
             cout << "Gracias por jugar" << endl << endl << endl;
 
             break;
@@ -122,8 +118,8 @@ void Menu()
 
             Limpia();
 
-            rlutil::locate(105,2);
-            cout<<"              Ambos jugadores lanzaran sus dados para ver quién arranca. ¡Mucha suerte y que los dados estén de su lado!                            "<<endl;
+            CentradoCarteles();
+            cout<<"Ambos jugadores lanzaran sus dados para ver quién arranca. ¡Mucha suerte y que los dados estén de su lado!";
 
             PausayLimpia();
 
@@ -137,7 +133,7 @@ void Menu()
 
             while (ValorDadoInicialJugador1 == ValorDadoInicialJugador2) //UTILIZAMOS ESTE WHILE PARA TIRAR NUEVAMENTE EN CASO DE QUE LOS NUMEROS DE LOS DADOS INICIALES SEAN IGUALES!!!
             {
-                rlutil::locate(105,2);
+                CentradoCarteles();
                 cout<<"Como ambos Jugadores empataron se tira nuevamente: "<<endl<<endl;
                 ValorDadoInicialJugador1 = DadoInicialJugador1(NombreJugador1);
                 DibujarDado(ValorDadoInicialJugador1);
@@ -150,7 +146,7 @@ void Menu()
                 Empieza = 1;
                 DadoMayor = ValorDadoInicialJugador1;
 
-                rlutil::locate(95,2);
+                CentradoCarteles();
                 cout<<NombreJugador1<<" comienza esta emocionante partida. ¡Mucha suerte!"<<endl<<endl;
             }
 
@@ -159,7 +155,7 @@ void Menu()
                 Empieza = 2;
                 DadoMayor = ValorDadoInicialJugador2;
 
-                rlutil::locate(95,2);
+                CentradoCarteles();
                 cout<<NombreJugador2<<" comienza esta emocionante partida. ¡Mucha suerte!"<<endl;
             }
 
@@ -189,7 +185,7 @@ void Menu()
                 Ronda++;
             }
 
-            rlutil::locate(90,2);
+            CentradoCarteles();
             cout<<"---------------------------------RESUMEN FINAL DE LA PARTIDA---------------------------------"<<endl;
 
             rlutil::locate(30,10);
@@ -239,10 +235,10 @@ void Menu()
         default:
 
             rlutil::setColor(rlutil::RED);
-            rlutil::locate(105,10);
+            CentradoCarteles();
 
             cout << "ESTA OPCION ES INCORRECTA " << endl;
-            //rlutil::anykey ();
+
             rlutil::setColor(rlutil::BLACK);
 
             PausayLimpia();
@@ -250,4 +246,34 @@ void Menu()
         }
     }
     while (opcion !=0);
+}
+
+void CentradoCarteles()
+{
+    rlutil::locate(55,10);
+}
+
+void ColorTiradaExitosa()
+{
+   rlutil::setColor(rlutil::GREEN);
+}
+
+void ColorTiradaFallida()
+{
+    rlutil::setColor(rlutil::RED);
+}
+
+void ColorAdvertencia()
+{
+   rlutil::setColor(rlutil::MAGENTA);
+}
+
+void VuelveColor()
+{
+    rlutil::setColor(rlutil::BLACK);
+}
+
+void ColorTiradaNoExitosa()
+{
+    rlutil::setColor(rlutil::BLUE);
 }

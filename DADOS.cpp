@@ -81,11 +81,14 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
 
         if (Numero == 0)
         {
+            ColorTiradaNoExitosa();
             cout<<"Tirada no Exitosa (no suma puntos)"<<endl;
 
             ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
 
             cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
+
+            VuelveColor();
 
             PausayLimpia();
 
@@ -94,8 +97,11 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
 
         if (Numero < 1 || Numero > DadosStockJugador1Cantidad)
         {
+            ColorAdvertencia();
             cout<<"El numero ingresado es Mayor  o Incorrecto a tus dados de Stock, Vuelve a tirar"<<endl;
             i--; //PARA REPETIR LA RONDA
+
+            VuelveColor();
         }
         else
         {
@@ -107,7 +113,9 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
 
             if (SumaDadosJugador1 == NumeroObjetivoJugador1)
             {
+
                 Tirada = true;
+                ColorTiradaExitosa();
 
                 cout<<"Tirada Exitosa"<<endl<<endl;
 
@@ -115,7 +123,6 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
 
                 ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
 
-                //PausayLimpia();
 
                 if (Tirada == true)   ///ADEMAS ESTO VA A SER EL RESUMEN DE LA RONDA!
                 {
@@ -128,6 +135,7 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
 
                     cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
 
+                    VuelveColor();
                     PausayLimpia();
 
                     return; ///ESTO SE AGREGO PARA SALIR DE LA FUNCION, SINO VUELVE A DAR LA VUELTA
@@ -138,10 +146,10 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
             {
                 Tirada = false;
 
-                rlutil::setColor(rlutil::RED);
+                ColorTiradaFallida();
                 cout<<"TIRADA FALLIDA!!!!"<<endl<<endl<<endl;
                 cout<<"Como penalizacion al Jugador 2 le sacamos un dado y te lo damos a vos!!!"<<endl<<endl;
-                rlutil::setColor(rlutil::WHITE);
+
 
                 if (DadosStockJugador1Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 2 TENGA DADOS    ///ADEMAS ESTO VA A SER EL RESUMEN DE LA RONDA!
                 {
@@ -154,8 +162,8 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
                     MostrarPuntajePuntajeJugador1(SumaDadosJugador1, DadosElegidosJugador1, NombreJugador1);
                     cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
 
+                    VuelveColor();
                     Limpia();
-                    //PausayLimpia();
 
                     return; ///ESTO SE AGREGO PARA SALIR DE LA FUNCION, SINO VUELVE A DAR LA VUELTA
                 }
@@ -249,6 +257,11 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
                           CANTIDAD MAXIMA DE DADOS QUE PUEDEN EXISTIR EN LA PARTIDA PORQUE? SON 6 DADOS STOCK PARA
                           EL JUGADOR 1 Y EL JUGADOR 2*/
 
+    for (int i = 0; i < 12; i++)
+    {
+        DadosUsados[i] = false;
+    }
+
     for (int i = 0; i < DadosStockJugador2Cantidad; i++)
     {
         cout<<"Ingrese el Numero de dado que va a elegir: "<<endl;
@@ -256,12 +269,15 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
 
         if (Numero == 0)
         {
+            ColorTiradaNoExitosa();
+
             cout<<"Tirada no Exitosa (no suma puntos)"<<endl;
 
             ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
 
             cout<<"LOS DADOS QUE TENES ACTUALMENTE: "<<DadosStockJugador2Cantidad<<endl<<endl;
 
+            VuelveColor();
             PausayLimpia();
 
             return; ///ESTO SE AGREGO PARA SALIR DE LA FUNCION, SINO VUELVE A DAR LA VUELTA
@@ -269,8 +285,10 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
 
         if (Numero < 1 || Numero > DadosStockJugador2Cantidad)
         {
+            ColorAdvertencia();
             cout<<"El numero ingresado es Mayor o Incorrecto a tus dados de Stock, Vuelve a tirar"<<endl;
             i--; //PARA REPETIR LA RONDA
+            VuelveColor();
         }
         else
         {
@@ -284,11 +302,12 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
             {
                 Tirada = true;
 
+                ColorTiradaExitosa();
                 cout<<"Tirada Exitosa"<<endl<<endl;
 
                 cout<<"Los dados que seleccionaste ("<<CantidadDadosElegidos<<" en total) se los vamos a pasar al otro Jugador"<<endl<<endl;
 
-               // PausayLimpia();
+
 
                 ///ACA PONER BIEN GRANDE RESUMEN, DADOS ELEGIDOS, PUNTOS ACUMULADOS Y COMO LLEGO A ESO OSE A 12X 3 (CANTIDAD DADOS), TRANSFIERE TANTOS DADOS SI ES EXITOSA AL OTRO JUGADOR
 
@@ -303,6 +322,7 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
 
                     cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
 
+                    VuelveColor();
                     PausayLimpia();
 
                     return; ///ESTO SE AGREGO PARA SALIR DE LA FUNCION, SINO VUELVE A DAR LA VUELTA
@@ -313,10 +333,10 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
             {
                 Tirada = false;
 
-                rlutil::setColor(rlutil::RED);
+                ColorTiradaFallida();
                 cout<<"TIRADA FALLIDA!!!!"<<endl<<endl<<endl;
                 cout<<"Como penalizacion al Jugador 2 le sacamos un dado y te lo damos a vos!!!"<<endl<<endl;
-                rlutil::setColor(rlutil::WHITE);
+
 
                 if (DadosStockJugador2Cantidad > 1) //VALIDAMOS QUE EL JUGADOR 1 TENGA DADOS    ///ADEMAS ESTO VA A SER EL RESUMEN DE LA RONDA!
                 {
@@ -331,6 +351,7 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
 
                     cout<<"Tira el proximo Jugador!!!"<<endl<<endl;
 
+                    VuelveColor();
                     PausayLimpia();
 
                     return; ///ESTO SE AGREGO PARA SALIR DE LA FUNCION, SINO VUELVE A DAR LA VUELTA

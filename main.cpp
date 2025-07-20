@@ -12,13 +12,16 @@ using namespace std;
 
 int main()
 {
-   /// rlutil::setBackgroundColor (rlutil::GREEN); aca PONER OTRO COLOR POR DIOS!!!!
-   /// rlutil::setColor(rlutil::BLACK);
+
+    rlutil::setBackgroundColor (rlutil::WHITE);
+    VuelveColor();
 
     srand(time(nullptr));
     setlocale(LC_ALL, "spanish");
 
+
     Menu(); //POSIBLE FUNCION QUE VA A CAMBIAR DE NOMBRE POR EL CONTENIDO QUE TIENE! ----21/06/2025 SE CAMBIO EL NOMBRE A Menu();
 
     return 0;
+
 }
