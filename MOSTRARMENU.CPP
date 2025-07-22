@@ -118,7 +118,9 @@ void Menu()
 
             Limpia();
 
-            CentradoCarteles();
+            MostrarTitulo();
+
+            rlutil::locate(61,11);
             cout<<"Ambos jugadores lanzaran sus dados para ver quién arranca. ¡Mucha suerte y que los dados estén de su lado!";
 
             PausayLimpia();
@@ -131,20 +133,28 @@ void Menu()
 
             PausayLimpia();
 
+            //ValorDadoInicialJugador1 = ValorDadoInicialJugador2; ///DEBUG: PARA REVISAR SI SALTA EL CARTEL ANTES
+
             while (ValorDadoInicialJugador1 == ValorDadoInicialJugador2) //UTILIZAMOS ESTE WHILE PARA TIRAR NUEVAMENTE EN CASO DE QUE LOS NUMEROS DE LOS DADOS INICIALES SEAN IGUALES!!!
             {
+                MostrarTitulo();
+
                 CentradoCarteles();
                 cout<<"Como ambos Jugadores empataron se tira nuevamente: "<<endl<<endl;
                 ValorDadoInicialJugador1 = DadoInicialJugador1(NombreJugador1);
                 DibujarDado(ValorDadoInicialJugador1);
                 ValorDadoInicialJugador2 = DadoInicialJugador2(NombreJugador2);
                 DibujarDado(ValorDadoInicialJugador2);
+
+                PausayLimpia();
             }
 
             if (ValorDadoInicialJugador1 > ValorDadoInicialJugador2)
             {
                 Empieza = 1;
                 DadoMayor = ValorDadoInicialJugador1;
+
+                MostrarTitulo();
 
                 CentradoCarteles();
                 cout<<NombreJugador1<<" comienza esta emocionante partida. ¡Mucha suerte!"<<endl<<endl;
@@ -154,6 +164,8 @@ void Menu()
             {
                 Empieza = 2;
                 DadoMayor = ValorDadoInicialJugador2;
+
+                MostrarTitulo();
 
                 CentradoCarteles();
                 cout<<NombreJugador2<<" comienza esta emocionante partida. ¡Mucha suerte!"<<endl;
@@ -180,7 +192,7 @@ void Menu()
 
                 GanarAutomaticamente(DadosStockJugador1Cantidad, DadosStockJugador2Cantidad,PuntajeJugador1, PuntajeJugador2, NombreJugador1, NombreJugador2);
 
-                PausayLimpia();
+               // PausayLimpia();
 
                 Ronda++;
             }
@@ -188,28 +200,28 @@ void Menu()
             CentradoCarteles();
             cout<<"---------------------------------RESUMEN FINAL DE LA PARTIDA---------------------------------"<<endl;
 
-            rlutil::locate(30,10);
+            rlutil::locate(90,14);
             cout<<NombreJugador1<<" Tuvo ("<<PuntajeJugador1<<") puntos"<<endl;
-            rlutil::locate(30,10);
+            rlutil::locate(90,16);
             cout<<NombreJugador2<<" Tuvo ("<<PuntajeJugador2<<") puntos"<<endl<<endl;
 
             if (PuntajeJugador1 > PuntajeJugador2)
             {
-                rlutil::locate(30,10);
+                rlutil::locate(90,14);
                 cout<<"Felicidades "<<NombreJugador1<<"! Ganaste!"<<endl<<endl;
 
                 PausayLimpia();
             }
             else if (PuntajeJugador2 > PuntajeJugador1)
             {
-                rlutil::locate(30,10);
+                rlutil::locate(90,14);
                 cout<<"Felicidades "<<NombreJugador2<<"! Ganaste!"<<endl<<endl;
                 PausayLimpia();
             }
             else
 
             {
-                rlutil::locate(30,10);
+                rlutil::locate(90,12);
                 cout<<"AMBOS JUGADORES EMPATARON"<<endl<<endl;
                 PausayLimpia();
             }
@@ -250,7 +262,7 @@ void Menu()
 
 void CentradoCarteles()
 {
-    rlutil::locate(55,10);
+    rlutil::locate(60,12);
 }
 
 void ColorTiradaExitosa()

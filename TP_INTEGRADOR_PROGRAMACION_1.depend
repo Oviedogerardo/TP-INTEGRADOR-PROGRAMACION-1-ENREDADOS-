@@ -35,7 +35,7 @@
 	"JUGAR.h"
 	"DADOS.h"
 
-1753031537 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\dados.cpp
+1753147127 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\dados.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -45,13 +45,13 @@
 	"MOSTRARMENU.h"
 	"rlutil.h"
 
-1752945748 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\dados.h
+1753034044 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\dados.h
 
-1752948532 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\jugar.h
+1753034044 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\jugar.h
 
-1753029738 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\mostrarmenu.h
+1753034044 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\mostrarmenu.h
 
-1753032461 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\jugar.cpp
+1753152937 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\jugar.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -61,7 +61,7 @@
 	"MOSTRARMENU.h"
 	"rlutil.h"
 
-1753029002 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\main.cpp
+1753147991 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\main.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -71,7 +71,7 @@
 	"DADOS.h"
 	"rlutil.h"
 
-1753031952 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\mostrarmenu.cpp
+1753153429 source:d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\mostrarmenu.cpp
 	<iostream>
 	<clocale>
 	"MOSTRARMENU.h"
@@ -250,7 +250,7 @@
 	"DADOS.h"
 	"rlutil.h"
 
-1748562564 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\rlutil.h
+1753034044 d:\descargas\utn\cursada_2025\programacion_1\tp_integrador\tp_integrador_programacion_n_1_-github-\tp-integrador-programacion-1-enredados-\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -263,4 +263,178 @@
 	<sys/ioctl.h>
 	<sys/types.h>
 	<sys/time.h>
+
+1753037019 source:c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1\tp-integrador-programacion-1-enredados--main\dados.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<clocale>
+	"DADOS.h"
+	"JUGAR.h"
+	"MOSTRARMENU.h"
+	"rlutil.h"
+
+1753034044 c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1\tp-integrador-programacion-1-enredados--main\dados.h
+
+1753034044 c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1\tp-integrador-programacion-1-enredados--main\jugar.h
+
+1753034044 c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1\tp-integrador-programacion-1-enredados--main\mostrarmenu.h
+
+1753034044 c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1\tp-integrador-programacion-1-enredados--main\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1753037243 source:c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1\tp-integrador-programacion-1-enredados--main\jugar.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<clocale>
+	"JUGAR.h"
+	"DADOS.h"
+	"MOSTRARMENU.h"
+	"rlutil.h"
+
+1753034044 source:c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1\tp-integrador-programacion-1-enredados--main\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<clocale>
+	"MOSTRARMENU.h"
+	"JUGAR.h"
+	"DADOS.h"
+	"rlutil.h"
+
+1753034044 source:c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1\tp-integrador-programacion-1-enredados--main\mostrarmenu.cpp
+	<iostream>
+	<clocale>
+	"MOSTRARMENU.h"
+	"JUGAR.h"
+	"DADOS.h"
+	"rlutil.h"
+
+1753037975 source:c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1-enredados--main1\dados.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<clocale>
+	"DADOS.h"
+	"JUGAR.h"
+	"MOSTRARMENU.h"
+	"rlutil.h"
+
+1753034044 c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1-enredados--main1\dados.h
+
+1753034044 c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1-enredados--main1\jugar.h
+
+1753034044 c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1-enredados--main1\mostrarmenu.h
+
+1753034044 c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1-enredados--main1\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1753037243 source:c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1-enredados--main1\jugar.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<clocale>
+	"JUGAR.h"
+	"DADOS.h"
+	"MOSTRARMENU.h"
+	"rlutil.h"
+
+1753034044 source:c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1-enredados--main1\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<clocale>
+	"MOSTRARMENU.h"
+	"JUGAR.h"
+	"DADOS.h"
+	"rlutil.h"
+
+1753034044 source:c:\users\aldos\onedrive\escritorio\tp-integrador-programacion-1-enredados--main1\mostrarmenu.cpp
+	<iostream>
+	<clocale>
+	"MOSTRARMENU.h"
+	"JUGAR.h"
+	"DADOS.h"
+	"rlutil.h"
+
+1753037975 source:j:\descargas ogx\borrar\tp-integrador-programacion-1-enredados--main1\dados.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<clocale>
+	"DADOS.h"
+	"JUGAR.h"
+	"MOSTRARMENU.h"
+	"rlutil.h"
+
+1753034044 j:\descargas ogx\borrar\tp-integrador-programacion-1-enredados--main1\dados.h
+
+1753034044 j:\descargas ogx\borrar\tp-integrador-programacion-1-enredados--main1\jugar.h
+
+1753034044 j:\descargas ogx\borrar\tp-integrador-programacion-1-enredados--main1\mostrarmenu.h
+
+1753034044 j:\descargas ogx\borrar\tp-integrador-programacion-1-enredados--main1\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1753037243 source:j:\descargas ogx\borrar\tp-integrador-programacion-1-enredados--main1\jugar.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<clocale>
+	"JUGAR.h"
+	"DADOS.h"
+	"MOSTRARMENU.h"
+	"rlutil.h"
+
+1753034044 source:j:\descargas ogx\borrar\tp-integrador-programacion-1-enredados--main1\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<clocale>
+	"MOSTRARMENU.h"
+	"JUGAR.h"
+	"DADOS.h"
+	"rlutil.h"
+
+1753034044 source:j:\descargas ogx\borrar\tp-integrador-programacion-1-enredados--main1\mostrarmenu.cpp
+	<iostream>
+	<clocale>
+	"MOSTRARMENU.h"
+	"JUGAR.h"
+	"DADOS.h"
+	"rlutil.h"
 

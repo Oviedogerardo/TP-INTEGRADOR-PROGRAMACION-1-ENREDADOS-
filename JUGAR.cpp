@@ -17,8 +17,10 @@ string PedirNombreJugador1() //ESTA FUNCION PIDE NOMBRES PARA INGRESAR
 {
     string NombreJugador1;
 
+    MostrarTitulo();
+
    rlutil::setColor(rlutil::BLACK);
-    rlutil::locate(80,10);// posiciona el cursor en algun punto
+    rlutil::locate(71,11);
     cout << "Ingrese el nombre del Jugador 1: ";
     cin >> NombreJugador1;
 
@@ -45,7 +47,9 @@ string PedirNombreJugador2() //ESTA FUNCION PIDE NOMBRES PARA INGRESAR
 {
     string NombreJugador2;
 
-    rlutil::locate(80,10);
+    MostrarTitulo();
+
+    rlutil::locate(71,11);
     cout << "Ingrese el nombre del Jugador 2: ";
     cin >> NombreJugador2;
 
@@ -70,25 +74,25 @@ void MostrarPuntajePuntajeJugador2(int &SumaDadosJugador2, int &DadosElegidosJug
 
 void creditos()    //ESTA FUNCION MUESTRA LOS CREDITOS DE TODOS LOS INTEGRANTES DEL GRUPO
 {
-    rlutil::locate(46,2);
+    rlutil::locate(96,2);
     cout << "-----CREDITOS-----";
-    rlutil::locate(46,4);
+    rlutil::locate(96,4);
     cout << "----Equipo #35----";
-    rlutil::locate(39,7);
+    rlutil::locate(92,7);
     cout << "BAÑULS BRIZUELA, Fernando Emmanuel";
-    rlutil::locate(48,8);
+    rlutil::locate(98,8);
     cout << "Legajo #33493";
-    rlutil::locate(39,10);
+    rlutil::locate(92,10);
     cout << "OVIEDO, Gerardo Joaquin";
-    rlutil::locate(48,11);
+    rlutil::locate(98,11);
     cout << "Legajo #31647";
-    rlutil::locate(39,13);
+    rlutil::locate(92,13);
     cout << "SARZA, Ludmila";
-    rlutil::locate(48,14);
+    rlutil::locate(98,14);
     cout << "Legajo #32540";
-    rlutil::locate(39,16);
+    rlutil::locate(92,16);
     cout << "VAZQUEZ GONZALEZ, Patricia";
-    rlutil::locate(48,17);
+    rlutil::locate(98,17);
     cout << "Legajo #31174";
     cout << endl;
 }
@@ -108,6 +112,7 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
 {
     if(Empieza == 1)
     {
+
         MostrarNombres(NombreJugador1, NombreJugador2);
 
         rlutil::locate(85,6);
@@ -148,7 +153,7 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
         MostrarNombres(NombreJugador1, NombreJugador2);
         cout<<endl;
 
-        cout<<"                                              El Numero Objetivo a llegar es: "<<NumeroObjetivoJugador1<<endl<<endl; //ESTO SE AGREGO PARA MOSTRAR EL NUMERO OBJETIVO
+        cout<<"El Numero Objetivo a llegar es: "<<NumeroObjetivoJugador1<<endl<<endl; //ESTO SE AGREGO PARA MOSTRAR EL NUMERO OBJETIVO
 
         cout<<"Estos son los Dados Stock de la tirada de : "<< NombreJugador1<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
 
@@ -162,7 +167,7 @@ void MostrarPartida(int Empieza, string &NombreJugador1, string &NombreJugador2,
 
         cout<<endl;
 
-        cout<<"                                              El Numero Objetivo a llegar es: "<<NumeroObjetivoJugador2<<endl<<endl;
+        cout<<"El Numero Objetivo a llegar es: "<<NumeroObjetivoJugador2<<endl<<endl;
 
         cout<<"Estos son los Dados Stock de la tirada de: "<< NombreJugador2<<endl<<endl; //SE PUSIERON 2 "endl" POR MOTIVOS ESTETICOS, PARA DARLE ESPACIO Y MOSTRAR LOS DADOS
 
@@ -226,30 +231,36 @@ void Estadisticas (string NombreJugador1, string NombreJugador2, int PuntajeJuga
 
     Limpia();
 
-    cout<<"                    ---------------------ESTADISTICAS---------------------"<<endl<<endl;
-
-    cout<<"                    ---------------------ULTIMO RESUMEN PARTIDA---------------------"<<endl<<endl;
-
-    cout<<"El Jugador 1: "<<NombreJugador1<<" tuvo estos puntos: "<<PuntajeJugador1<<endl<<endl;
-
-    cout<<"El Jugador 2: "<<NombreJugador2<<" tuvo estos puntos: "<<PuntajeJugador2<<endl<<endl;
-
-    cout<<"                    ---------------------MAYOR PUNTAJE---------------------"<<endl<<endl;
+    rlutil::locate(80,1);
+    cout<<"---------------------ESTADISTICAS---------------------";
+    rlutil::locate(75,2);
+    cout<<"---------------------ULTIMO RESUMEN PARTIDA---------------------";
+    rlutil::locate(90,4);
+    cout<<"El Jugador 1: "<<NombreJugador1<<" tuvo estos puntos: "<<PuntajeJugador1;
+    rlutil::locate(90,5);
+    cout<<"El Jugador 2: "<<NombreJugador2<<" tuvo estos puntos: "<<PuntajeJugador2;
+    rlutil::locate(80,7);
+    cout<<"---------------------MAYOR PUNTAJE---------------------";
 
     if (PuntajeJugador1 > PuntajeJugador2)
     {
         MayorPuntaje = PuntajeJugador1;
+
+        rlutil::locate(90,9);
         cout<<"El mayor puntaje de la ultima partida es "<<MayorPuntaje<<endl<<endl;
     }
     if (PuntajeJugador1 < PuntajeJugador2)
     {
         MayorPuntaje = PuntajeJugador2;
+
+        rlutil::locate(90,9);
         cout<<"El mayor puntaje de la ultima partida es "<<MayorPuntaje<<endl<<endl;
     }
 
     if (PuntajeJugador1 == 0 & PuntajeJugador2 == 0)
     {
         ColorAdvertencia();
+        rlutil::locate(90,9);
         cout<<"TODAVIA NO SE JUGO NINGUNA RONDA"<<endl<<endl;
         VuelveColor();
     }
@@ -265,20 +276,31 @@ void MostrarRonda(int &Ronda)
 
 void GanarAutomaticamente(int DadosStockJugador1Cantidad, int DadosStockJugador2Cantidad, int PuntajeJugador1,int PuntajeJugador2, string NombreJugador1, string NombreJugador2)
 {
+    Limpia();
+    //DadosStockJugador1Cantidad = 0; ///DEBUG: PARA VER COMO QUEDA
+    //DadosStockJugador2Cantidad = 1; ///DEBUG: PARA VER COMO QUEDA
+
     if (DadosStockJugador1Cantidad == 0 || DadosStockJugador2Cantidad == 0)
     {
-        cout<<"********************************************************************************"<<endl;
-        cout<<"      UNO DE LOS JUGADORES SE QUEDO SIN DADOS!!!"<<endl<<endl;
+        Limpia();
+        rlutil::locate(80,1);
+        cout<<"********************************************************************************";
+        rlutil::locate(85,3);
+        cout<<"UNO DE LOS JUGADORES SE QUEDO SIN DADOS!!!"<<endl<<endl;
         if (DadosStockJugador1Cantidad == 0)
         {
             PuntajeJugador1 += 10000;
-            cout<<"FELICIDADES "<<NombreJugador1<<"      TE QUEDASTE SIN DADOS, TOMA 10.000 PUNTOS Y GANAS AUTOMATICAMENTE!!!"<<endl;
+            rlutil::locate(90,25);
+            cout<<"FELICIDADES "<<NombreJugador1<<"      TE QUEDASTE SIN DADOS, TOMA 10.000 PUNTOS Y GANAS AUTOMATICAMENTE!!!";
+            rlutil::locate(93,27);
             cout<<"CERRAS CON ESTOS PUNTOS: "<<PuntajeJugador1<<endl;
         }
         else if (DadosStockJugador2Cantidad == 0)
         {
             PuntajeJugador2 += 10000;
-            cout<<"FELICIDADES "<<NombreJugador2<<"      TE QUEDASTE SIN DADOS, TOMA 10.000 PUNTOS Y GANAS AUTOMATICAMENTE!!!"<<endl;
+            rlutil::locate(90,25);
+            cout<<"FELICIDADES "<<NombreJugador2<<"      TE QUEDASTE SIN DADOS, TOMA 10.000 PUNTOS Y GANAS AUTOMATICAMENTE!!!";
+            rlutil::locate(93,27);
             cout<<"CERRAS CON ESTOS PUNTOS: "<<PuntajeJugador2<<endl;
         }
     }
