@@ -192,7 +192,6 @@ void Menu()
 
                 GanarAutomaticamente(DadosStockJugador1Cantidad, DadosStockJugador2Cantidad,PuntajeJugador1, PuntajeJugador2, NombreJugador1, NombreJugador2);
 
-               // PausayLimpia();
 
                 Ronda++;
             }

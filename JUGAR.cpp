@@ -94,6 +94,13 @@ void creditos()    //ESTA FUNCION MUESTRA LOS CREDITOS DE TODOS LOS INTEGRANTES 
     cout << "VAZQUEZ GONZALEZ, Patricia";
     rlutil::locate(98,17);
     cout << "Legajo #31174";
+
+    ColorAdvertencia();
+    rlutil::locate(85,19);
+    cout << "Tapio Vierros: Creador de la Libreria rlutil";
+    rlutil::locate(80,20);
+    cout << "https://tapiov.net/rlutil/docs/HTML/files/rlutil-h.html#Copyright";
+    VuelveColor();
     cout << endl;
 }
 
@@ -274,11 +281,11 @@ void MostrarRonda(int &Ronda)
     cout<<"RONDA NUMERO: "<<Ronda<<endl<<endl;
 }
 
-void GanarAutomaticamente(int DadosStockJugador1Cantidad, int DadosStockJugador2Cantidad, int PuntajeJugador1,int PuntajeJugador2, string NombreJugador1, string NombreJugador2)
+void GanarAutomaticamente(int DadosStockJugador1Cantidad, int DadosStockJugador2Cantidad, int &PuntajeJugador1,int &PuntajeJugador2, string NombreJugador1, string NombreJugador2)
 {
     Limpia();
-    //DadosStockJugador1Cantidad = 0; ///DEBUG: PARA VER COMO QUEDA
-    //DadosStockJugador2Cantidad = 1; ///DEBUG: PARA VER COMO QUEDA
+    DadosStockJugador1Cantidad = 0; ///DEBUG: PARA VER COMO QUEDA
+    //DadosStockJugador2Cantidad = 0; ///DEBUG: PARA VER COMO QUEDA
 
     if (DadosStockJugador1Cantidad == 0 || DadosStockJugador2Cantidad == 0)
     {

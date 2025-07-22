@@ -111,7 +111,10 @@ void ElegirDadosySumarJugador1 (int DadosStockJugador1Numero[], int &DadosStockJ
         }
         else if ((DadosUsados[Numero - 1] == true))
         {
+            ColorTiradaFallida();
             cout << "¡Epa!Ese dado ya lo usaste. Elegí otro." << endl;
+            VuelveColor();
+
             i--;
         }
 
@@ -309,7 +312,9 @@ void ElegirDadosySumarJugador2 (int DadosStockJugador2Numero[], int &DadosStockJ
         }
         else if ((DadosUsados[Numero - 1] == true))
         {
+            ColorTiradaFallida();
             cout << "¡Epa!Ese dado ya lo usaste. Elegí otro."<< endl;
+            VuelveColor();
             i--;
         }
             else
